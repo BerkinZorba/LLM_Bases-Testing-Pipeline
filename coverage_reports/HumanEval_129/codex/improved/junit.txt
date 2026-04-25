@@ -1,0 +1,39 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+.
++-- JUnit Platform Suite [OK]
++-- JUnit Jupiter [OK]
+| '-- HumanEval_129_ImprovedTest [OK]
+|   +-- Null grid is pinned to empty list [OK]
+|   +-- Extended position and boundary cases [OK]
+|   | +-- k=1, path=[1] [OK]
+|   | +-- k=2, path=[1, 2] [OK]
+|   | +-- k=5, path=[1, 2, 1, 2, 1] [OK]
+|   | +-- k=6, path=[1, 2, 1, 2, 1, 2] [OK]
+|   | +-- k=4, path=[1, 2, 1, 2] [OK]
+|   | '-- k=6, path=[1, 2, 1, 2, 1, 2] [OK]
+|   +-- Negative k is pinned to empty list [OK]
+|   +-- Empty grid is pinned to empty list [OK]
+|   +-- Zero k is pinned to empty list [OK]
+|   '-- Dataset expectations [OK]
+|     +-- k=3, path=[1, 2, 1] [OK]
+|     +-- k=1, path=[1] [OK]
+|     +-- k=4, path=[1, 2, 1, 2] [OK]
+|     '-- k=8, path=[1, 3, 1, 3, 1, 3, 1, 3] [OK]
+'-- JUnit Vintage [OK]
+
+Test run finished after 82 ms
+[         6 containers found      ]
+[         0 containers skipped    ]
+[         6 containers started    ]
+[         0 containers aborted    ]
+[         6 containers successful ]
+[         0 containers failed     ]
+[        14 tests found           ]
+[         0 tests skipped         ]
+[        14 tests started         ]
+[         0 tests aborted         ]
+[        14 tests successful      ]
+[         0 tests failed          ]
+

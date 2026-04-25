@@ -1,0 +1,44 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  └─ HumanEval_129_ImprovedTest ✔
+│     ├─ Position of 1 in grid — covers all 4 corners and interior ✔
+│     │  ├─ 1 at top-left corner (0,0): only right and down neighbors ✔
+│     │  ├─ 1 at bottom-left corner (n-1,0): only right and up neighbors ✔
+│     │  ├─ 1 at bottom-right corner (n-1,n-1): only left and up neighbors ✔
+│     │  ├─ 1 at interior of 3x3: four neighbors available ✔
+│     │  └─ 1 at top-right corner (0,n-1): only left and down neighbors ✔
+│     ├─ Dataset cases — one assertion per test ✔
+│     │  ├─ ds09_3x3_topMid_k8_nb5() ✔
+│     │  ├─ ds06_4x4_cornerBR_k9() ✔
+│     │  ├─ ds03_4x4_cornerTL_k4() ✔
+│     │  ├─ ds02_3x3_interior_k1() ✔
+│     │  ├─ ds01_3x3_cornerTL_k3() ✔
+│     │  ├─ ds05_4x4_interior_k5() ✔
+│     │  ├─ ds10_2x2_cornerTL_k10() ✔
+│     │  ├─ ds08_3x3_midRow_k8_nb3() ✔
+│     │  ├─ ds11_2x2_tiedNeighbors_k10() ✔
+│     │  ├─ ds07_4x4_cornerTR_k12() ✔
+│     │  └─ ds04_4x4_edgeRight_k7() ✔
+│     └─ k boundary values ✔
+│        ├─ k=1: result is always [1] ✔
+│        └─ k=2: both parities — [1, minNeighbor] ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 75 ms
+[         7 containers found      ]
+[         0 containers skipped    ]
+[         7 containers started    ]
+[         0 containers aborted    ]
+[         7 containers successful ]
+[         0 containers failed     ]
+[        18 tests found           ]
+[         0 tests skipped         ]
+[        18 tests started         ]
+[         0 tests aborted         ]
+[        18 tests successful      ]
+[         0 tests failed          ]
+

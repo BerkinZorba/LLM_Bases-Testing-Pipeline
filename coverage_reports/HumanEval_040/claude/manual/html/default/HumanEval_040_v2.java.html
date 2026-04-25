@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HumanEval_040_v2.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">HumanEval_040_v2.java</span></div><h1>HumanEval_040_v2.java</h1><pre class="source lang-java linenums">import java.util.*;
+import java.lang.*;
+
+<span class="fc" id="L4">class Solution {</span>
+    /**
+     * triplesSumToZero takes a list of integers as an input.
+     * it returns True if there are three distinct elements in the list that
+     * sum to zero, and False otherwise.
+     *
+     * &gt;&gt;&gt; triplesSumToZero(Arrays.asList(1, 3, 5, 0))
+     * false
+     * &gt;&gt;&gt; triplesSumToZero(Arrays.asList(1, 3, -2, 1))
+     * true
+     * &gt;&gt;&gt; triplesSumToZero(Arrays.asList(1, 2, 3, 7))
+     * false
+     * &gt;&gt;&gt; triplesSumToZero(Arrays.asList(2, 4, -5, 3, 9, 7))
+     * true
+     * &gt;&gt;&gt; triplesSumToZero(Arrays.asList(1))
+     * false
+     */
+    public boolean triplesSumToZero(List&lt;Integer&gt; l) {
+<span class="fc" id="L22">        int n = l.size();</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (n &lt; 3) return false;</span>
+
+<span class="fc" id="L25">        List&lt;Integer&gt; sorted = new ArrayList&lt;&gt;(l);</span>
+<span class="fc" id="L26">        Collections.sort(sorted);</span>
+
+<span class="fc bfc" id="L28" title="All 2 branches covered.">        for (int i = 0; i &lt; n - 2; i++) {</span>
+<span class="fc" id="L29">            int left = i + 1;</span>
+<span class="fc" id="L30">            int right = n - 1;</span>
+
+<span class="fc bfc" id="L32" title="All 2 branches covered.">            while (left &lt; right) {</span>
+<span class="fc" id="L33">                int sum = sorted.get(i) + sorted.get(left) + sorted.get(right);</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">                if (sum == 0) {</span>
+<span class="fc" id="L35">                    return true;</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">                } else if (sum &lt; 0) {</span>
+<span class="fc" id="L37">                    left++;</span>
+                } else {
+<span class="fc" id="L39">                    right--;</span>
+                }
+<span class="fc" id="L41">            }</span>
+        }
+
+<span class="fc" id="L44">        return false;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

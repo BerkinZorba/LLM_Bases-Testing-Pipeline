@@ -1,0 +1,35 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+.
++-- JUnit Platform Suite [OK]
++-- JUnit Jupiter [OK]
+| '-- HumanEval_106_ManualTest [OK]
+|   +-- Even positions are factorials [OK]
+|   +-- Valid equivalence classes [OK]
+|   | +-- "V1": f(1) -> [1] [OK]
+|   | +-- "V2": f(2) -> [1, 2] [OK]
+|   | +-- "V3": f(3) -> [1, 2, 6] [OK]
+|   | +-- "V4": f(5) -> [1, 2, 6, 24, 15] [OK]
+|   | +-- "V5": f(7) -> [1, 2, 6, 24, 15, 720, 28] [OK]
+|   | '-- "V6": f(8) -> [1, 2, 6, 24, 15, 720, 28, 40320] [OK]
+|   +-- Boundary: negative n [OK]
+|   +-- Result length equals n for positive n [OK]
+|   +-- Boundary: zero [OK]
+|   '-- Odd positions are triangular sums [OK]
+'-- JUnit Vintage [OK]
+
+Test run finished after 77 ms
+[         5 containers found      ]
+[         0 containers skipped    ]
+[         5 containers started    ]
+[         0 containers aborted    ]
+[         5 containers successful ]
+[         0 containers failed     ]
+[        11 tests found           ]
+[         0 tests skipped         ]
+[        11 tests started         ]
+[         0 tests aborted         ]
+[        11 tests successful      ]
+[         0 tests failed          ]
+

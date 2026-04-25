@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HumanEval_020_ImprovedTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">HumanEval_020_ImprovedTest.java</span></div><h1>HumanEval_020_ImprovedTest.java</h1><pre class="source lang-java linenums">import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+/**
+ * Codex-authored improved JUnit 6 suite for HumanEval_020.
+ *
+ * Design goals:
+ * - split the dataset's assertion-list harness into attributable checks;
+ * - exercise sorted-copy behavior without depending on input ordering;
+ * - add coverage for two-element, duplicate, negative, tie, and invalid-size cases.
+ */
+<span class="fc" id="L21">public class HumanEval_020_ImprovedTest {</span>
+
+<span class="fc" id="L23">    private final Solution solution = new Solution();</span>
+
+    static Stream&lt;Arguments&gt; datasetCases() {
+<span class="fc" id="L26">        return Stream.of(</span>
+<span class="fc" id="L27">                Arguments.of(Arrays.asList(1.0, 2.0, 3.9, 4.0, 5.0, 2.2), Arrays.asList(3.9, 4.0)),</span>
+<span class="fc" id="L28">                Arguments.of(Arrays.asList(1.0, 2.0, 5.9, 4.0, 5.0), Arrays.asList(5.0, 5.9)),</span>
+<span class="fc" id="L29">                Arguments.of(Arrays.asList(1.0, 2.0, 3.0, 4.0, 5.0, 2.2), Arrays.asList(2.0, 2.2)),</span>
+<span class="fc" id="L30">                Arguments.of(Arrays.asList(1.0, 2.0, 3.0, 4.0, 5.0, 2.0), Arrays.asList(2.0, 2.0)),</span>
+<span class="fc" id="L31">                Arguments.of(Arrays.asList(1.1, 2.2, 3.1, 4.1, 5.1), Arrays.asList(2.2, 3.1))</span>
+        );
+    }
+
+    static Stream&lt;Arguments&gt; extendedCases() {
+<span class="fc" id="L36">        return Stream.of(</span>
+<span class="fc" id="L37">                Arguments.of(Arrays.asList(8.0, 1.0), Arrays.asList(1.0, 8.0)),</span>
+<span class="fc" id="L38">                Arguments.of(Arrays.asList(-5.0, -2.0, -2.5, 4.0), Arrays.asList(-2.5, -2.0)),</span>
+<span class="fc" id="L39">                Arguments.of(Arrays.asList(0.0, -0.1, 10.0, 9.75), Arrays.asList(-0.1, 0.0)),</span>
+<span class="fc" id="L40">                Arguments.of(Arrays.asList(4.4, 4.4, 1.0), Arrays.asList(4.4, 4.4)),</span>
+<span class="fc" id="L41">                Arguments.of(Arrays.asList(100.0, 1.0, 50.0, 51.0), Arrays.asList(50.0, 51.0)),</span>
+<span class="fc" id="L42">                Arguments.of(Arrays.asList(1.0, 2.0, 3.0), Arrays.asList(1.0, 2.0))</span>
+        );
+    }
+
+    @ParameterizedTest(name = &quot;{0} -&gt; {1}&quot;)
+    @MethodSource(&quot;datasetCases&quot;)
+    @DisplayName(&quot;Dataset expectations&quot;)
+    void datasetExpectations(List&lt;Double&gt; input, List&lt;Double&gt; expected) {
+<span class="fc" id="L50">        assertEquals(expected, solution.findClosestElements(input));</span>
+<span class="fc" id="L51">    }</span>
+
+    @ParameterizedTest(name = &quot;{0} -&gt; {1}&quot;)
+    @MethodSource(&quot;extendedCases&quot;)
+    @DisplayName(&quot;Extended branch and boundary cases&quot;)
+    void extendedBranchAndBoundaryCases(List&lt;Double&gt; input, List&lt;Double&gt; expected) {
+<span class="fc" id="L57">        assertEquals(expected, solution.findClosestElements(input));</span>
+<span class="fc" id="L58">    }</span>
+
+    @Test
+    @DisplayName(&quot;Input order is not mutated&quot;)
+    void inputOrderIsNotMutated() {
+<span class="fc" id="L63">        List&lt;Double&gt; input = Arrays.asList(3.0, 1.0, 2.0);</span>
+
+<span class="fc" id="L65">        assertEquals(Arrays.asList(3.0, 1.0, 2.0), input);</span>
+<span class="fc" id="L66">        assertEquals(Arrays.asList(1.0, 2.0), solution.findClosestElements(input));</span>
+<span class="fc" id="L67">        assertEquals(Arrays.asList(3.0, 1.0, 2.0), input);</span>
+<span class="fc" id="L68">    }</span>
+
+    @Test
+    @DisplayName(&quot;Null input is pinned to empty list&quot;)
+    void nullInputReturnsEmptyList() {
+<span class="fc" id="L73">        assertEquals(List.of(), solution.findClosestElements(null));</span>
+<span class="fc" id="L74">    }</span>
+
+    @Test
+    @DisplayName(&quot;Singleton input is pinned to empty list&quot;)
+    void singletonInputReturnsEmptyList() {
+<span class="fc" id="L79">        assertEquals(List.of(), solution.findClosestElements(List.of(42.0)));</span>
+<span class="fc" id="L80">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

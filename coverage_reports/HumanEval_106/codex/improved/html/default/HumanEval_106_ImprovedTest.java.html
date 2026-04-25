@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HumanEval_106_ImprovedTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">HumanEval_106_ImprovedTest.java</span></div><h1>HumanEval_106_ImprovedTest.java</h1><pre class="source lang-java linenums">import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+/**
+ * Codex-authored improved JUnit 6 suite for HumanEval_106.
+ *
+ * Design goals:
+ * - split the dataset's assertion-list harness into attributable checks;
+ * - cover empty/negative-size behavior and early boundaries;
+ * - exercise larger even factorial and odd triangular-number positions.
+ */
+<span class="fc" id="L21">public class HumanEval_106_ImprovedTest {</span>
+
+<span class="fc" id="L23">    private final Solution solution = new Solution();</span>
+
+    static Stream&lt;Arguments&gt; datasetCases() {
+<span class="fc" id="L26">        return Stream.of(</span>
+<span class="fc" id="L27">                Arguments.of(5, Arrays.asList(1, 2, 6, 24, 15)),</span>
+<span class="fc" id="L28">                Arguments.of(7, Arrays.asList(1, 2, 6, 24, 15, 720, 28)),</span>
+<span class="fc" id="L29">                Arguments.of(1, List.of(1)),</span>
+<span class="fc" id="L30">                Arguments.of(3, Arrays.asList(1, 2, 6))</span>
+        );
+    }
+
+    static Stream&lt;Arguments&gt; extendedCases() {
+<span class="fc" id="L35">        return Stream.of(</span>
+<span class="fc" id="L36">                Arguments.of(0, List.of()),</span>
+<span class="fc" id="L37">                Arguments.of(2, Arrays.asList(1, 2)),</span>
+<span class="fc" id="L38">                Arguments.of(4, Arrays.asList(1, 2, 6, 24)),</span>
+<span class="fc" id="L39">                Arguments.of(6, Arrays.asList(1, 2, 6, 24, 15, 720)),</span>
+<span class="fc" id="L40">                Arguments.of(8, Arrays.asList(1, 2, 6, 24, 15, 720, 28, 40320))</span>
+        );
+    }
+
+    @ParameterizedTest(name = &quot;f({0}) -&gt; {1}&quot;)
+    @MethodSource(&quot;datasetCases&quot;)
+    @DisplayName(&quot;Dataset expectations&quot;)
+    void datasetExpectations(int n, List&lt;Integer&gt; expected) {
+<span class="fc" id="L48">        assertEquals(expected, solution.f(n));</span>
+<span class="fc" id="L49">    }</span>
+
+    @ParameterizedTest(name = &quot;f({0}) -&gt; {1}&quot;)
+    @MethodSource(&quot;extendedCases&quot;)
+    @DisplayName(&quot;Extended boundary and parity cases&quot;)
+    void extendedBoundaryAndParityCases(int n, List&lt;Integer&gt; expected) {
+<span class="fc" id="L55">        assertEquals(expected, solution.f(n));</span>
+<span class="fc" id="L56">    }</span>
+
+    @Test
+    @DisplayName(&quot;Negative n is pinned to empty list&quot;)
+    void negativeNReturnsEmptyList() {
+<span class="fc" id="L61">        assertEquals(List.of(), solution.f(-3));</span>
+<span class="fc" id="L62">    }</span>
+
+    @Test
+    @DisplayName(&quot;Repeated calls are stable&quot;)
+    void repeatedCallsAreStable() {
+<span class="fc" id="L67">        List&lt;Integer&gt; expected = Arrays.asList(1, 2, 6, 24, 15);</span>
+
+<span class="fc" id="L69">        assertEquals(expected, solution.f(5));</span>
+<span class="fc" id="L70">        assertEquals(expected, solution.f(5));</span>
+<span class="fc" id="L71">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

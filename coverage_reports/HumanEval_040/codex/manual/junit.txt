@@ -1,0 +1,41 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+.
++-- JUnit Platform Suite [OK]
++-- JUnit Jupiter [OK]
+| '-- HumanEval_040_ManualTest [OK]
+|   +-- Boundary: length one [OK]
+|   +-- Boundary: length two [OK]
+|   +-- Valid equivalence classes [OK]
+|   | +-- "V1": [1, 2] -> false [OK]
+|   | +-- "V2": [-1, 0, 1] -> true [OK]
+|   | +-- "V3": [1, 2, 4] -> false [OK]
+|   | +-- "V4": [1, 2, 3, 7] -> false [OK]
+|   | +-- "V5": [-5, -4, -1] -> false [OK]
+|   | +-- "V6": [-2, -2, 4, 8] -> true [OK]
+|   | +-- "V7": [0, 0, 0] -> true [OK]
+|   | +-- "V8": [0, 1, 2] -> false [OK]
+|   | +-- "V9": [2, 4, -5, 3, 9, 7] -> true [OK]
+|   | '-- "V10": [100, 3, 5, -100] -> false [OK]
+|   +-- Original input list order remains unchanged [OK]
+|   +-- Boundary: exactly three values summing to zero [OK]
+|   +-- Boundary: duplicate values as distinct elements [OK]
+|   +-- Boundary: length zero [OK]
+|   '-- Null list is pinned to false [OK]
+'-- JUnit Vintage [OK]
+
+Test run finished after 81 ms
+[         5 containers found      ]
+[         0 containers skipped    ]
+[         5 containers started    ]
+[         0 containers aborted    ]
+[         5 containers successful ]
+[         0 containers failed     ]
+[        17 tests found           ]
+[         0 tests skipped         ]
+[        17 tests started         ]
+[         0 tests aborted         ]
+[        17 tests successful      ]
+[         0 tests failed          ]
+

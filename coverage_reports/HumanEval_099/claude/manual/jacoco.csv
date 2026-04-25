@@ -1,0 +1,6 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+JaCoCo Coverage Report,default,HumanEval_099_ManualTest.InvalidInputs,21,24,0,0,0,7,3,4,3,4
+JaCoCo Coverage Report,default,HumanEval_099_ManualTest.ValidClasses,0,14,0,0,0,3,0,2,0,2
+JaCoCo Coverage Report,default,HumanEval_099_ManualTest.Boundaries,0,68,0,0,0,15,0,7,0,7
+JaCoCo Coverage Report,default,HumanEval_099_ManualTest,0,8,0,0,0,2,0,1,0,1
+JaCoCo Coverage Report,default,Solution,0,28,0,4,0,5,0,4,0,2

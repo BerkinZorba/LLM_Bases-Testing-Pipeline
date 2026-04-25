@@ -1,0 +1,49 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  └─ HumanEval_040_ManualTest ✔
+│     ├─ Valid equivalence classes (V1-V15) ✔
+│     │  ├─ expectTrue(String, List) ✔
+│     │  │  ├─ "V4  three elems summing to zero" ✔
+│     │  │  ├─ "V6  three zeros" ✔
+│     │  │  ├─ "V8  all-neg with mixed" ✔
+│     │  │  ├─ "V9  mixed sign — triple exists" ✔
+│     │  │  ├─ "V11 duplicate vals form triple" ✔
+│     │  │  ├─ "V12 triple spans min and max" ✔
+│     │  │  ├─ "V14 multiple triples" ✔
+│     │  │  └─ "V15 neg + two positives" ✔
+│     │  └─ expectFalse(String, List) ✔
+│     │     ├─ "V1  empty list" ✔
+│     │     ├─ "V2  one element" ✔
+│     │     ├─ "V3  two elements" ✔
+│     │     ├─ "V5  three elems no zero-sum" ✔
+│     │     ├─ "V7  all positive" ✔
+│     │     ├─ "V10 mixed — no triple" ✔
+│     │     └─ "V13 large magnitude no triple" ✔
+│     ├─ Boundary analysis ✔
+│     │  ├─ Size boundary: 2 → 3 → 4 elements ✔
+│     │  ├─ Two-pointer: left and right converge without finding a triple ✔
+│     │  ├─ Sum boundary: sum just below zero, exactly zero, just above zero ✔
+│     │  ├─ Triple at last three sorted positions ✔
+│     │  └─ Triple at first three sorted positions ✔
+│     └─ Invalid / undefined-by-spec inputs (pinned behavior) ✔
+│        └─ I1: null list throws NullPointerException ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 95 ms
+[         9 containers found      ]
+[         0 containers skipped    ]
+[         9 containers started    ]
+[         0 containers aborted    ]
+[         9 containers successful ]
+[         0 containers failed     ]
+[        21 tests found           ]
+[         0 tests skipped         ]
+[        21 tests started         ]
+[         0 tests aborted         ]
+[        21 tests successful      ]
+[         0 tests failed          ]
+

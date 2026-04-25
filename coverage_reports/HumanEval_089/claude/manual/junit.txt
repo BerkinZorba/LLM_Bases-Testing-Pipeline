@@ -1,0 +1,47 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  └─ HumanEval_089_ManualTest ✔
+│     ├─ Invalid / undefined-by-spec inputs (pinned behavior) ✔
+│     │  └─ I1: null input returns empty string ✔
+│     ├─ Boundary analysis ✔
+│     │  ├─ Lowercase wrap boundary: v→z (no wrap), w→a (first wrap) ✔
+│     │  ├─ String length: 0 → 1 → many ✔
+│     │  ├─ Uppercase wrap boundary: V→Z (no wrap), W→A (first wrap) ✔
+│     │  └─ All 26 lowercase letters produce correct +4 rotation ✔
+│     ├─ Valid equivalence classes — spec-defined (V1-V7) ✔
+│     │  └─ specDefinedExpectations(String, String, String) ✔
+│     │     ├─ "V1  empty string" ✔
+│     │     ├─ "V2  single mid-alphabet" ✔
+│     │     ├─ "V3  single near-end (wrap)" ✔
+│     │     ├─ "V4  lowercase no wrap" ✔
+│     │     ├─ "V5  lowercase with wrap" ✔
+│     │     ├─ "V6  longer string" ✔
+│     │     └─ "V7  repeated chars" ✔
+│     └─ Extended classes — implementation-defined pinned behavior (V8-V13) ✔
+│        └─ extendedExpectations(String, String, String) ✔
+│           ├─ "V8  uppercase no wrap" ✔
+│           ├─ "V9  uppercase wrap" ✔
+│           ├─ "V10 mixed lower/upper" ✔
+│           ├─ "V11 digits pass through" ✔
+│           ├─ "V12 spaces pass through" ✔
+│           └─ "V13 punctuation pass through" ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 99 ms
+[        10 containers found      ]
+[         0 containers skipped    ]
+[        10 containers started    ]
+[         0 containers aborted    ]
+[        10 containers successful ]
+[         0 containers failed     ]
+[        18 tests found           ]
+[         0 tests skipped         ]
+[        18 tests started         ]
+[         0 tests aborted         ]
+[        18 tests successful      ]
+[         0 tests failed          ]
+

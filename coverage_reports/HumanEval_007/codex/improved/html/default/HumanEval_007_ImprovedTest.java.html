@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HumanEval_007_ImprovedTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">HumanEval_007_ImprovedTest.java</span></div><h1>HumanEval_007_ImprovedTest.java</h1><pre class="source lang-java linenums">import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
+
+/**
+ * Codex-authored improved JUnit 6 suite for HumanEval_007.
+ *
+ * Design goals:
+ * - make each dataset expectation independently attributable;
+ * - add coverage for ordering, duplicate retention, case sensitivity,
+ *   empty-substring semantics, and result-list independence;
+ * - keep the suite executable against only Solution plus this test class.
+ */
+<span class="fc" id="L24">public class HumanEval_007_ImprovedTest {</span>
+
+<span class="fc" id="L26">    private final Solution solution = new Solution();</span>
+
+    static Stream&lt;Arguments&gt; datasetCases() {
+<span class="fc" id="L29">        return Stream.of(</span>
+<span class="fc" id="L30">                Arguments.of(&quot;empty input&quot;, List.of(), &quot;john&quot;, List.of()),</span>
+<span class="fc" id="L31">                Arguments.of(&quot;exact xxx&quot;, Arrays.asList(&quot;xxx&quot;, &quot;asd&quot;, &quot;xxy&quot;, &quot;john doe&quot;, &quot;xxxAAA&quot;, &quot;xxx&quot;),</span>
+<span class="fc" id="L32">                        &quot;xxx&quot;, Arrays.asList(&quot;xxx&quot;, &quot;xxxAAA&quot;, &quot;xxx&quot;)),</span>
+<span class="fc" id="L33">                Arguments.of(&quot;broader xx&quot;, Arrays.asList(&quot;xxx&quot;, &quot;asd&quot;, &quot;aaaxxy&quot;, &quot;john doe&quot;, &quot;xxxAAA&quot;, &quot;xxx&quot;),</span>
+<span class="fc" id="L34">                        &quot;xx&quot;, Arrays.asList(&quot;xxx&quot;, &quot;aaaxxy&quot;, &quot;xxxAAA&quot;, &quot;xxx&quot;)),</span>
+<span class="fc" id="L35">                Arguments.of(&quot;middle run&quot;, Arrays.asList(&quot;grunt&quot;, &quot;trumpet&quot;, &quot;prune&quot;, &quot;gruesome&quot;),</span>
+<span class="fc" id="L36">                        &quot;run&quot;, Arrays.asList(&quot;grunt&quot;, &quot;prune&quot;))</span>
+        );
+    }
+
+    @ParameterizedTest(name = &quot;{0}&quot;)
+    @MethodSource(&quot;datasetCases&quot;)
+    @DisplayName(&quot;Dataset cases&quot;)
+    void datasetExpectations(String label, List&lt;String&gt; input, String substring, List&lt;String&gt; expected) {
+<span class="fc" id="L44">        assertEquals(expected, solution.filterBySubstring(new ArrayList&lt;&gt;(input), substring),</span>
+<span class="nc" id="L45">                () -&gt; label + &quot; substring=\&quot;&quot; + substring + &quot;\&quot;&quot;);</span>
+<span class="fc" id="L46">    }</span>
+
+    @Test
+    @DisplayName(&quot;Order of matches follows input order&quot;)
+    void preservesInputOrder() {
+<span class="fc" id="L51">        assertEquals(Arrays.asList(&quot;beta&quot;, &quot;alphabet&quot;),</span>
+<span class="fc" id="L52">                solution.filterBySubstring(new ArrayList&lt;&gt;(Arrays.asList(&quot;beta&quot;, &quot;alpha&quot;, &quot;alphabet&quot;, &quot;table&quot;)), &quot;bet&quot;));</span>
+<span class="fc" id="L53">    }</span>
+
+    @Test
+    @DisplayName(&quot;Duplicate matching strings are retained&quot;)
+    void retainsDuplicateMatches() {
+<span class="fc" id="L58">        assertEquals(Arrays.asList(&quot;needle&quot;, &quot;needle&quot;, &quot;hayneedle&quot;),</span>
+<span class="fc" id="L59">                solution.filterBySubstring(new ArrayList&lt;&gt;(Arrays.asList(&quot;needle&quot;, &quot;hay&quot;, &quot;needle&quot;, &quot;hayneedle&quot;)), &quot;needle&quot;));</span>
+<span class="fc" id="L60">    }</span>
+
+    @Test
+    @DisplayName(&quot;Matching is case-sensitive&quot;)
+    void matchingIsCaseSensitive() {
+<span class="fc" id="L65">        assertEquals(List.of(&quot;Cat&quot;),</span>
+<span class="fc" id="L66">                solution.filterBySubstring(new ArrayList&lt;&gt;(Arrays.asList(&quot;Cat&quot;, &quot;cat&quot;, &quot;Concatenate&quot;)), &quot;Cat&quot;));</span>
+<span class="fc" id="L67">    }</span>
+
+    @Test
+    @DisplayName(&quot;Empty substring selects every element&quot;)
+    void emptySubstringSelectsEveryElement() {
+<span class="fc" id="L72">        List&lt;String&gt; input = Arrays.asList(&quot;&quot;, &quot;plain&quot;, &quot; &quot;);</span>
+<span class="fc" id="L73">        assertEquals(input, solution.filterBySubstring(new ArrayList&lt;&gt;(input), &quot;&quot;));</span>
+<span class="fc" id="L74">    }</span>
+
+    @Test
+    @DisplayName(&quot;Empty string element does not match non-empty substring&quot;)
+    void emptyElementOnlyMatchesEmptySubstring() {
+<span class="fc" id="L79">        assertEquals(List.of(&quot;a&quot;),</span>
+<span class="fc" id="L80">                solution.filterBySubstring(new ArrayList&lt;&gt;(Arrays.asList(&quot;&quot;, &quot;a&quot;, &quot;b&quot;)), &quot;a&quot;));</span>
+<span class="fc" id="L81">    }</span>
+
+    @Test
+    @DisplayName(&quot;Result list is independent from the input list object&quot;)
+    void resultListIsIndependentObject() {
+<span class="fc" id="L86">        ArrayList&lt;String&gt; input = new ArrayList&lt;&gt;(Arrays.asList(&quot;aa&quot;, &quot;bb&quot;, &quot;aba&quot;));</span>
+<span class="fc" id="L87">        List&lt;String&gt; result = solution.filterBySubstring(input, &quot;a&quot;);</span>
+
+<span class="fc" id="L89">        assertNotSame(input, result);</span>
+<span class="fc" id="L90">        assertEquals(Arrays.asList(&quot;aa&quot;, &quot;aba&quot;), result);</span>
+<span class="fc" id="L91">    }</span>
+
+    @Test
+    @DisplayName(&quot;Mutating one result does not affect later calls&quot;)
+    void resultStateDoesNotLeakAcrossCalls() {
+<span class="fc" id="L96">        ArrayList&lt;String&gt; input = new ArrayList&lt;&gt;(Arrays.asList(&quot;ab&quot;, &quot;bc&quot;, &quot;abc&quot;));</span>
+<span class="fc" id="L97">        List&lt;String&gt; first = solution.filterBySubstring(input, &quot;a&quot;);</span>
+<span class="fc" id="L98">        first.clear();</span>
+
+<span class="fc" id="L100">        assertEquals(Arrays.asList(&quot;ab&quot;, &quot;abc&quot;), solution.filterBySubstring(input, &quot;a&quot;));</span>
+<span class="fc" id="L101">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

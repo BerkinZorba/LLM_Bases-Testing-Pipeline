@@ -241,3 +241,29 @@ Select 30 prompts with balanced difficulty
 - JaCoCo coverage exported to `coverage_reports/HumanEval_097/claude/{base,improved,manual}/`. All three suites: 13/13 instr, 0/0 branch, 2/2 line, 2/2 CC, 2/2 method on `Solution`. The implementation has no in-method conditionals so JaCoCo reports zero branch counters; behavioral path coverage is documented in the suite rationales.
 - Per-prompt summary at `analysis/HumanEval_097/HumanEval_097_claude.md`; rows added to `analysis/coverage_summary.md`.
 - No defects against spec → no refactor loop triggered. HumanEval_097 (Claude side) complete; Codex side still pending.
+
+### 2026-04-25 — HumanEval_100 (Codex)
+
+- Started Phase 1 implementation for `HumanEval_100` under the `codex` workflow.
+- Read the prompt text from `prompts/selected_prompts.md` and saved the initial Java solution to `generated_code/codex/HumanEval_100.java`.
+- Logged the initial interaction in `llm_logs/codex/HumanEval_100_initial.md`.
+- Adjusted dataset `Main.java` at `tests/base_tests/adjusted/HumanEval_100/Main.java` by adding `import java.util.*;`; documented in `tests/base_tests/adjustment_log.md`. Generated code unchanged.
+- Executed the adjusted dataset base harness for `HumanEval_100` with Homebrew OpenJDK; compile succeeded and `Main` exited with status 0.
+- Added Codex-side base, improved, and manual test artifacts for `HumanEval_100`, plus separate Codex test-generation logs for improved/manual work.
+- JUnit 6 Codex suites with `.tools/junit-platform-console-standalone.jar`: base 5/5, improved 12/12, manual 9/9.
+- Exported JaCoCo coverage to `coverage_reports/HumanEval_100/codex/{base,improved,manual}/`; `Solution` reached 25/25 instructions, 2/2 branches, 5/5 lines, 3/3 complexity, and 2/2 methods in all three suites.
+- Added per-prompt summary findings to `analysis/HumanEval_100/HumanEval_100_codex.md` and rows to `analysis/coverage_summary.md`.
+- No defects against the prompt specification were observed, so no refactor loop was triggered. HumanEval_100 (Codex side) is complete for Phase 1.
+
+### 2026-04-25 — HumanEval_100 (Claude)
+
+- Started Phase 1 implementation for `HumanEval_100` (Claude side) — `makeAPile(int n)`: build a list of `n` levels where the first level has `n` stones and each subsequent level adds 2 (parity-preserving "next odd / next even").
+- Generated `generated_code/claude/HumanEval_100.java` from the verbatim Java/100 prompt (closed-form arithmetic progression `n + 2*i` over a single `for` loop).
+- Logged the initial interaction in `llm_logs/claude/HumanEval_100_initial.md`.
+- Adjusted dataset `Main.java` at `tests/base_tests/adjusted/HumanEval_100/Main.java` (added `import java.util.*;`); logged in `tests/base_tests/adjustment_log.md`. Adjusted harness exits 0.
+- JUnit 6 base port at `tests/base_tests/claude/HumanEval_100_BaseTest.java` — 5/5 pass.
+- Improved JUnit 6 suite at `tests/improved_tests/claude/HumanEval_100_ImprovedTest.java` — 15/15 pass. Targets test smells (assertion roulette via per-case `@Test`s, magic numbers via intent-named display names, eager test via nested classes) and the for-loop-guard branch (taken / not-taken) plus invariants (size==n, first==n, last==3n-2, step==2, parity preserved, closed-form `n+2*i`).
+- Manual black-box notes + suite at `tests/manual_tests/claude/HumanEval_100_blackbox.md` and `HumanEval_100_ManualTest.java` — 19/19 pass. Pinned that `n=0` and `n<0` return an empty list (loop never enters); these are observed-behavior pins, not spec contracts.
+- JaCoCo coverage exported to `coverage_reports/HumanEval_100/claude/{base,improved,manual}/`. All three suites: 25/25 instr, 2/2 branch, 5/5 line, 3/3 CC, 2/2 method on `Solution`.
+- Per-prompt summary at `analysis/HumanEval_100/HumanEval_100_claude.md`; rows added to `analysis/coverage_summary.md`.
+- No defects against spec → no refactor loop triggered. HumanEval_100 (Claude side) complete.

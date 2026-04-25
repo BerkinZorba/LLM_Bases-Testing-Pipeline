@@ -1,0 +1,36 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  └─ HumanEval_100_ImprovedTest ✔
+│     ├─ preservesEvenParityAcrossAllLevels() ✔
+│     ├─ everyAdjacentPairDiffersByTwo() ✔
+│     ├─ currentImplementationReturnsEmptyListForNegativeInput() ✔
+│     ├─ currentImplementationReturnsEmptyListForZero() ✔
+│     ├─ Builds the expected arithmetic progression for representative sizes ✔
+│     │  ├─ makeAPile(1) = [1] ✔
+│     │  ├─ makeAPile(2) = [2, 4] ✔
+│     │  ├─ makeAPile(3) = [3, 5, 7] ✔
+│     │  ├─ makeAPile(7) = [7, 9, 11, 13, 15, 17, 19] ✔
+│     │  └─ makeAPile(10) = [10, 12, 14, 16, 18, 20, 22, 24, 26, 28] ✔
+│     ├─ preservesOddParityAcrossAllLevels() ✔
+│     ├─ firstLevelAlwaysEqualsInput() ✔
+│     └─ returnsExactlyNLevels() ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 71 ms
+[         5 containers found      ]
+[         0 containers skipped    ]
+[         5 containers started    ]
+[         0 containers aborted    ]
+[         5 containers successful ]
+[         0 containers failed     ]
+[        12 tests found           ]
+[         0 tests skipped         ]
+[        12 tests started         ]
+[         0 tests aborted         ]
+[        12 tests successful      ]
+[         0 tests failed          ]
+

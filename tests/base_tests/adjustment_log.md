@@ -64,3 +64,21 @@ This file records every minor, test-side compatibility fix made to dataset base 
 - Change: added `import java.util.*;` at the top of `Main.java`. The original references `List` and `Arrays` without importing them, so it does not compile as a standalone file.
 - Why this is a "minor test-side fix": the assertion logic, expected values, and inputs are unchanged. Only an import line was added to make the dataset harness compilable.
 - Generated code modified? No.
+
+## HumanEval_059
+
+- Date: 2026-04-26
+- Original: `tests/base_tests/original/HumanEval_059/Main.java`
+- Adjusted: `tests/base_tests/adjusted/HumanEval_059/Main.java`
+- Change: added `import java.util.*;` at the top of `Main.java`. The original references `List` and `Arrays` without importing them, so it does not compile as a standalone file.
+- Why this is a "minor test-side fix": the assertion logic, expected values, and inputs are unchanged. Only an import line was added to make the dataset harness compilable.
+- Generated code modified? No.
+
+## HumanEval_059
+
+- Date: 2026-04-26
+- Original: `tests/base_tests/original/HumanEval_059/Main.java`
+- Adjusted: `tests/base_tests/adjusted/HumanEval_059/Main.java`
+- Change: added `import java.util.*;` at the top of `Main.java`. The original references `List` and `Arrays` without importing them, so it does not compile as a standalone file.
+- Why this is a "minor test-side fix": the assertion logic, expected values, and inputs are unchanged. Only an import line was added to make the dataset harness compilable.
+- Generated code modified? No.

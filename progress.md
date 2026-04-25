@@ -319,3 +319,29 @@ Select 30 prompts with balanced difficulty
 - JaCoCo coverage exported to `coverage_reports/HumanEval_122/claude/{base,improved,manual}/`. All three suites: 28/28 instr, 4/4 branch, 7/7 line, 4/4 CC, 2/2 method on `Solution`.
 - Per-prompt summary at `analysis/HumanEval_122/HumanEval_122_claude.md`; rows added to `analysis/coverage_summary.md`.
 - No defects against spec → no refactor loop triggered. HumanEval_122 (Claude side) complete for Phase 1.
+
+### 2026-04-26 — HumanEval_059 (Codex)
+
+- Started Phase 1 implementation for `HumanEval_059` under the `codex` workflow.
+- Read the prompt text from `prompts/selected_prompts.md` and saved the initial Java solution to `generated_code/codex/HumanEval_059.java`.
+- Logged the initial interaction in `llm_logs/codex/HumanEval_059_initial.md`.
+- Adjusted dataset `Main.java` at `tests/base_tests/adjusted/HumanEval_059/Main.java` by adding `import java.util.*;`; documented in `tests/base_tests/adjustment_log.md`. Generated code unchanged.
+- Executed the adjusted dataset base harness for `HumanEval_059` with Homebrew OpenJDK; compile succeeded and `Main` exited with status 0.
+- Added Codex-side base, improved, and manual test artifacts for `HumanEval_059`, plus separate Codex test-generation logs for improved/manual work.
+- JUnit 6 Codex suites with `.tools/junit-platform-console-standalone.jar`: base 5/5, improved 13/13, manual 13/13.
+- Exported JaCoCo coverage to `coverage_reports/HumanEval_059/codex/{base,improved,manual}/`; `Solution` reached 43/43 instructions, 8/8 branches, 12/12 lines, 6/6 complexity, and 2/2 methods in all three suites.
+- Added per-prompt summary findings to `analysis/HumanEval_059/HumanEval_059_codex.md` and rows to `analysis/coverage_summary.md`.
+- No defects against the prompt specification were observed, so no refactor loop was triggered. HumanEval_059 (Codex side) is complete for Phase 1.
+
+### 2026-04-26 — HumanEval_059 (Claude)
+
+- Started Phase 1 implementation for `HumanEval_059` (Claude side) — `largestPrimeFactor(int n)`: returns the largest prime divisor of `n` (spec assumes `n > 1` and not prime).
+- Generated `generated_code/claude/HumanEval_059.java` from the verbatim Java/59 prompt (trial division with the most-recent-divisor pattern; outer guard cast to `long` to avoid overflow at large factors; final `if (x > 1)` returns the residual prime).
+- Logged the initial interaction in `llm_logs/claude/HumanEval_059_initial.md`.
+- Adjusted dataset `Main.java` at `tests/base_tests/adjusted/HumanEval_059/Main.java` (added `import java.util.*;` so the dataset harness, which references `List` and `Arrays`, compiles standalone); logged in `tests/base_tests/adjustment_log.md`. Adjusted harness exits 0.
+- JUnit 6 base port at `tests/base_tests/claude/HumanEval_059_BaseTest.java` — 5/5 pass against the verbatim Claude solution (`15→5`, `27→3`, `63→7`, `330→11`, `13195→29`).
+- Improved JUnit 6 suite at `tests/improved_tests/claude/HumanEval_059_ImprovedTest.java` — 26/26 pass. Targets test smells (assertion roulette via per-case `@Test`s, magic numbers via factorisation-named display names, eager test via nested classes by behavioral concern) and exercises both branches of the inner-while divisibility check, the outer sqrt-loop boundary at `factor*factor == x` (`25`, `49`, `121`), pure prime powers (`2048`, `1024`, `2401`, `3125`) for the false branch of `if (x > 1)`, and large remainders (`22`, `9991`) for its true branch.
+- Manual black-box notes + suite at `tests/manual_tests/claude/HumanEval_059_blackbox.md` and `HumanEval_059_ManualTest.java` — 20/20 pass. Pinned four undefined-by-spec behaviors: `n = 7` (prime) returns `7` itself; `n ∈ {0, 1, -15}` returns `1` because the loop guard fails on entry and the final `if (x > 1)` is also false. These are observation-only pins, not spec contracts.
+- JaCoCo coverage exported to `coverage_reports/HumanEval_059/claude/{base,improved,manual}/`. All three suites: 38/38 instr, 6/6 branch, 12/12 line, 5/5 CC, 2/2 method on `Solution`.
+- Per-prompt summary at `analysis/HumanEval_059/HumanEval_059_claude.md`; rows added to `analysis/coverage_summary.md`.
+- No defects against spec → no refactor loop triggered. HumanEval_059 (Claude side) complete for Phase 1.

@@ -1,0 +1,45 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  └─ HumanEval_007_ManualTest ✔
+│     ├─ Boundary analysis ✔
+│     │  ├─ List size zero / one / many ✔
+│     │  ├─ Whole-string, prefix, middle, suffix matches ✔
+│     │  └─ Substring length zero vs one ✔
+│     ├─ Valid equivalence classes (V1-V12) ✔
+│     │  └─ allValidClasses(String, List, String, List) ✔
+│     │     ├─ "V1 empty list" ✔
+│     │     ├─ "V2 no matches" ✔
+│     │     ├─ "V3 single exact match" ✔
+│     │     ├─ "V4 prefix match" ✔
+│     │     ├─ "V5 middle match" ✔
+│     │     ├─ "V6 suffix match" ✔
+│     │     ├─ "V7 duplicates" ✔
+│     │     ├─ "V8 empty substring" ✔
+│     │     ├─ "V9 empty element excluded" ✔
+│     │     ├─ "V10 case-sensitive" ✔
+│     │     ├─ "V11 whitespace punctuation" ✔
+│     │     └─ "V12 repeated suffix matches" ✔
+│     └─ Invalid / undefined-by-spec inputs (pinned behavior) ✔
+│        ├─ I2: null substring throws NullPointerException ✔
+│        ├─ I1: null list throws NullPointerException ✔
+│        └─ I3: null element throws NullPointerException ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 122 ms
+[         8 containers found      ]
+[         0 containers skipped    ]
+[         8 containers started    ]
+[         0 containers aborted    ]
+[         8 containers successful ]
+[         0 containers failed     ]
+[        18 tests found           ]
+[         0 tests skipped         ]
+[        18 tests started         ]
+[         0 tests aborted         ]
+[        18 tests successful      ]
+[         0 tests failed          ]
+

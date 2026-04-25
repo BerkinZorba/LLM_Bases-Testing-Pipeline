@@ -200,3 +200,13 @@ Select 30 prompts with balanced difficulty
 - Manual black-box notes + suite at `tests/manual_tests/codex/HumanEval_007_blackbox.md` and `HumanEval_007_ManualTest.java` — 18/18 pass. Pinned undefined-by-spec NPE behavior for null list, null substring, and null list element.
 - JaCoCo coverage exported to `coverage_reports/HumanEval_007/codex/{base,improved,manual}/`. All three suites: 28/28 instr, 4/4 branch, 7/7 line, 4/4 CC, 2/2 method on `Solution`.
 - Per-prompt analysis added at `analysis/HumanEval_007/HumanEval_007_codex.md`. No defects against the prompt spec; no refactor loop triggered.
+
+### 2026-04-25 — HumanEval_007 (Claude)
+
+- Logged initial generation in `llm_logs/claude/HumanEval_007_initial.md`; generated code is `generated_code/claude/HumanEval_007.java` (ArrayList + enhanced for-loop + `String.contains`).
+- Adjusted dataset `Main.java` already present at `tests/base_tests/adjusted/HumanEval_007/Main.java` (adds `import java.util.*;`). Generated code was not modified.
+- JUnit 6 base port at `tests/base_tests/claude/HumanEval_007_BaseTest.java` — 4/4 pass against the verbatim Claude solution.
+- Improved suite at `tests/improved_tests/claude/HumanEval_007_ImprovedTest.java` — 11/11 pass. Targets assertion roulette, magic expected values, eager test shape, and missing edge cases (order, duplicates, case-sensitivity, empty-substring, result identity, state isolation).
+- Manual black-box notes + suite at `tests/manual_tests/claude/HumanEval_007_blackbox.md` and `HumanEval_007_ManualTest.java` — 18/18 pass. Pinned undefined-by-spec NPE behavior for null list, null substring, and null list element.
+- JaCoCo coverage exported to `coverage_reports/HumanEval_007/claude/{base,improved,manual}/`. All three suites: 28/28 instr, 4/4 branch, 7/7 line, 4/4 CC, 2/2 method on `Solution`.
+- Per-prompt analysis added at `analysis/HumanEval_007/HumanEval_007_claude.md`. No defects against the prompt spec; no refactor loop triggered. Both models now complete for HumanEval_007.

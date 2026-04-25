@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HumanEval_020_ManualTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">HumanEval_020_ManualTest.java</span></div><h1>HumanEval_020_ManualTest.java</h1><pre class="source lang-java linenums">import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+/**
+ * Codex-authored executable manual suite derived from the black-box analysis.
+ */
+<span class="fc" id="L16">public class HumanEval_020_ManualTest {</span>
+
+<span class="fc" id="L18">    private final Solution solution = new Solution();</span>
+
+    static Stream&lt;Arguments&gt; validClasses() {
+<span class="fc" id="L21">        return Stream.of(</span>
+<span class="fc" id="L22">                Arguments.of(&quot;V1&quot;, Arrays.asList(8.0, 1.0), Arrays.asList(1.0, 8.0)),</span>
+<span class="fc" id="L23">                Arguments.of(&quot;V2&quot;, Arrays.asList(1.0, 1.1, 5.0), Arrays.asList(1.0, 1.1)),</span>
+<span class="fc" id="L24">                Arguments.of(&quot;V3&quot;, Arrays.asList(1.1, 2.2, 3.1, 4.1, 5.1), Arrays.asList(2.2, 3.1)),</span>
+<span class="fc" id="L25">                Arguments.of(&quot;V4&quot;, Arrays.asList(1.0, 4.0, 5.0, 5.9), Arrays.asList(5.0, 5.9)),</span>
+<span class="fc" id="L26">                Arguments.of(&quot;V5&quot;, Arrays.asList(1.0, 2.0, 2.0, 5.0), Arrays.asList(2.0, 2.0)),</span>
+<span class="fc" id="L27">                Arguments.of(&quot;V6&quot;, Arrays.asList(-5.0, -2.0, -2.5, 4.0), Arrays.asList(-2.5, -2.0)),</span>
+<span class="fc" id="L28">                Arguments.of(&quot;V7&quot;, Arrays.asList(-0.1, 0.0, 10.0, 9.75), Arrays.asList(-0.1, 0.0)),</span>
+<span class="fc" id="L29">                Arguments.of(&quot;V8&quot;, Arrays.asList(3.0, 1.0, 2.0), Arrays.asList(1.0, 2.0)),</span>
+<span class="fc" id="L30">                Arguments.of(&quot;V9&quot;, Arrays.asList(1.0, 2.0, 3.0), Arrays.asList(1.0, 2.0))</span>
+        );
+    }
+
+    @ParameterizedTest(name = &quot;{0}: {1} -&gt; {2}&quot;)
+    @MethodSource(&quot;validClasses&quot;)
+    @DisplayName(&quot;Valid equivalence classes&quot;)
+    void validEquivalenceClasses(String id, List&lt;Double&gt; input, List&lt;Double&gt; expected) {
+<span class="fc" id="L38">        assertEquals(expected, solution.findClosestElements(input));</span>
+<span class="fc" id="L39">    }</span>
+
+    @Test
+    @DisplayName(&quot;Boundary: length zero&quot;)
+    void lengthZeroReturnsEmptyList() {
+<span class="fc" id="L44">        assertEquals(List.of(), solution.findClosestElements(List.of()));</span>
+<span class="fc" id="L45">    }</span>
+
+    @Test
+    @DisplayName(&quot;Boundary: length one&quot;)
+    void lengthOneReturnsEmptyList() {
+<span class="fc" id="L50">        assertEquals(List.of(), solution.findClosestElements(List.of(42.0)));</span>
+<span class="fc" id="L51">    }</span>
+
+    @Test
+    @DisplayName(&quot;Boundary: length two&quot;)
+    void lengthTwoReturnsSortedPair() {
+<span class="fc" id="L56">        assertEquals(Arrays.asList(1.0, 8.0), solution.findClosestElements(Arrays.asList(8.0, 1.0)));</span>
+<span class="fc" id="L57">    }</span>
+
+    @Test
+    @DisplayName(&quot;Boundary: zero distance from duplicate values&quot;)
+    void duplicateValuesHaveZeroDistance() {
+<span class="fc" id="L62">        assertEquals(Arrays.asList(4.4, 4.4), solution.findClosestElements(Arrays.asList(4.4, 4.4, 1.0)));</span>
+<span class="fc" id="L63">    }</span>
+
+    @Test
+    @DisplayName(&quot;Null list is pinned to empty list&quot;)
+    void nullListReturnsEmptyList() {
+<span class="fc" id="L68">        assertEquals(List.of(), solution.findClosestElements(null));</span>
+<span class="fc" id="L69">    }</span>
+
+    @Test
+    @DisplayName(&quot;Original input list order remains unchanged&quot;)
+    void originalInputOrderRemainsUnchanged() {
+<span class="fc" id="L74">        List&lt;Double&gt; input = Arrays.asList(5.0, 1.0, 1.5);</span>
+
+<span class="fc" id="L76">        assertEquals(Arrays.asList(1.0, 1.5), solution.findClosestElements(input));</span>
+<span class="fc" id="L77">        assertEquals(Arrays.asList(5.0, 1.0, 1.5), input);</span>
+<span class="fc" id="L78">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

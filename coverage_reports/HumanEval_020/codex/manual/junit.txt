@@ -1,0 +1,39 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+.
++-- JUnit Platform Suite [OK]
++-- JUnit Jupiter [OK]
+| '-- HumanEval_020_ManualTest [OK]
+|   +-- Boundary: length zero [OK]
+|   +-- Null list is pinned to empty list [OK]
+|   +-- Boundary: length two [OK]
+|   +-- Boundary: zero distance from duplicate values [OK]
+|   +-- Valid equivalence classes [OK]
+|   | +-- "V1": [8.0, 1.0] -> [1.0, 8.0] [OK]
+|   | +-- "V2": [1.0, 1.1, 5.0] -> [1.0, 1.1] [OK]
+|   | +-- "V3": [1.1, 2.2, 3.1, 4.1, 5.1] -> [2.2, 3.1] [OK]
+|   | +-- "V4": [1.0, 4.0, 5.0, 5.9] -> [5.0, 5.9] [OK]
+|   | +-- "V5": [1.0, 2.0, 2.0, 5.0] -> [2.0, 2.0] [OK]
+|   | +-- "V6": [-5.0, -2.0, -2.5, 4.0] -> [-2.5, -2.0] [OK]
+|   | +-- "V7": [-0.1, 0.0, 10.0, 9.75] -> [-0.1, 0.0] [OK]
+|   | +-- "V8": [3.0, 1.0, 2.0] -> [1.0, 2.0] [OK]
+|   | '-- "V9": [1.0, 2.0, 3.0] -> [1.0, 2.0] [OK]
+|   +-- Original input list order remains unchanged [OK]
+|   '-- Boundary: length one [OK]
+'-- JUnit Vintage [OK]
+
+Test run finished after 80 ms
+[         5 containers found      ]
+[         0 containers skipped    ]
+[         5 containers started    ]
+[         0 containers aborted    ]
+[         5 containers successful ]
+[         0 containers failed     ]
+[        15 tests found           ]
+[         0 tests skipped         ]
+[        15 tests started         ]
+[         0 tests aborted         ]
+[        15 tests successful      ]
+[         0 tests failed          ]
+

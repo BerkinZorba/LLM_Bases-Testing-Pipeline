@@ -1,0 +1,47 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  └─ HumanEval_020_ManualTest ✔
+│     ├─ Valid equivalence classes (V1-V12) ✔
+│     │  └─ allValidClasses(String, List, List) ✔
+│     │     ├─ "V1  two elements natural order" ✔
+│     │     ├─ "V2  two elements reversed" ✔
+│     │     ├─ "V3  duplicate elements — diff zero" ✔
+│     │     ├─ "V4  closest at start of sorted list" ✔
+│     │     ├─ "V5  closest at end of sorted list" ✔
+│     │     ├─ "V6  closest in middle of sorted list" ✔
+│     │     ├─ "V7  multiple pairs, unique closest" ✔
+│     │     ├─ "V8  all negative numbers" ✔
+│     │     ├─ "V9  mixed positive and negative" ✔
+│     │     ├─ "V10 all equal spacing — first pair wins" ✔
+│     │     ├─ "V11 closest not adjacent in input" ✔
+│     │     └─ "V12 two identical elements only" ✔
+│     ├─ Input list not mutated ✔
+│     │  └─ Original list order is preserved after call ✔
+│     ├─ Boundary analysis ✔
+│     │  ├─ Minimum list size: exactly two elements ✔
+│     │  ├─ Closest pair at last sorted index (last pair) ✔
+│     │  ├─ Diff = 0 boundary: duplicate pair ✔
+│     │  ├─ Closest pair at sorted index 0 (first pair) ✔
+│     │  └─ Three-element list — loop runs twice ✔
+│     └─ Invalid / undefined-by-spec inputs (pinned behavior) ✔
+│        └─ I1: null list throws NullPointerException ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 112 ms
+[         9 containers found      ]
+[         0 containers skipped    ]
+[         9 containers started    ]
+[         0 containers aborted    ]
+[         9 containers successful ]
+[         0 containers failed     ]
+[        19 tests found           ]
+[         0 tests skipped         ]
+[        19 tests started         ]
+[         0 tests aborted         ]
+[        19 tests successful      ]
+[         0 tests failed          ]
+

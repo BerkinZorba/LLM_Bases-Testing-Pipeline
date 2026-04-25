@@ -22,3 +22,6 @@ Source: per-suite JaCoCo CSV under `coverage_reports/<HumanEval_XXX>/<model>/<su
 | HumanEval_018 | codex | base     | 4  | 4  | 36/38 | 7/10 | 7/8 | 4/7 | 2/2 |
 | HumanEval_018 | codex | improved | 17 | 17 | 38/38 | 8/10 | 8/8 | 5/7 | 2/2 |
 | HumanEval_018 | codex | manual   | 19 | 19 | 38/38 | 10/10 | 8/8 | 7/7 | 2/2 |
+| HumanEval_020 | codex | base     | 5  | 5  | 86/90 | 6/8 | 14/15 | 4/6 | 2/2 |
+| HumanEval_020 | codex | improved | 14 | 14 | 90/90 | 8/8 | 15/15 | 6/6 | 2/2 |
+| HumanEval_020 | codex | manual   | 15 | 15 | 90/90 | 8/8 | 15/15 | 6/6 | 2/2 |

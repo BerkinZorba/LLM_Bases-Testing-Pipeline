@@ -4,3 +4,5 @@
 .tools/
 **/*.class
 .junit_run/
+.build/
+.idea/

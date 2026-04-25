@@ -1,0 +1,50 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  └─ HumanEval_036_ImprovedTest ✔
+│     ├─ Divisible by both 11 and 13 is not double-counted ✔
+│     ├─ Crossing 177 includes 176 exactly once ✔
+│     ├─ Boundary and branch-focused cases ✔
+│     │  ├─ branch case n=0 -> 0 ✔
+│     │  ├─ branch case n=1 -> 0 ✔
+│     │  ├─ branch case n=11 -> 0 ✔
+│     │  ├─ branch case n=12 -> 0 ✔
+│     │  ├─ branch case n=13 -> 0 ✔
+│     │  ├─ branch case n=14 -> 0 ✔
+│     │  ├─ branch case n=77 -> 0 ✔
+│     │  ├─ branch case n=88 -> 3 ✔
+│     │  ├─ branch case n=143 -> 4 ✔
+│     │  ├─ branch case n=144 -> 4 ✔
+│     │  ├─ branch case n=177 -> 5 ✔
+│     │  ├─ branch case n=178 -> 5 ✔
+│     │  └─ branch case n=1000 -> 47 ✔
+│     ├─ Crossing 79 adds the single seven from 78 ✔
+│     ├─ Crossing 78 includes 77 with two sevens ✔
+│     └─ Dataset expectations ✔
+│        ├─ dataset n=50 -> 0 ✔
+│        ├─ dataset n=78 -> 2 ✔
+│        ├─ dataset n=79 -> 3 ✔
+│        ├─ dataset n=100 -> 3 ✔
+│        ├─ dataset n=200 -> 6 ✔
+│        ├─ dataset n=4000 -> 192 ✔
+│        ├─ dataset n=10000 -> 639 ✔
+│        └─ dataset n=100000 -> 8026 ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 146 ms
+[         6 containers found      ]
+[         0 containers skipped    ]
+[         6 containers started    ]
+[         0 containers aborted    ]
+[         6 containers successful ]
+[         0 containers failed     ]
+[        25 tests found           ]
+[         0 tests skipped         ]
+[        25 tests started         ]
+[         0 tests aborted         ]
+[        25 tests successful      ]
+[         0 tests failed          ]
+

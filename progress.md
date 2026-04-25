@@ -153,6 +153,18 @@ Select 30 prompts with balanced difficulty
 
 ## 8. Phase 1 prompt runs
 
+### 2026-04-25 — HumanEval_036 (Codex)
+
+- Started Phase 1 implementation for `HumanEval_036` under the `codex` workflow.
+- Read the prompt text from `prompts/selected_prompts.md` and saved the initial Java solution to `generated_code/codex/HumanEval_036.java`.
+- Logged the initial interaction in `llm_logs/codex/HumanEval_036_initial.md`.
+- Added Codex-side base, improved, and manual test artifacts for `HumanEval_036`, plus separate Codex test-generation logs for improved/manual work.
+- Executed the adjusted dataset base harness for `HumanEval_036` with Homebrew OpenJDK; compile succeeded and `Main` exited with status 0.
+- JUnit 6 Codex suites with `.tools/junit-platform-console-standalone.jar`: base 8/8, improved 25/25, manual 14/14.
+- Exported JaCoCo coverage to `coverage_reports/HumanEval_036/codex/{base,improved,manual}/`; `Solution` reached 37/37 instructions, 10/10 branches, 10/10 lines, 7/7 complexity, and 2/2 methods in all three suites.
+- Added per-prompt summary findings to `analysis/HumanEval_036_codex.md`.
+- No defects against the prompt specification were observed, so no refactor loop was triggered. HumanEval_036 (Codex side) is complete for Phase 1.
+
 ### 2026-04-25 — HumanEval_016 (Claude)
 
 - Generated `generated_code/claude/HumanEval_016.java` from the verbatim Java/16 prompt; logged at `llm_logs/claude/HumanEval_016_initial.md`.
@@ -164,3 +176,17 @@ Select 30 prompts with balanced difficulty
 - Coverage (all three suites): 33/33 instr, 2/2 branch, 5/5 line, 3/3 cyclomatic, 2/2 method. Raw outputs in `coverage_reports/HumanEval_016/claude/{base,improved,manual}/`.
 - No defects against the spec → no refactor loop. Three undefined-by-spec behaviors pinned: NPE on `null`, surrogate pair counted as 2 `char`s, Turkish dotted/dotless I under root-locale folding.
 - Per-prompt summary: `analysis/HumanEval_016_claude.md`. Codex side of HumanEval_016 still pending.
+
+### 2026-04-25 — HumanEval_036 (Claude)
+
+- Started Phase 1 implementation for `HumanEval_036` (Claude side).
+- Generated `generated_code/claude/HumanEval_036.java` from the verbatim Java/36 prompt (count digit-7 occurrences in integers <n divisible by 11 or 13).
+- Logged the initial interaction in `llm_logs/claude/HumanEval_036_initial.md`.
+- Next: port base test, run with JUnit 6, then improved + manual suites and coverage.
+- Adjusted dataset `Main.java` at `tests/base_tests/adjusted/HumanEval_036/Main.java` (added `import java.util.*;`); logged in `tests/base_tests/adjustment_log.md`. Adjusted harness exits 0.
+- JUnit 6 base port at `tests/base_tests/claude/HumanEval_036_BaseTest.java` — 8/8 pass against the verbatim Claude solution.
+- Per-prompt analysis seeded at `analysis/HumanEval_036_claude.md`.
+- Improved JUnit 6 suite at `tests/improved_tests/claude/HumanEval_036_ImprovedTest.java` — 24/24 pass. Targets test smells (assertion roulette, magic numbers, eager test) and branch coverage of divisor `||` overlap and inner-while digit positions.
+- Manual black-box notes + suite at `tests/manual_tests/claude/HumanEval_036_blackbox.md` and `HumanEval_036_ManualTest.java` — 20/20 pass. Pinned that negative `n` and `Integer.MIN_VALUE` return 0 (undefined by spec).
+- JaCoCo coverage exported to `coverage_reports/HumanEval_036/claude/{base,improved,manual}/`. All three suites: 37/37 instr, 10/10 branch, 10/10 line, 7/7 CC, 2/2 method on `Solution`.
+- No defects against spec → no refactor loop triggered. HumanEval_036 (Claude side) complete; Codex side now also complete.

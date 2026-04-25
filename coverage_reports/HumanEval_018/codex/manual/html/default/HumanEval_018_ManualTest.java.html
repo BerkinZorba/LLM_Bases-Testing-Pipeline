@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HumanEval_018_ManualTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">HumanEval_018_ManualTest.java</span></div><h1>HumanEval_018_ManualTest.java</h1><pre class="source lang-java linenums">import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+/**
+ * Codex-authored executable manual suite derived from the black-box analysis.
+ */
+<span class="fc" id="L14">public class HumanEval_018_ManualTest {</span>
+
+<span class="fc" id="L16">    private final Solution solution = new Solution();</span>
+
+    static Stream&lt;Arguments&gt; validClasses() {
+<span class="fc" id="L19">        return Stream.of(</span>
+<span class="fc" id="L20">                Arguments.of(&quot;V1&quot;, &quot;&quot;, &quot;a&quot;, 0),</span>
+<span class="fc" id="L21">                Arguments.of(&quot;V2&quot;, &quot;aaa&quot;, &quot;a&quot;, 3),</span>
+<span class="fc" id="L22">                Arguments.of(&quot;V3&quot;, &quot;aaaa&quot;, &quot;aa&quot;, 3),</span>
+<span class="fc" id="L23">                Arguments.of(&quot;V4&quot;, &quot;abc&quot;, &quot;abc&quot;, 1),</span>
+<span class="fc" id="L24">                Arguments.of(&quot;V5&quot;, &quot;abc&quot;, &quot;abcd&quot;, 0),</span>
+<span class="fc" id="L25">                Arguments.of(&quot;V6&quot;, &quot;abcdef&quot;, &quot;gh&quot;, 0),</span>
+<span class="fc" id="L26">                Arguments.of(&quot;V7&quot;, &quot;john doe&quot;, &quot;john&quot;, 1),</span>
+<span class="fc" id="L27">                Arguments.of(&quot;V8&quot;, &quot;hello.java&quot;, &quot;.java&quot;, 1),</span>
+<span class="fc" id="L28">                Arguments.of(&quot;V9&quot;, &quot;cat dog cat&quot;, &quot;cat&quot;, 2),</span>
+<span class="fc" id="L29">                Arguments.of(&quot;V10&quot;, &quot;a b a b&quot;, &quot;a b&quot;, 2),</span>
+<span class="fc" id="L30">                Arguments.of(&quot;V11&quot;, &quot;!!!&quot;, &quot;!!&quot;, 2),</span>
+<span class="fc" id="L31">                Arguments.of(&quot;V12&quot;, &quot;CaseCASEcase&quot;, &quot;case&quot;, 1)</span>
+        );
+    }
+
+    @ParameterizedTest(name = &quot;{0}: \&quot;{1}\&quot; contains \&quot;{2}\&quot; {3} times&quot;)
+    @MethodSource(&quot;validClasses&quot;)
+    @DisplayName(&quot;Valid equivalence classes&quot;)
+    void validEquivalenceClasses(String id, String string, String substring, int expected) {
+<span class="fc" id="L39">        assertEquals(expected, solution.howManyTimes(string, substring));</span>
+<span class="fc" id="L40">    }</span>
+
+    @Test
+    @DisplayName(&quot;Boundary: source length zero&quot;)
+    void sourceLengthZeroBoundary() {
+<span class="fc" id="L45">        assertEquals(0, solution.howManyTimes(&quot;&quot;, &quot;x&quot;));</span>
+<span class="fc" id="L46">    }</span>
+
+    @Test
+    @DisplayName(&quot;Boundary: substring length one&quot;)
+    void substringLengthOneBoundary() {
+<span class="fc" id="L51">        assertEquals(4, solution.howManyTimes(&quot;xyxyxyx&quot;, &quot;x&quot;));</span>
+<span class="fc" id="L52">    }</span>
+
+    @Test
+    @DisplayName(&quot;Boundary: first possible overlapping pair&quot;)
+    void firstPossibleOverlappingPairBoundary() {
+<span class="fc" id="L57">        assertEquals(1, solution.howManyTimes(&quot;aa&quot;, &quot;aa&quot;));</span>
+<span class="fc" id="L58">    }</span>
+
+    @Test
+    @DisplayName(&quot;Boundary: one more overlapping window&quot;)
+    void oneMoreOverlappingWindowBoundary() {
+<span class="fc" id="L63">        assertEquals(2, solution.howManyTimes(&quot;aaa&quot;, &quot;aa&quot;));</span>
+<span class="fc" id="L64">    }</span>
+
+    @Test
+    @DisplayName(&quot;Null source is pinned to zero&quot;)
+    void nullSourceReturnsZero() {
+<span class="fc" id="L69">        assertEquals(0, solution.howManyTimes(null, &quot;a&quot;));</span>
+<span class="fc" id="L70">    }</span>
+
+    @Test
+    @DisplayName(&quot;Null substring is pinned to zero&quot;)
+    void nullSubstringReturnsZero() {
+<span class="fc" id="L75">        assertEquals(0, solution.howManyTimes(&quot;abc&quot;, null));</span>
+<span class="fc" id="L76">    }</span>
+
+    @Test
+    @DisplayName(&quot;Empty substring is pinned to zero&quot;)
+    void emptySubstringReturnsZero() {
+<span class="fc" id="L81">        assertEquals(0, solution.howManyTimes(&quot;abc&quot;, &quot;&quot;));</span>
+<span class="fc" id="L82">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

@@ -210,3 +210,25 @@ Select 30 prompts with balanced difficulty
 - Manual black-box notes + suite at `tests/manual_tests/claude/HumanEval_007_blackbox.md` and `HumanEval_007_ManualTest.java` — 18/18 pass. Pinned undefined-by-spec NPE behavior for null list, null substring, and null list element.
 - JaCoCo coverage exported to `coverage_reports/HumanEval_007/claude/{base,improved,manual}/`. All three suites: 28/28 instr, 4/4 branch, 7/7 line, 4/4 CC, 2/2 method on `Solution`.
 - Per-prompt analysis added at `analysis/HumanEval_007/HumanEval_007_claude.md`. No defects against the prompt spec; no refactor loop triggered. Both models now complete for HumanEval_007.
+
+### 2026-04-25 — HumanEval_018 (Claude)
+
+- Logged initial generation in `llm_logs/claude/HumanEval_018_initial.md`; generated code is `generated_code/claude/HumanEval_018.java` (guard clause + for-loop using `String.startsWith` for overlapping-count).
+- Adjusted dataset `Main.java` at `tests/base_tests/adjusted/HumanEval_018/Main.java` (added `import java.util.*;` and `import java.lang.*;`); assertion logic and generated code unchanged. Adjusted harness compiles with `javac --release 21` and exits 0.
+- JUnit 6 base port at `tests/base_tests/claude/HumanEval_018_BaseTest.java` — 4/4 pass.
+- Base coverage on `Solution`: 37/37 instr, 8/10 branch, 8/8 line, 5/7 CC, 2/2 method. Two guard-condition true branches (`substring.isEmpty()` and `substring.length() > string.length()`) not exercised by the base suite.
+- Improved suite at `tests/improved_tests/claude/HumanEval_018_ImprovedTest.java` — 16/16 pass. Closes the two missing guard branches; adds prompt overlap examples, no-match, single-char, prefix/suffix, and non-overlapping-multiple cases.
+- Manual black-box notes + suite at `tests/manual_tests/claude/HumanEval_018_blackbox.md` and `HumanEval_018_ManualTest.java` — 22/22 pass. Pinned undefined-by-spec NPE for null string and null substring.
+- JaCoCo coverage exported to `coverage_reports/HumanEval_018/claude/{base,improved,manual}/`. Improved and manual suites: 37/37 instr, 10/10 branch, 8/8 line, 7/7 CC, 2/2 method on `Solution`.
+- No defects against spec → no refactor loop triggered. Per-prompt summary: `analysis/HumanEval_018_claude.md`.
+
+### 2026-04-25 — HumanEval_018 (Codex)
+
+- Applied the Phase 1 Codex workflow to existing `generated_code/codex/HumanEval_018.java`; generated code was not modified before base testing.
+- Logged the existing Codex generation at `llm_logs/codex/HumanEval_018_initial.md`.
+- Adjusted dataset harness at `tests/base_tests/adjusted/HumanEval_018/Main.java` compiled with `javac --release 21` and exited 0 against the Codex solution.
+- JUnit 6 base port at `tests/base_tests/codex/HumanEval_018_BaseTest.java` — 4/4 pass.
+- Improved suite at `tests/improved_tests/codex/HumanEval_018_ImprovedTest.java` — 17/17 pass after correcting one test authoring expectation for `"mississippi"` / `"issi"`.
+- Manual black-box notes + suite at `tests/manual_tests/codex/HumanEval_018_blackbox.md` and `HumanEval_018_ManualTest.java` — 19/19 pass. Pinned undefined-by-spec behavior for null source, null substring, and empty substring.
+- JaCoCo coverage exported to `coverage_reports/HumanEval_018/codex/{base,improved,manual}/`: base 36/38 instr and 7/10 branch; improved 38/38 instr and 8/10 branch; manual 38/38 instr and 10/10 branch.
+- Per-prompt analysis added at `analysis/HumanEval_018/HumanEval_018_codex.md`. No defects against the prompt spec; no refactor loop triggered. Both models now complete for HumanEval_018.

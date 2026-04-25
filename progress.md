@@ -293,3 +293,29 @@ Select 30 prompts with balanced difficulty
 - JaCoCo coverage exported to `coverage_reports/HumanEval_103/claude/{base,improved,manual}/`. All three suites: 41/41 instr, 4/4 branch, 9/9 line, 4/4 CC, 2/2 method on `Solution`.
 - Per-prompt summary at `analysis/HumanEval_103/HumanEval_103_claude.md`; rows added to `analysis/coverage_summary.md`.
 - No defects against spec → no refactor loop triggered. HumanEval_103 (Claude side) complete for Phase 1.
+
+### 2026-04-26 — HumanEval_122 (Codex)
+
+- Started Phase 1 implementation for `HumanEval_122` under the `codex` workflow.
+- Read the prompt text from `prompts/selected_prompts.md` and saved the initial Java solution to `generated_code/codex/HumanEval_122.java`.
+- Logged the initial interaction in `llm_logs/codex/HumanEval_122_initial.md`.
+- Adjusted dataset `Main.java` at `tests/base_tests/adjusted/HumanEval_122/Main.java` by adding `import java.util.*;`; documented in `tests/base_tests/adjustment_log.md`. Generated code unchanged.
+- Executed the adjusted dataset base harness for `HumanEval_122` with Homebrew OpenJDK; compile succeeded and `Main` exited with status 0.
+- Added Codex-side base, improved, and manual test artifacts for `HumanEval_122`, plus separate Codex logs for the initial test-generation steps and a later test-side expected-value correction.
+- JUnit 6 Codex suites with `.tools/junit-platform-console-standalone.jar`: base 5/5, improved 10/10, manual 9/9.
+- Exported JaCoCo coverage to `coverage_reports/HumanEval_122/codex/{base,improved,manual}/`; `Solution` reached 30/30 instructions, 4/4 branches, 7/7 lines, 4/4 complexity, and 2/2 methods in all three suites.
+- Added per-prompt summary findings to `analysis/HumanEval_122/HumanEval_122_codex.md` and rows to `analysis/coverage_summary.md`.
+- No defect against the prompt specification was observed in generated code, so no refactor loop was triggered. A single arithmetic mistake in the first Codex-authored improved/manual boundary case was corrected on the test side and logged separately.
+
+
+### 2026-04-26 — HumanEval_122 (Claude)
+
+- Started Phase 1 implementation for `HumanEval_122` (Claude side) — `addElements(List<Integer> arr, int k)`: sum of values from `arr[0..k-1]` whose decimal representation has at most two digits (interpreted as `|v| < 100`, sign-preserving).
+- Generated `generated_code/claude/HumanEval_122.java` from the verbatim Java/122 prompt (single `for` loop bounded by `k`, `Math.abs(v) < 100` predicate, `int` accumulator); logged at `llm_logs/claude/HumanEval_122_initial.md`.
+- Base test: dataset `Main.java` needed `import java.util.*;` to compile standalone — adjusted copy at `tests/base_tests/adjusted/HumanEval_122/Main.java`, documented in `tests/base_tests/adjustment_log.md`. Generated code unchanged. Adjusted harness exits 0.
+- JUnit 6 base port at `tests/base_tests/claude/HumanEval_122_BaseTest.java` — 5/5 pass (all dataset cases including the negatives-count `-4`, the all-three-digit prefix `0`, the all-qualifying prefix `125`, the mixed example `24`, and the singleton `1`).
+- Improved JUnit 6 suite at `tests/improved_tests/claude/HumanEval_122_ImprovedTest.java` — 21/21 pass. Targets test smells (assertion roulette via per-case `@Test`s, magic numbers via intent-named display names, eager test via nested classes by behavioral concern) and exercises both branches of the `Math.abs(v) < 100` predicate at the edges 99/100 and -99/-100, the loop bound at `k=1` / `k == arr.size()`, sign cancellation, all-out-of-range, and the constraint upper bound (length-100 list of 1s).
+- Manual black-box notes + suite at `tests/manual_tests/claude/HumanEval_122_blackbox.md` and `HumanEval_122_ManualTest.java` — 21/21 pass. Pinned three undefined-by-spec behaviors: `k = 0` returns `0` (loop never runs), `Integer.MAX_VALUE` is dropped, and `Integer.MIN_VALUE` slips past the predicate because `Math.abs(Integer.MIN_VALUE) == Integer.MIN_VALUE` (overflow); these are observed-behavior pins, not spec contracts.
+- JaCoCo coverage exported to `coverage_reports/HumanEval_122/claude/{base,improved,manual}/`. All three suites: 28/28 instr, 4/4 branch, 7/7 line, 4/4 CC, 2/2 method on `Solution`.
+- Per-prompt summary at `analysis/HumanEval_122/HumanEval_122_claude.md`; rows added to `analysis/coverage_summary.md`.
+- No defects against spec → no refactor loop triggered. HumanEval_122 (Claude side) complete for Phase 1.

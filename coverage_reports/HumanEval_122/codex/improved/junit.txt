@@ -1,0 +1,34 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  └─ HumanEval_122_ImprovedTest ✔
+│     ├─ excludesThreeDigitNegativeNumbers() ✔
+│     ├─ includesSingleDigitNegativeNumbersUsingAbsoluteDigitCount() ✔
+│     ├─ kEqualToArrayLengthConsumesTheWholeList() ✔
+│     ├─ ignoresEligibleValuesBeyondThePrefixBoundary() ✔
+│     ├─ Sums only values with at most two digits from the first k elements ✔
+│     │  ├─ addElements([1], 1) = 1 ✔
+│     │  ├─ addElements([9, 10, 99, 100], 3) = 118 ✔
+│     │  ├─ addElements([111, 21, 3, 4000, 5], 4) = 24 ✔
+│     │  ├─ addElements([-9, -10, -99, 1234], 3) = -118 ✔
+│     │  └─ addElements([100, 1000, 7, 8], 2) = 0 ✔
+│     └─ includesExactlyTwoDigitNegativeNumbers() ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 122 ms
+[         5 containers found      ]
+[         0 containers skipped    ]
+[         5 containers started    ]
+[         0 containers aborted    ]
+[         5 containers successful ]
+[         0 containers failed     ]
+[        10 tests found           ]
+[         0 tests skipped         ]
+[        10 tests started         ]
+[         0 tests aborted         ]
+[        10 tests successful      ]
+[         0 tests failed          ]
+

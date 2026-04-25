@@ -1,0 +1,50 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  └─ HumanEval_081_ImprovedTest ✔
+│     ├─ Maps each threshold and representative in-band GPA to the correct letter ✔
+│     │  ├─ numericalLetterGrade([4.0]) = ["A+"] ✔
+│     │  ├─ numericalLetterGrade([3.8]) = ["A"] ✔
+│     │  ├─ numericalLetterGrade([3.7]) = ["A-"] ✔
+│     │  ├─ numericalLetterGrade([3.4]) = ["A-"] ✔
+│     │  ├─ numericalLetterGrade([3.3]) = ["B+"] ✔
+│     │  ├─ numericalLetterGrade([3.1]) = ["B+"] ✔
+│     │  ├─ numericalLetterGrade([3.0]) = ["B"] ✔
+│     │  ├─ numericalLetterGrade([2.8]) = ["B"] ✔
+│     │  ├─ numericalLetterGrade([2.7]) = ["B-"] ✔
+│     │  ├─ numericalLetterGrade([2.4]) = ["B-"] ✔
+│     │  ├─ numericalLetterGrade([2.3]) = ["C+"] ✔
+│     │  ├─ numericalLetterGrade([2.1]) = ["C+"] ✔
+│     │  ├─ numericalLetterGrade([2.0]) = ["C"] ✔
+│     │  ├─ numericalLetterGrade([1.8]) = ["C"] ✔
+│     │  ├─ numericalLetterGrade([1.7]) = ["C-"] ✔
+│     │  ├─ numericalLetterGrade([1.4]) = ["C-"] ✔
+│     │  ├─ numericalLetterGrade([1.3]) = ["D+"] ✔
+│     │  ├─ numericalLetterGrade([1.1]) = ["D+"] ✔
+│     │  ├─ numericalLetterGrade([1.0]) = ["D"] ✔
+│     │  ├─ numericalLetterGrade([0.8]) = ["D"] ✔
+│     │  ├─ numericalLetterGrade([0.7]) = ["D-"] ✔
+│     │  ├─ numericalLetterGrade([0.1]) = ["D-"] ✔
+│     │  └─ numericalLetterGrade([0.0]) = ["E"] ✔
+│     ├─ emptyInputProducesEmptyOutput() ✔
+│     ├─ negativeOutOfScopeValuesFallThroughToE() ✔
+│     └─ preservesInputOrderAcrossMultipleBands() ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 147 ms
+[         5 containers found      ]
+[         0 containers skipped    ]
+[         5 containers started    ]
+[         0 containers aborted    ]
+[         5 containers successful ]
+[         0 containers failed     ]
+[        26 tests found           ]
+[         0 tests skipped         ]
+[        26 tests started         ]
+[         0 tests aborted         ]
+[        26 tests successful      ]
+[         0 tests failed          ]
+

@@ -1,0 +1,116 @@
+# LLM Interaction Log
+
+- Prompt ID: HumanEval_081
+- Model: codex
+- Workflow Step: initial_generation
+- Timestamp: 2026-04-26 01:58:18
+- Output Files:
+  - generated_code/codex/HumanEval_081.java
+
+## Exact Prompt
+Generate Java code for `HumanEval_081` using the original prompt text exactly as selected in `prompts/selected_prompts.md`.
+
+```java
+import java.util.*;
+import java.lang.*;
+
+class Solution {
+    /**
+    It is the last week of the semester and the teacher has to give the grades
+    to students. The teacher has been making her own algorithm for grading.
+    The only problem is, she has lost the code she used for grading.
+    She has given you a list of GPAs for some students and you have to write
+    a function that can output a list of letter grades using the following table:
+             GPA       |    Letter grade
+              4.0                A+
+            > 3.7                A
+            > 3.3                A-
+            > 3.0                B+
+            > 2.7                B
+            > 2.3                B-
+            > 2.0                C+
+            > 1.7                C
+            > 1.3                C-
+            > 1.0                D+
+            > 0.7                D
+            > 0.0                D-
+              0.0                E
+
+
+    Example:
+    numericalLetterGrade(Arrays.asList(4.0, 3, 1.7, 2, 3.5)) ==> ["A+", "B", "C-", "C", "A-"]
+     */
+    public List<String> numericalLetterGrade(List<Double> grades) {
+```
+
+## Exact Response
+```java
+import java.util.*;
+import java.lang.*;
+
+class Solution {
+    /**
+    It is the last week of the semester and the teacher has to give the grades
+    to students. The teacher has been making her own algorithm for grading.
+    The only problem is, she has lost the code she used for grading.
+    She has given you a list of GPAs for some students and you have to write
+    a function that can output a list of letter grades using the following table:
+             GPA       |    Letter grade
+              4.0                A+
+            > 3.7                A
+            > 3.3                A-
+            > 3.0                B+
+            > 2.7                B
+            > 2.3                B-
+            > 2.0                C+
+            > 1.7                C
+            > 1.3                C-
+            > 1.0                D+
+            > 0.7                D
+            > 0.0                D-
+              0.0                E
+
+
+    Example:
+    numericalLetterGrade(Arrays.asList(4.0, 3, 1.7, 2, 3.5)) ==> ["A+", "B", "C-", "C", "A-"]
+     */
+    public List<String> numericalLetterGrade(List<Double> grades) {
+        List<String> result = new ArrayList<>();
+
+        for (double grade : grades) {
+            if (grade == 4.0) {
+                result.add("A+");
+            } else if (grade > 3.7) {
+                result.add("A");
+            } else if (grade > 3.3) {
+                result.add("A-");
+            } else if (grade > 3.0) {
+                result.add("B+");
+            } else if (grade > 2.7) {
+                result.add("B");
+            } else if (grade > 2.3) {
+                result.add("B-");
+            } else if (grade > 2.0) {
+                result.add("C+");
+            } else if (grade > 1.7) {
+                result.add("C");
+            } else if (grade > 1.3) {
+                result.add("C-");
+            } else if (grade > 1.0) {
+                result.add("D+");
+            } else if (grade > 0.7) {
+                result.add("D");
+            } else if (grade > 0.0) {
+                result.add("D-");
+            } else {
+                result.add("E");
+            }
+        }
+
+        return result;
+    }
+}
+```
+
+## Decision Note
+Accepted as the initial Codex solution. It follows the prompt’s strict-threshold grading table, preserves input order, and handles the exact `4.0` special case before the descending `>` bands.

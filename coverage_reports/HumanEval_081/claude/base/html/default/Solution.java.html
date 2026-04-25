@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Solution.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Solution.java</span></div><h1>Solution.java</h1><pre class="source lang-java linenums">import java.util.*;
+import java.lang.*;
+
+<span class="fc" id="L4">class Solution {</span>
+    /**
+    It is the last week of the semester and the teacher has to give the grades
+    to students. The teacher has been making her own algorithm for grading.
+    The only problem is, she has lost the code she used for grading.
+    She has given you a list of GPAs for some students and you have to write
+    a function that can output a list of letter grades using the following table:
+             GPA       |    Letter grade
+              4.0                A+
+            &gt; 3.7                A
+            &gt; 3.3                A-
+            &gt; 3.0                B+
+            &gt; 2.7                B
+            &gt; 2.3                B-
+            &gt; 2.0                C+
+            &gt; 1.7                C
+            &gt; 1.3                C-
+            &gt; 1.0                D+
+            &gt; 0.7                D
+            &gt; 0.0                D-
+              0.0                E
+
+
+    Example:
+    numericalLetterGrade(Arrays.asList(4.0, 3, 1.7, 2, 3.5)) ==&gt; [&quot;A+&quot;, &quot;B&quot;, &quot;C-&quot;, &quot;C&quot;, &quot;A-&quot;]
+     */
+    public List&lt;String&gt; numericalLetterGrade(List&lt;Double&gt; grades) {
+<span class="fc" id="L31">        List&lt;String&gt; result = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">        for (Double g : grades) {</span>
+<span class="fc" id="L33">            double gpa = g;</span>
+            String letter;
+<span class="fc bfc" id="L35" title="All 2 branches covered.">            if (gpa == 4.0) {</span>
+<span class="fc" id="L36">                letter = &quot;A+&quot;;</span>
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">            } else if (gpa &gt; 3.7) {</span>
+<span class="nc" id="L38">                letter = &quot;A&quot;;</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">            } else if (gpa &gt; 3.3) {</span>
+<span class="fc" id="L40">                letter = &quot;A-&quot;;</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">            } else if (gpa &gt; 3.0) {</span>
+<span class="fc" id="L42">                letter = &quot;B+&quot;;</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">            } else if (gpa &gt; 2.7) {</span>
+<span class="fc" id="L44">                letter = &quot;B&quot;;</span>
+<span class="pc bpc" id="L45" title="1 of 2 branches missed.">            } else if (gpa &gt; 2.3) {</span>
+<span class="nc" id="L46">                letter = &quot;B-&quot;;</span>
+<span class="pc bpc" id="L47" title="1 of 2 branches missed.">            } else if (gpa &gt; 2.0) {</span>
+<span class="nc" id="L48">                letter = &quot;C+&quot;;</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">            } else if (gpa &gt; 1.7) {</span>
+<span class="fc" id="L50">                letter = &quot;C&quot;;</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">            } else if (gpa &gt; 1.3) {</span>
+<span class="fc" id="L52">                letter = &quot;C-&quot;;</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">            } else if (gpa &gt; 1.0) {</span>
+<span class="fc" id="L54">                letter = &quot;D+&quot;;</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">            } else if (gpa &gt; 0.7) {</span>
+<span class="fc" id="L56">                letter = &quot;D&quot;;</span>
+<span class="fc bfc" id="L57" title="All 2 branches covered.">            } else if (gpa &gt; 0.0) {</span>
+<span class="fc" id="L58">                letter = &quot;D-&quot;;</span>
+            } else {
+<span class="fc" id="L60">                letter = &quot;E&quot;;</span>
+            }
+<span class="fc" id="L62">            result.add(letter);</span>
+<span class="fc" id="L63">        }</span>
+<span class="fc" id="L64">        return result;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

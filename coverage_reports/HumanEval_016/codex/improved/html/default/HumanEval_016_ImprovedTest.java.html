@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HumanEval_016_ImprovedTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">HumanEval_016_ImprovedTest.java</span></div><h1>HumanEval_016_ImprovedTest.java</h1><pre class="source lang-java linenums">import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+/**
+ * Codex-authored improved JUnit 6 suite for HumanEval_016.
+ *
+ * Design goals:
+ * - remove the dataset harness' assertion-roulette structure;
+ * - keep dataset expectations explicit and individually attributable;
+ * - add representative unseen inputs across whitespace, symbols, digits,
+ *   repeated invocation, and Unicode case-folding boundaries.
+ */
+<span class="nc" id="L20">public class HumanEval_016_ImprovedTest {</span>
+
+<span class="nc" id="L22">    private final Solution solution = new Solution();</span>
+
+    static Stream&lt;Arguments&gt; datasetCases() {
+<span class="nc" id="L25">        return Stream.of(</span>
+<span class="nc" id="L26">                Arguments.of(&quot;&quot;, 0),</span>
+<span class="nc" id="L27">                Arguments.of(&quot;abcde&quot;, 5),</span>
+<span class="nc" id="L28">                Arguments.of(&quot;abcde&quot; + &quot;cade&quot; + &quot;CADE&quot;, 5),</span>
+<span class="nc" id="L29">                Arguments.of(&quot;aaaaAAAAaaaa&quot;, 1),</span>
+<span class="nc" id="L30">                Arguments.of(&quot;Jerry jERRY JeRRRY&quot;, 5)</span>
+        );
+    }
+
+    static Stream&lt;Arguments&gt; extendedCases() {
+<span class="nc" id="L35">        return Stream.of(</span>
+<span class="nc" id="L36">                Arguments.of(&quot;A&quot;, 1),</span>
+<span class="nc" id="L37">                Arguments.of(&quot;AaAaBb&quot;, 2),</span>
+<span class="nc" id="L38">                Arguments.of(&quot;0123401234&quot;, 5),</span>
+<span class="nc" id="L39">                Arguments.of(&quot;!? !?&quot;, 3),</span>
+<span class="nc" id="L40">                Arguments.of(&quot;Line\nline&quot;, 5),</span>
+<span class="nc" id="L41">                Arguments.of(&quot;ÄäÖöÜü&quot;, 3),</span>
+<span class="nc" id="L42">                Arguments.of(&quot;Java 17&quot;, 6),</span>
+<span class="nc" id="L43">                Arguments.of(&quot;😀&quot;, 2),</span>
+<span class="nc" id="L44">                Arguments.of(&quot;İIıi&quot;, 3)</span>
+        );
+    }
+
+    @ParameterizedTest(name = &quot;dataset case \&quot;{0}\&quot; -&gt; {1}&quot;)
+    @MethodSource(&quot;datasetCases&quot;)
+    @DisplayName(&quot;Dataset expectations&quot;)
+    void datasetExpectations(String input, int expected) {
+<span class="nc" id="L52">        assertEquals(expected, solution.countDistinctCharacters(input));</span>
+<span class="nc" id="L53">    }</span>
+
+    @ParameterizedTest(name = &quot;extended case \&quot;{0}\&quot; -&gt; {1}&quot;)
+    @MethodSource(&quot;extendedCases&quot;)
+    @DisplayName(&quot;Extended coverage cases&quot;)
+    void extendedCoverageCases(String input, int expected) {
+<span class="nc" id="L59">        assertEquals(expected, solution.countDistinctCharacters(input));</span>
+<span class="nc" id="L60">    }</span>
+
+    @Test
+    @DisplayName(&quot;Repeated calls return the same result&quot;)
+    void repeatedCallsAreStable() {
+<span class="nc" id="L65">        String input = &quot;MiXeD Case 123&quot;;</span>
+<span class="nc" id="L66">        int expected = solution.countDistinctCharacters(input);</span>
+
+<span class="nc" id="L68">        assertEquals(expected, solution.countDistinctCharacters(input));</span>
+<span class="nc" id="L69">        assertEquals(expected, solution.countDistinctCharacters(input));</span>
+<span class="nc" id="L70">    }</span>
+
+    @Test
+    @DisplayName(&quot;Whitespace variants remain distinct&quot;)
+    void whitespaceVariantsRemainDistinct() {
+<span class="nc" id="L75">        assertEquals(4, solution.countDistinctCharacters(&quot;a\t a\n&quot;));</span>
+<span class="nc" id="L76">    }</span>
+
+    @Test
+    @DisplayName(&quot;Alphabet saturation does not grow with uppercase duplicate&quot;)
+    void alphabetSaturation() {
+<span class="nc" id="L81">        assertEquals(26, solution.countDistinctCharacters(&quot;abcdefghijklmnopqrstuvwxyz&quot;));</span>
+<span class="nc" id="L82">        assertEquals(26, solution.countDistinctCharacters(&quot;abcdefghijklmnopqrstuvwxyzA&quot;));</span>
+<span class="nc" id="L83">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

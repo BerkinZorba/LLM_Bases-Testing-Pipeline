@@ -1,0 +1,27 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  └─ HumanEval_106_BaseTest ✔
+│     ├─ f3_returns1_2_6() ✔
+│     ├─ f5_returns1_2_6_24_15() ✔
+│     ├─ f1_returns1() ✔
+│     └─ f7_returns1_2_6_24_15_720_28() ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 77 ms
+[         4 containers found      ]
+[         0 containers skipped    ]
+[         4 containers started    ]
+[         0 containers aborted    ]
+[         4 containers successful ]
+[         0 containers failed     ]
+[         4 tests found           ]
+[         0 tests skipped         ]
+[         4 tests started         ]
+[         0 tests aborted         ]
+[         4 tests successful      ]
+[         0 tests failed          ]
+

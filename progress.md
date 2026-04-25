@@ -368,3 +368,26 @@ Select 30 prompts with balanced difficulty
 - Manual suite at `tests/manual_tests/claude/HumanEval_099_ManualTest.java` — 26/26 pass. Manual coverage: 28/28 instr, 4/4 branch.
 - JaCoCo coverage exported to `coverage_reports/HumanEval_099/claude/{base,improved,manual}/`.
 - Per-prompt analysis added at `analysis/HumanEval_099_claude.md`. Coverage rows appended to `analysis/coverage_summary.md`.
+
+### 2026-04-26 — HumanEval_106 (Codex)
+
+- Applied the Phase 1 Codex workflow to existing `generated_code/codex/HumanEval_106.java`; generated code was not modified before base testing.
+- Added adjusted dataset harness at `tests/base_tests/adjusted/HumanEval_106/Main.java` by adding `import java.util.*;` only; assertion logic and generated code unchanged. Adjusted harness compiled with `javac --release 21` and exited 0.
+- Logged the existing Codex generation at `llm_logs/codex/HumanEval_106_initial.md`.
+- JUnit 6 base port at `tests/base_tests/codex/HumanEval_106_BaseTest.java` — 4/4 pass.
+- Improved suite at `tests/improved_tests/codex/HumanEval_106_ImprovedTest.java` — 11/11 pass. Covers zero, negative `n`, first even boundary, larger factorial/triangular positions, and repeated-call stability.
+- Manual black-box notes + suite at `tests/manual_tests/codex/HumanEval_106_blackbox.md` and `HumanEval_106_ManualTest.java` — 11/11 pass. Pinned undefined-by-spec behavior for zero and negative `n`.
+- JaCoCo coverage exported to `coverage_reports/HumanEval_106/codex/{base,improved,manual}/`: base 45/47 instr and 5/6 branch; improved/manual 47/47 instr and 6/6 branch.
+- Per-prompt analysis added at `analysis/HumanEval_106/HumanEval_106_codex.md`. No defects against the prompt spec; no refactor loop triggered.
+
+### 2026-04-25 — HumanEval_106 (Claude)
+
+- Applied the Phase 1 Claude workflow to existing `generated_code/claude/HumanEval_106.java`; generated code was not modified before base testing.
+- Added adjusted dataset harness at `tests/base_tests/adjusted/HumanEval_106/Main.java` by adding `import java.util.*;` and `import java.lang.*;`. Adjusted harness compiled and exited 0.
+- Logged the existing Claude generation at `llm_logs/claude/HumanEval_106_initial.md`. Generation was complete and correct on the first attempt; no refactor loop triggered.
+- JUnit 6 base port at `tests/base_tests/claude/HumanEval_106_BaseTest.java` — 4/4 pass. Base coverage: 52/52 instr, 6/6 branch (100%) — dataset inputs already exercise both parity branches and all loop conditions.
+- Improved suite at `tests/improved_tests/claude/HumanEval_106_ImprovedTest.java` — 17/17 pass. Adds n=0 (empty list), n=2 (minimal both-branch), n=6, per-element parameterized suite for i=1..8, list-size invariant test, and repeated-call independence check.
+- Manual black-box notes at `tests/manual_tests/claude/HumanEval_106_blackbox.md`. Defined 8 valid classes (V1–V8) and 1 invalid class (I1: n<0 → empty list). Documented element-level boundary values for i=1..8 and list-level boundaries.
+- Manual suite at `tests/manual_tests/claude/HumanEval_106_ManualTest.java` — 14/14 pass. Manual coverage: 52/52 instr, 6/6 branch.
+- JaCoCo coverage exported to `coverage_reports/HumanEval_106/claude/{base,improved,manual}/`.
+- Per-prompt analysis added at `analysis/HumanEval_106_claude.md`. Coverage rows appended to `analysis/coverage_summary.md`.

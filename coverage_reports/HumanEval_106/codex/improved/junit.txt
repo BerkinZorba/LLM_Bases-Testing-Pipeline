@@ -1,0 +1,36 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+.
++-- JUnit Platform Suite [OK]
++-- JUnit Jupiter [OK]
+| '-- HumanEval_106_ImprovedTest [OK]
+|   +-- Negative n is pinned to empty list [OK]
+|   +-- Repeated calls are stable [OK]
+|   +-- Extended boundary and parity cases [OK]
+|   | +-- f(0) -> [] [OK]
+|   | +-- f(2) -> [1, 2] [OK]
+|   | +-- f(4) -> [1, 2, 6, 24] [OK]
+|   | +-- f(6) -> [1, 2, 6, 24, 15, 720] [OK]
+|   | '-- f(8) -> [1, 2, 6, 24, 15, 720, 28, 40320] [OK]
+|   '-- Dataset expectations [OK]
+|     +-- f(5) -> [1, 2, 6, 24, 15] [OK]
+|     +-- f(7) -> [1, 2, 6, 24, 15, 720, 28] [OK]
+|     +-- f(1) -> [1] [OK]
+|     '-- f(3) -> [1, 2, 6] [OK]
+'-- JUnit Vintage [OK]
+
+Test run finished after 74 ms
+[         6 containers found      ]
+[         0 containers skipped    ]
+[         6 containers started    ]
+[         0 containers aborted    ]
+[         6 containers successful ]
+[         0 containers failed     ]
+[        11 tests found           ]
+[         0 tests skipped         ]
+[        11 tests started         ]
+[         0 tests aborted         ]
+[        11 tests successful      ]
+[         0 tests failed          ]
+

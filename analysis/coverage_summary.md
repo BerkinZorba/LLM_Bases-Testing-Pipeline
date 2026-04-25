@@ -34,3 +34,9 @@ Source: per-suite JaCoCo CSV under `coverage_reports/<HumanEval_XXX>/<model>/<su
 | HumanEval_100 | claude | base     | 5  | 5  | 25/25 | 2/2 | 5/5 | 3/3 | 2/2 |
 | HumanEval_100 | claude | improved | 15 | 15 | 25/25 | 2/2 | 5/5 | 3/3 | 2/2 |
 | HumanEval_100 | claude | manual   | 19 | 19 | 25/25 | 2/2 | 5/5 | 3/3 | 2/2 |
+| HumanEval_103 | codex  | base     | 12 | 12 | 25/25 | 2/2 | 6/6 | 3/3 | 2/2 |
+| HumanEval_103 | codex  | improved | 12 | 12 | 25/25 | 2/2 | 6/6 | 3/3 | 2/2 |
+| HumanEval_103 | codex  | manual   | 9  | 9  | 25/25 | 2/2 | 6/6 | 3/3 | 2/2 |
+| HumanEval_103 | claude | base     | 12 | 12 | 41/41 | 4/4 | 9/9 | 4/4 | 2/2 |
+| HumanEval_103 | claude | improved | 19 | 19 | 41/41 | 4/4 | 9/9 | 4/4 | 2/2 |
+| HumanEval_103 | claude | manual   | 18 | 18 | 41/41 | 4/4 | 9/9 | 4/4 | 2/2 |

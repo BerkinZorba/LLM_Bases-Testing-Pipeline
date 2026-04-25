@@ -1,0 +1,35 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  └─ HumanEval_103_BaseTest ✔
+│     ├─ nineNinetySixToNineNinetySeven_returnsExpectedBinary() ✔
+│     ├─ threeFiftyToNineZeroTwo_returnsExpectedBinary() ✔
+│     ├─ descendingRange_returnsMinusOne() ✔
+│     ├─ oneEightyFiveToFiveFortySix_returnsExpectedBinary() ✔
+│     ├─ fiveSixtyToEightFiftyOne_returnsExpectedBinary() ✔
+│     ├─ equalEndpoints_returnBinaryOfTheValue() ✔
+│     ├─ threeSixtyTwoToFourNinetySix_returnsExpectedBinary() ✔
+│     ├─ nineSixtyFourToNineSeventySeven_returnsExpectedBinary() ✔
+│     ├─ exampleOneToFive_returnsBinaryThree() ✔
+│     ├─ oneNinetySevenToTwoThirtyThree_returnsExpectedBinary() ✔
+│     ├─ anotherDescendingRange_returnsMinusOne() ✔
+│     └─ sevenToThirteen_returnsBinaryTen() ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 55 ms
+[         4 containers found      ]
+[         0 containers skipped    ]
+[         4 containers started    ]
+[         0 containers aborted    ]
+[         4 containers successful ]
+[         0 containers failed     ]
+[        12 tests found           ]
+[         0 tests skipped         ]
+[        12 tests started         ]
+[         0 tests aborted         ]
+[        12 tests successful      ]
+[         0 tests failed          ]
+

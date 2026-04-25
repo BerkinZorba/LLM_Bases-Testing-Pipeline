@@ -267,3 +267,29 @@ Select 30 prompts with balanced difficulty
 - JaCoCo coverage exported to `coverage_reports/HumanEval_100/claude/{base,improved,manual}/`. All three suites: 25/25 instr, 2/2 branch, 5/5 line, 3/3 CC, 2/2 method on `Solution`.
 - Per-prompt summary at `analysis/HumanEval_100/HumanEval_100_claude.md`; rows added to `analysis/coverage_summary.md`.
 - No defects against spec → no refactor loop triggered. HumanEval_100 (Claude side) complete.
+
+### 2026-04-26 — HumanEval_103 (Codex)
+
+- Started Phase 1 implementation for `HumanEval_103` under the `codex` workflow.
+- Read the prompt text from `prompts/selected_prompts.md` and saved the initial Java solution to `generated_code/codex/HumanEval_103.java`.
+- Logged the initial interaction in `llm_logs/codex/HumanEval_103_initial.md`.
+- Adjusted dataset `Main.java` at `tests/base_tests/adjusted/HumanEval_103/Main.java` by adding `import java.util.*;`; documented in `tests/base_tests/adjustment_log.md`. Generated code unchanged.
+- Executed the adjusted dataset base harness for `HumanEval_103` with Homebrew OpenJDK; compile succeeded and `Main` exited with status 0.
+- Added Codex-side base, improved, and manual test artifacts for `HumanEval_103`, plus separate Codex test-generation logs for improved/manual work.
+- JUnit 6 Codex suites with `.tools/junit-platform-console-standalone.jar`: base 12/12, improved 12/12, manual 9/9.
+- Exported JaCoCo coverage to `coverage_reports/HumanEval_103/codex/{base,improved,manual}/`; `Solution` reached 25/25 instructions, 2/2 branches, 6/6 lines, 3/3 complexity, and 2/2 methods in all three suites.
+- Added per-prompt summary findings to `analysis/HumanEval_103/HumanEval_103_codex.md` and rows to `analysis/coverage_summary.md`.
+- No defects against the prompt specification were observed, so no refactor loop was triggered. HumanEval_103 (Codex side) is complete for Phase 1.
+
+### 2026-04-26 — HumanEval_103 (Claude)
+
+- Started Phase 1 implementation for `HumanEval_103` (Claude side) — `roundedAvg(int n, int m)`: average of integers in `[n, m]`, rounded to nearest int (half-up), returned as a binary string; or `-1` when `n > m`.
+- Generated `generated_code/claude/HumanEval_103.java` from the verbatim Java/103 prompt (guarded summation loop into a `long` accumulator, `Math.round` on the double quotient, `Long.toBinaryString` for the result; return type `Object`).
+- Logged the initial interaction in `llm_logs/claude/HumanEval_103_initial.md`.
+- Adjusted dataset `Main.java` at `tests/base_tests/adjusted/HumanEval_103/Main.java` (added `import java.util.*;` so the dataset harness, which references `List`, `Arrays`, and `Objects`, compiles standalone); logged in `tests/base_tests/adjustment_log.md`. Adjusted harness exits 0.
+- JUnit 6 base port at `tests/base_tests/claude/HumanEval_103_BaseTest.java` — 12/12 pass against the verbatim Claude solution.
+- Improved JUnit 6 suite at `tests/improved_tests/claude/HumanEval_103_ImprovedTest.java` — 19/19 pass. Targets test smells (assertion roulette via per-case `@Test`s, magic numbers via intent-named display names, eager test via nested classes by behavioral concern) and branch coverage of the `n > m` guard (taken / not-taken at edge `n == m` and `n == m + 1`) and the `for`-loop guard; exercises return-type contract (`String` on success, `Integer(-1)` on failure), exact integer averages, the half-up rounding rule (1.5/2.5/3.5 → up), singleton ranges, and larger ranges (1..100, 50..100).
+- Manual black-box notes + suite at `tests/manual_tests/claude/HumanEval_103_blackbox.md` and `HumanEval_103_ManualTest.java` — 18/18 pass. Pinned that `(0, 5)` returns `"11"` and `(-2, 2)` returns `"0"` — the implementation does not check `n > 0`, so the summation/round/binary path runs unconditionally; these are observed-behavior pins, not spec contracts.
+- JaCoCo coverage exported to `coverage_reports/HumanEval_103/claude/{base,improved,manual}/`. All three suites: 41/41 instr, 4/4 branch, 9/9 line, 4/4 CC, 2/2 method on `Solution`.
+- Per-prompt summary at `analysis/HumanEval_103/HumanEval_103_claude.md`; rows added to `analysis/coverage_summary.md`.
+- No defects against spec → no refactor loop triggered. HumanEval_103 (Claude side) complete for Phase 1.

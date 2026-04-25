@@ -1,0 +1,39 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  └─ HumanEval_095_ManualTest ✔
+│     ├─ Invalid classes ✔
+│     │  ├─ mixedCaseAcrossKeys() ✔
+│     │  ├─ noLetterKeyObservedAsInvalid() ✔
+│     │  ├─ nonStringKey() ✔
+│     │  ├─ titleCaseKey() ✔
+│     │  └─ uncasedUnicodeLetterObservedAsInvalid() ✔
+│     ├─ Valid classes ✔
+│     │  ├─ uppercaseKeysWithSeparatorsAndDigits() ✔
+│     │  ├─ minimalLowercaseMap() ✔
+│     │  ├─ lowercaseKeysWithSeparatorsAndDigits() ✔
+│     │  └─ minimalUppercaseMap() ✔
+│     └─ Boundaries ✔
+│        ├─ emptyStringKeyObservedAsInvalid() ✔
+│        ├─ firstCrossCaseConflict() ✔
+│        ├─ emptyMap() ✔
+│        └─ firstTypeConflict() ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 52 ms
+[         7 containers found      ]
+[         0 containers skipped    ]
+[         7 containers started    ]
+[         0 containers aborted    ]
+[         7 containers successful ]
+[         0 containers failed     ]
+[        13 tests found           ]
+[         0 tests skipped         ]
+[        13 tests started         ]
+[         0 tests aborted         ]
+[        13 tests successful      ]
+[         0 tests failed          ]
+

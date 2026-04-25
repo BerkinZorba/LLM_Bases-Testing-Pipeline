@@ -371,3 +371,27 @@ Select 30 prompts with balanced difficulty
 - Exported JaCoCo coverage to `coverage_reports/HumanEval_081/claude/{base,improved,manual}/`; `Solution` reached 104/113 instructions, 23/26 branches, 29/32 lines, 12/15 complexity, and 2/2 methods in the base suite (the three missed branches are `> 3.7`, `> 2.3`, `> 2.0` — `A`, `B-`, `C+` are not represented in the dataset rows), and 113/113 instructions, 26/26 branches, 32/32 lines, 15/15 complexity, and 2/2 methods in both the improved and manual suites.
 - Added per-prompt summary findings to `analysis/HumanEval_081/HumanEval_081_claude.md` and rows to `analysis/coverage_summary.md`.
 - No defects against the prompt specification were observed, so no refactor loop was triggered. HumanEval_081 (Claude side) is complete for Phase 1.
+
+## 2026-04-26 — HumanEval_095 (Codex)
+
+- Started Phase 1 implementation for `HumanEval_095` under the `codex` workflow.
+- Read the prompt text from `prompts/selected_prompts.md` and saved the initial Java solution to `generated_code/codex/HumanEval_095.java`.
+- Logged the initial interaction in `llm_logs/codex/HumanEval_095_initial.md`.
+- Adjusted dataset `Main.java` at `tests/base_tests/adjusted/HumanEval_095/Main.java` by adding `import java.util.*;`; documented in `tests/base_tests/adjustment_log.md`. Generated code unchanged during the base-test step.
+- Executed the adjusted dataset base harness for `HumanEval_095` with Homebrew OpenJDK; compile succeeded and `Main` exited with status 0.
+- Added Codex-side base, improved, and manual test artifacts for `HumanEval_095`, plus separate Codex test-generation logs for improved/manual work.
+- Improved testing exposed a real bug in the initial solution: a key containing uncased letters was accepted even though it was neither lowercase nor uppercase. Logged and addressed with `generated_code/codex/HumanEval_095_v2.java` plus `llm_logs/codex/HumanEval_095_refactor_01.md`.
+- Re-ran the dataset harness and all JUnit 6 Codex suites against `HumanEval_095_v2.java` with `.tools/junit-platform-console-standalone.jar`: base 7/7, improved 17/17, manual 13/13.
+- Exported JaCoCo coverage to `coverage_reports/HumanEval_095/codex/{base,improved,manual}/`; `Solution` reached 100/103 instructions, 26/30 branches, 31/33 lines, 14/18 complexity, and 3/3 methods in the base suite, and 103/103 instructions, 30/30 branches, 33/33 lines, 18/18 complexity, and 3/3 methods in both the improved and manual suites.
+- Added per-prompt summary findings to `analysis/HumanEval_095/HumanEval_095_codex.md` and rows to `analysis/coverage_summary.md`.
+- HumanEval_095 (Codex side) is complete for Phase 1, including a documented refactor loop triggered by improved-test findings.
+
+## 2026-04-26 — HumanEval_095 (Claude)
+
+- Generated `generated_code/claude/HumanEval_095.java` from the verbatim prompt and logged the interaction in `llm_logs/claude/HumanEval_095_initial.md`.
+- Authored the JUnit 6 base port at `tests/base_tests/claude/HumanEval_095_BaseTest.java` (7 cases) and the adjusted dataset harness at `tests/base_tests/adjusted/HumanEval_095/Main.java` (added `import java.util.*;` only, recorded in `tests/base_tests/adjustment_log.md`).
+- Authored the improved suite at `tests/improved_tests/claude/HumanEval_095_ImprovedTest.java` (24 cases across dataset / branches / edge / structural nests) and the manual black-box notes plus tests at `tests/manual_tests/claude/HumanEval_095_blackbox.md` and `tests/manual_tests/claude/HumanEval_095_ManualTest.java` (24 cases across V1..V13 valid, I1..I4 invalid, and size/type/case boundary axes).
+- Adjusted dataset harness compiles and exits `0` (`ADJUSTED_OK`); JUnit 6 runs report 7/7, 24/24, 24/24 for base/improved/manual respectively.
+- Exported JaCoCo coverage to `coverage_reports/HumanEval_095/claude/{base,improved,manual}/`; `Solution` reached 53/53 instructions, 14/14 branches, 15/15 lines, 9/9 complexity, and 2/2 methods on every suite — every branch (empty short-circuit, non-string `instanceof`, both case-equality arms, the loop continuation, and the final disjunction) is hit.
+- Added per-prompt summary findings to `analysis/HumanEval_095/HumanEval_095_claude.md` and rows to `analysis/coverage_summary.md`.
+- No defects against the prompt specification were observed, so no refactor loop was triggered. HumanEval_095 (Claude side) is complete for Phase 1.

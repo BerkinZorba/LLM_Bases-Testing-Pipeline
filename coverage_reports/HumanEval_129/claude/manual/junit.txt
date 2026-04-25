@@ -1,0 +1,44 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  └─ HumanEval_129_ManualTest ✔
+│     ├─ V11–V14: grid-size and tie-breaking ✔
+│     │  ├─ V14: 4x4 grid, 1 at interior, k=5 ✔
+│     │  ├─ V13: 3x3 grid, 1 at centre, k=8 ✔
+│     │  ├─ V11: two neighbours of 1 tied — picks the true minimum (they are equal) ✔
+│     │  └─ V12: minimum 2x2 grid, k=10 ✔
+│     ├─ V5–V10: position of 1 in the grid ✔
+│     │  └─ positionVariants(String, List, int, List) ✔
+│     │     ├─ "V5 top-left corner (0,0) — 2 neighbours" ✔
+│     │     ├─ "V6 top-right corner (0,n-1) — 2 neighbours" ✔
+│     │     ├─ "V7 bottom-left corner (n-1,0) — 2 neighbours" ✔
+│     │     ├─ "V8 bottom-right corner (n-1,n-1) — 2 neighbours" ✔
+│     │     ├─ "V9 top-edge non-corner (0,1) in 3x3 — 3 neighbours" ✔
+│     │     └─ "V10 interior (1,1) in 3x3 — 4 neighbours" ✔
+│     ├─ I1–I2: invalid / undefined-by-spec inputs (pinned) ✔
+│     │  ├─ I1: null grid throws NullPointerException ✔
+│     │  └─ I2: k=0 returns empty list (loop never executes) ✔
+│     └─ V1–V4: k boundary values ✔
+│        ├─ V1: k=1 always returns [1] ✔
+│        ├─ V2: k=2 returns [1, minNeighbour] ✔
+│        ├─ V4: k even (4) → last element is minNeighbour ✔
+│        └─ V3: k odd (3) → last element is 1 ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 94 ms
+[         9 containers found      ]
+[         0 containers skipped    ]
+[         9 containers started    ]
+[         0 containers aborted    ]
+[         9 containers successful ]
+[         0 containers failed     ]
+[        16 tests found           ]
+[         0 tests skipped         ]
+[        16 tests started         ]
+[         0 tests aborted         ]
+[        16 tests successful      ]
+[         0 tests failed          ]
+

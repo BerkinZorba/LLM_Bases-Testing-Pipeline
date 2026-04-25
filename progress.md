@@ -391,3 +391,26 @@ Select 30 prompts with balanced difficulty
 - Manual suite at `tests/manual_tests/claude/HumanEval_106_ManualTest.java` — 14/14 pass. Manual coverage: 52/52 instr, 6/6 branch.
 - JaCoCo coverage exported to `coverage_reports/HumanEval_106/claude/{base,improved,manual}/`.
 - Per-prompt analysis added at `analysis/HumanEval_106_claude.md`. Coverage rows appended to `analysis/coverage_summary.md`.
+
+### 2026-04-25 — HumanEval_129 (Claude)
+
+- Applied the Phase 1 Claude workflow to existing `generated_code/claude/HumanEval_129.java`; generated code was not modified before base testing.
+- Added adjusted dataset harness at `tests/base_tests/adjusted/HumanEval_129/Main.java` by adding `import java.util.*;` and `import java.lang.*;`. Adjusted harness compiled and exited 0.
+- Logged the existing Claude generation at `llm_logs/claude/HumanEval_129_initial.md`. Generation was complete and correct on the first attempt; no refactor loop triggered. Minor dead-code note: `int minVal = n * n + 1` is declared but never read.
+- JUnit 6 base port at `tests/base_tests/claude/HumanEval_129_BaseTest.java` — 11/11 pass. Base coverage: 178/178 instr, 20/20 branch (100%) — the unusually comprehensive dataset covers 1 at corners, edges, and interior across 2x2, 3x3, and 4x4 grids with k from 1 to 12.
+- Improved suite at `tests/improved_tests/claude/HumanEval_129_ImprovedTest.java` — 18/18 pass. Adds structural grouping (k-boundary, position-of-1, grid-size nested suites) and explicit all-four-corner 2x2 coverage.
+- Manual black-box notes at `tests/manual_tests/claude/HumanEval_129_blackbox.md`. Defined 14 valid classes (V1–V14) and 2 invalid classes (I1: null grid→NPE, I2: k=0→empty list). Documented algorithmic insight: optimal path bounces between cell-with-1 and its minimum neighbour.
+- Manual suite at `tests/manual_tests/claude/HumanEval_129_ManualTest.java` — 16/16 pass. Manual coverage: 178/178 instr, 20/20 branch.
+- JaCoCo coverage exported to `coverage_reports/HumanEval_129/claude/{base,improved,manual}/`.
+- Per-prompt analysis added at `analysis/HumanEval_129_claude.md`. Coverage rows appended to `analysis/coverage_summary.md`.
+
+### 2026-04-26 — HumanEval_129 (Codex)
+
+- Applied the Phase 1 Codex workflow to existing `generated_code/codex/HumanEval_129.java`; generated code was not modified before base testing.
+- Added adjusted dataset harness at `tests/base_tests/adjusted/HumanEval_129/Main.java` by adding `import java.util.*;` only; assertion logic and generated code unchanged. Adjusted harness compiled with `javac --release 21` and exited 0.
+- Logged the existing Codex generation at `llm_logs/codex/HumanEval_129_initial.md`.
+- JUnit 6 base port at `tests/base_tests/codex/HumanEval_129_BaseTest.java` — 10/10 pass.
+- Improved suite at `tests/improved_tests/codex/HumanEval_129_ImprovedTest.java` — 14/14 pass. Covers `k` boundaries, null/empty grid behavior, and cases where cell `1` is at a corner, edge, and interior.
+- Manual black-box notes + suite at `tests/manual_tests/codex/HumanEval_129_blackbox.md` and `HumanEval_129_ManualTest.java` — 12/12 pass. Pinned undefined-by-spec behavior for null grid, empty grid, and non-positive `k`.
+- JaCoCo coverage exported to `coverage_reports/HumanEval_129/codex/{base,improved,manual}/`: base 170/172 instr and 24/28 branch; improved/manual 172/172 instr and 27/28 branch.
+- Per-prompt analysis added at `analysis/HumanEval_129/HumanEval_129_codex.md`. No defects against the prompt spec; no refactor loop triggered.

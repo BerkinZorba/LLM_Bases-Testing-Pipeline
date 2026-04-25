@@ -1,0 +1,36 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+.
++-- JUnit Platform Suite [OK]
++-- JUnit Jupiter [OK]
+| '-- HumanEval_129_ManualTest [OK]
+|   +-- Null grid returns empty list [OK]
+|   +-- Valid equivalence classes [OK]
+|   | +-- "V1": k=1, path=[1] [OK]
+|   | +-- "V2": k=5, path=[1, 2, 1, 2, 1] [OK]
+|   | +-- "V3": k=6, path=[1, 2, 1, 2, 1, 2] [OK]
+|   | +-- "V4": k=4, path=[1, 2, 1, 2] [OK]
+|   | +-- "V5": k=6, path=[1, 2, 1, 2, 1, 2] [OK]
+|   | +-- "V6": k=3, path=[1, 2, 1] [OK]
+|   | '-- "V7": k=12, path=[1, 6, 1, 6, 1, 6, 1, 6, 1, 6, 1, 6] [OK]
+|   +-- Boundary: negative k [OK]
+|   +-- Boundary: first move chooses smallest neighbor [OK]
+|   +-- Empty grid returns empty list [OK]
+|   '-- Boundary: zero k [OK]
+'-- JUnit Vintage [OK]
+
+Test run finished after 75 ms
+[         5 containers found      ]
+[         0 containers skipped    ]
+[         5 containers started    ]
+[         0 containers aborted    ]
+[         5 containers successful ]
+[         0 containers failed     ]
+[        12 tests found           ]
+[         0 tests skipped         ]
+[        12 tests started         ]
+[         0 tests aborted         ]
+[        12 tests successful      ]
+[         0 tests failed          ]
+

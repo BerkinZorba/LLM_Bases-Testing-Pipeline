@@ -1,0 +1,50 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  └─ HumanEval_040_ImprovedTest ✔
+│     ├─ Guard branch: list shorter than 3 ✔
+│     │  ├─ One-element list returns false ✔
+│     │  ├─ Empty list returns false ✔
+│     │  └─ Two-element list returns false ✔
+│     ├─ Behavioral properties ✔
+│     │  ├─ Input list is not mutated by the call ✔
+│     │  ├─ Large values, no zero-sum triple ✔
+│     │  ├─ Duplicate values form the zero-sum triple ✔
+│     │  ├─ All-negative list with a zero-sum triple ✔
+│     │  ├─ Zero-sum triple uses first and last sorted elements ✔
+│     │  └─ All-positive list — no zero-sum triple possible ✔
+│     ├─ Dataset cases — one assertion per row ✔
+│     │  ├─ expectTrue(String, List) ✔
+│     │  │  ├─ true — ["1,3,-2,1"] ✔
+│     │  │  └─ true — ["2,4,-5,3,9,7"] ✔
+│     │  └─ expectFalse(String, List) ✔
+│     │     ├─ false — ["1,3,5,0"] ✔
+│     │     ├─ false — ["1,3,5,-1"] ✔
+│     │     ├─ false — ["1,2,3,7"] ✔
+│     │     ├─ false — ["1,2,5,7"] ✔
+│     │     ├─ false — ["1"] ✔
+│     │     ├─ false — ["1,3,5,-100"] ✔
+│     │     └─ false — ["100,3,5,-100"] ✔
+│     └─ Exactly three elements ✔
+│        ├─ Three zeros sum to zero ✔
+│        ├─ Three elements that do not sum to zero ✔
+│        └─ Three elements that sum to zero ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 107 ms
+[        10 containers found      ]
+[         0 containers skipped    ]
+[        10 containers started    ]
+[         0 containers aborted    ]
+[        10 containers successful ]
+[         0 containers failed     ]
+[        21 tests found           ]
+[         0 tests skipped         ]
+[        21 tests started         ]
+[         0 tests aborted         ]
+[        21 tests successful      ]
+[         0 tests failed          ]
+

@@ -215,3 +215,29 @@ Select 30 prompts with balanced difficulty
 - Exported JaCoCo coverage to `coverage_reports/HumanEval_057/codex/{base,improved,manual}/`; `Solution` reached 53/53 instructions, 10/10 branches, 9/9 lines, 7/7 complexity, and 2/2 methods in all three suites.
 - Added per-prompt summary findings to `analysis/HumanEval_057/HumanEval_057_codex.md` and rows to `analysis/coverage_summary.md`.
 - No defects against the prompt specification were observed, so no refactor loop was triggered. HumanEval_057 (Codex side) is complete for Phase 1.
+
+### 2026-04-25 — HumanEval_097 (Codex)
+
+- Started Phase 1 implementation for `HumanEval_097` under the `codex` workflow.
+- Read the prompt text from `prompts/selected_prompts.md` and saved the initial Java solution to `generated_code/codex/HumanEval_097.java`.
+- Logged the initial interaction in `llm_logs/codex/HumanEval_097_initial.md`.
+- Adjusted dataset `Main.java` at `tests/base_tests/adjusted/HumanEval_097/Main.java` by adding `import java.util.*;`; documented in `tests/base_tests/adjustment_log.md`. Generated code unchanged.
+- Executed the adjusted dataset base harness for `HumanEval_097` with Homebrew OpenJDK; compile succeeded and `Main` exited with status 0.
+- Added Codex-side base, improved, and manual test artifacts for `HumanEval_097`, plus separate Codex test-generation logs for improved/manual work.
+- JUnit 6 Codex suites with `.tools/junit-platform-console-standalone.jar`: base 8/8, improved 12/12, manual 10/10.
+- Exported JaCoCo coverage to `coverage_reports/HumanEval_097/codex/{base,improved,manual}/`; `Solution` reached 13/13 instructions, 0/0 branches, 2/2 lines, 2/2 complexity, and 2/2 methods in all three suites.
+- Added per-prompt summary findings to `analysis/HumanEval_097/HumanEval_097_codex.md` and rows to `analysis/coverage_summary.md`.
+- No defects against the prompt specification were observed, so no refactor loop was triggered. HumanEval_097 (Codex side) is complete for Phase 1.
+
+### 2026-04-25 — HumanEval_097 (Claude)
+
+- Started Phase 1 implementation for `HumanEval_097` (Claude side) — `multiply(int a, int b)`: product of the unit digits, sign-insensitive.
+- Generated `generated_code/claude/HumanEval_097.java` from the verbatim Java/97 prompt (single-expression `Math.abs(a % 10) * Math.abs(b % 10)`).
+- Logged the initial interaction in `llm_logs/claude/HumanEval_097_initial.md`.
+- Adjusted dataset `Main.java` at `tests/base_tests/adjusted/HumanEval_097/Main.java` (added `import java.util.*;`); logged in `tests/base_tests/adjustment_log.md`. Adjusted harness exits 0.
+- JUnit 6 base port at `tests/base_tests/claude/HumanEval_097_BaseTest.java` — 8/8 pass.
+- Improved JUnit 6 suite at `tests/improved_tests/claude/HumanEval_097_ImprovedTest.java` — 22/22 pass. Targets test smells (assertion roulette, magic numbers, eager test) and behavioral path coverage of the sign-cross matrix `(±,±)`, the units-zero short-circuit (operand 0 or multiple of 10), and invariants (commutativity, sign-insensitivity, units-only, non-negativity, bound 81).
+- Manual black-box notes + suite at `tests/manual_tests/claude/HumanEval_097_blackbox.md` and `HumanEval_097_ManualTest.java` — 19/19 pass. Pinned that `Integer.MIN_VALUE` operand is well-defined for this implementation (`MIN_VALUE % 10 == -8`, `Math.abs(-8) == 8`) and that no overflow path exists because the raw inputs are never multiplied.
+- JaCoCo coverage exported to `coverage_reports/HumanEval_097/claude/{base,improved,manual}/`. All three suites: 13/13 instr, 0/0 branch, 2/2 line, 2/2 CC, 2/2 method on `Solution`. The implementation has no in-method conditionals so JaCoCo reports zero branch counters; behavioral path coverage is documented in the suite rationales.
+- Per-prompt summary at `analysis/HumanEval_097/HumanEval_097_claude.md`; rows added to `analysis/coverage_summary.md`.
+- No defects against spec → no refactor loop triggered. HumanEval_097 (Claude side) complete; Codex side still pending.

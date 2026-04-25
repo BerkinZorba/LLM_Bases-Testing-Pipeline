@@ -1,0 +1,36 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  └─ HumanEval_097_ImprovedTest ✔
+│     ├─ Multiplies the magnitude of the unit digits ✔
+│     │  ├─ multiply(1, 2) = 2 ✔
+│     │  ├─ multiply(123, 45) = 15 ✔
+│     │  ├─ multiply(999, 999) = 81 ✔
+│     │  ├─ multiply(-41, 32) = 2 ✔
+│     │  ├─ multiply(-41, -32) = 2 ✔
+│     │  ├─ multiply(70, -89) = 0 ✔
+│     │  ├─ multiply(2147483647, 12) = 14 ✔
+│     │  └─ multiply(-2147483648, 19) = 72 ✔
+│     ├─ zeroUnitDigitDominatesNonZeroOperand() ✔
+│     ├─ ignoresTensAndHigherPlaces() ✔
+│     ├─ bothNegativeOperandsStillProducePositiveDigitProduct() ✔
+│     └─ oneDigitInputsBehaveLikeWholeNumbers() ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 71 ms
+[         5 containers found      ]
+[         0 containers skipped    ]
+[         5 containers started    ]
+[         0 containers aborted    ]
+[         5 containers successful ]
+[         0 containers failed     ]
+[        12 tests found           ]
+[         0 tests skipped         ]
+[        12 tests started         ]
+[         0 tests aborted         ]
+[        12 tests successful      ]
+[         0 tests failed          ]
+

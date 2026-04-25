@@ -1,0 +1,43 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+[36m╷[0m
+[36m├─[0m [36mJUnit Platform Suite[0m [32m✔[0m
+[36m├─[0m [36mJUnit Jupiter[0m [32m✔[0m
+[36m│  └─[0m [36mHumanEval_100_ImprovedTest[0m [32m✔[0m
+[36m│     ├─[0m [36mStructural invariants[0m [32m✔[0m
+[36m│     │  ├─[0m [34melement at index i is exactly n + 2*i (closed form)[0m [32m✔[0m
+[36m│     │  ├─[0m [34mfirst element equals n[0m [32m✔[0m
+[36m│     │  ├─[0m [34msize(pile) == n for a sweep across small n[0m [32m✔[0m
+[36m│     │  ├─[0m [34mlast element equals n + 2*(n-1) = 3n-2[0m [32m✔[0m
+[36m│     │  ├─[0m [34mconsecutive elements always differ by exactly +2 (arithmetic progression)[0m [32m✔[0m
+[36m│     │  └─[0m [34mparity is preserved across every level (odd n -> all odd; even n -> all even)[0m [32m✔[0m
+[36m│     ├─[0m [36mBranch coverage — for-loop guard[0m [32m✔[0m
+[36m│     │  ├─[0m [34mloop body executes many times for moderately large n[0m [32m✔[0m
+[36m│     │  └─[0m [34mloop body executes for n=1 (single iteration)[0m [32m✔[0m
+[36m│     ├─[0m [36mDataset cases — even starting n[0m [32m✔[0m
+[36m│     │  ├─[0m [34mn=4 -> [4, 6, 8, 10][0m [32m✔[0m
+[36m│     │  ├─[0m [34mn=6 -> [6, 8, 10, 12, 14, 16][0m [32m✔[0m
+[36m│     │  └─[0m [34mn=8 -> [8, 10, 12, 14, 16, 18, 20, 22][0m [32m✔[0m
+[36m│     ├─[0m [36mBoundary — smallest valid n[0m [32m✔[0m
+[36m│     │  ├─[0m [34mn=1 returns the singleton [1] (loop-body executed exactly once)[0m [32m✔[0m
+[36m│     │  └─[0m [34mn=2 returns [2, 4] (smallest even start)[0m [32m✔[0m
+[36m│     └─[0m [36mDataset cases — odd starting n[0m [32m✔[0m
+[36m│        ├─[0m [34mn=3 -> [3, 5, 7] (smallest odd dataset case)[0m [32m✔[0m
+[36m│        └─[0m [34mn=5 -> [5, 7, 9, 11, 13][0m [32m✔[0m
+[36m└─[0m [36mJUnit Vintage[0m [32m✔[0m
+
+Test run finished after 82 ms
+[         9 containers found      ]
+[         0 containers skipped    ]
+[         9 containers started    ]
+[         0 containers aborted    ]
+[         9 containers successful ]
+[         0 containers failed     ]
+[        15 tests found           ]
+[         0 tests skipped         ]
+[        15 tests started         ]
+[         0 tests aborted         ]
+[        15 tests successful      ]
+[         0 tests failed          ]
+

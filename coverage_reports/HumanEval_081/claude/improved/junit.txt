@@ -1,0 +1,50 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+[36m╷[0m
+[36m├─[0m [36mJUnit Platform Suite[0m [32m✔[0m
+[36m├─[0m [36mJUnit Jupiter[0m [32m✔[0m
+[36m│  └─[0m [36mHumanEval_081_ImprovedTest[0m [32m✔[0m
+[36m│     ├─[0m [36mInputs and outputs — empty list, ordering, length parity[0m [32m✔[0m
+[36m│     │  ├─[0m [34moutput length equals input length[0m [32m✔[0m
+[36m│     │  ├─[0m [34morder is preserved (per-index mapping, not sorted)[0m [32m✔[0m
+[36m│     │  ├─[0m [34mempty input -> empty output[0m [32m✔[0m
+[36m│     │  └─[0m [34mreturned list is a non-null List<String>[0m [32m✔[0m
+[36m│     ├─[0m [36mEach band reachable from at least one representative GPA[0m [32m✔[0m
+[36m│     │  └─[0m [34mHit all 13 bands across one call[0m [32m✔[0m
+[36m│     ├─[0m [36mDataset cases[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[4.0, 3.0, 1.7, 2.0, 3.5] -> [A+, B, C-, C, A-][0m [32m✔[0m
+[36m│     │  ├─[0m [34m[1.2] -> [D+][0m [32m✔[0m
+[36m│     │  ├─[0m [34m[0.5] -> [D-][0m [32m✔[0m
+[36m│     │  ├─[0m [34m[0.0] -> [E][0m [32m✔[0m
+[36m│     │  ├─[0m [34m[1.0, 0.3, 1.5, 2.8, 3.3] -> [D, D-, C-, B, B+][0m [32m✔[0m
+[36m│     │  └─[0m [34m[0.0, 0.7] -> [E, D-][0m [32m✔[0m
+[36m│     └─[0m [36mBranch coverage — every band edge: at-edge stays in lower band, just-above moves...[0m [32m✔[0m
+[36m│        ├─[0m [34m0.0 stays E, 0.01 moves to D-[0m [32m✔[0m
+[36m│        ├─[0m [34m0.7 stays D-, 0.71 moves to D[0m [32m✔[0m
+[36m│        ├─[0m [34m1.0 stays D, 1.01 moves to D+[0m [32m✔[0m
+[36m│        ├─[0m [34m1.3 stays D+, 1.31 moves to C-[0m [32m✔[0m
+[36m│        ├─[0m [34m1.7 stays C-, 1.71 moves to C[0m [32m✔[0m
+[36m│        ├─[0m [34m2.0 stays C, 2.01 moves to C+[0m [32m✔[0m
+[36m│        ├─[0m [34m2.3 stays C+, 2.31 moves to B-[0m [32m✔[0m
+[36m│        ├─[0m [34m2.7 stays B-, 2.71 moves to B[0m [32m✔[0m
+[36m│        ├─[0m [34m3.0 stays B, 3.01 moves to B+[0m [32m✔[0m
+[36m│        ├─[0m [34m3.3 stays B+, 3.31 moves to A-[0m [32m✔[0m
+[36m│        ├─[0m [34m3.7 stays A-, 3.71 moves to A[0m [32m✔[0m
+[36m│        └─[0m [34m4.0 == top -> A+ (only exact equality maps to A+)[0m [32m✔[0m
+[36m└─[0m [36mJUnit Vintage[0m [32m✔[0m
+
+Test run finished after 56 ms
+[         8 containers found      ]
+[         0 containers skipped    ]
+[         8 containers started    ]
+[         0 containers aborted    ]
+[         8 containers successful ]
+[         0 containers failed     ]
+[        23 tests found           ]
+[         0 tests skipped         ]
+[        23 tests started         ]
+[         0 tests aborted         ]
+[        23 tests successful      ]
+[         0 tests failed          ]
+

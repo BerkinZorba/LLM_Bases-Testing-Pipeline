@@ -1,0 +1,42 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  └─ HumanEval_057_ImprovedTest ✔
+│     ├─ A late decrease invalidates previously non-decreasing data ✔
+│     ├─ Strict decrease keeps only the non-increasing flag alive ✔
+│     ├─ Dataset expectations and branch-focused cases ✔
+│     │  ├─ "dataset increasing" -> true ✔
+│     │  ├─ "dataset increasing larger tail" -> true ✔
+│     │  ├─ "dataset mixed spike" -> false ✔
+│     │  ├─ "dataset decreasing" -> true ✔
+│     │  ├─ "dataset decreasing with plateau" -> true ✔
+│     │  ├─ "dataset mixed dip" -> false ✔
+│     │  ├─ "dataset increasing long" -> true ✔
+│     │  ├─ "dataset all equal" -> true ✔
+│     │  ├─ "empty list" -> true ✔
+│     │  ├─ "single item" -> true ✔
+│     │  ├─ "plateau then rise" -> true ✔
+│     │  ├─ "plateau then drop" -> true ✔
+│     │  ├─ "rise then plateau then drop" -> false ✔
+│     │  └─ "drop then plateau then rise" -> false ✔
+│     ├─ A late increase invalidates previously non-increasing data ✔
+│     └─ Strict increase keeps only the non-decreasing flag alive ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 77 ms
+[         5 containers found      ]
+[         0 containers skipped    ]
+[         5 containers started    ]
+[         0 containers aborted    ]
+[         5 containers successful ]
+[         0 containers failed     ]
+[        18 tests found           ]
+[         0 tests skipped         ]
+[        18 tests started         ]
+[         0 tests aborted         ]
+[        18 tests successful      ]
+[         0 tests failed          ]
+

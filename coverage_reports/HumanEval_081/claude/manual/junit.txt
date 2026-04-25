@@ -1,0 +1,58 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+[36m╷[0m
+[36m├─[0m [36mJUnit Platform Suite[0m [32m✔[0m
+[36m├─[0m [36mJUnit Jupiter[0m [32m✔[0m
+[36m│  └─[0m [36mHumanEval_081_ManualTest[0m [32m✔[0m
+[36m│     ├─[0m [36mValid partitions — V1..V16[0m [32m✔[0m
+[36m│     │  ├─[0m [34mV1: [4.0] -> [A+][0m [32m✔[0m
+[36m│     │  ├─[0m [34mV2: [3.8] -> [A][0m [32m✔[0m
+[36m│     │  ├─[0m [34mV3: [3.4] -> [A-][0m [32m✔[0m
+[36m│     │  ├─[0m [34mV4: [3.1] -> [B+][0m [32m✔[0m
+[36m│     │  ├─[0m [34mV5: [2.8] -> [B][0m [32m✔[0m
+[36m│     │  ├─[0m [34mV6: [2.4] -> [B-][0m [32m✔[0m
+[36m│     │  ├─[0m [34mV7: [2.1] -> [C+][0m [32m✔[0m
+[36m│     │  ├─[0m [34mV8: [1.8] -> [C][0m [32m✔[0m
+[36m│     │  ├─[0m [34mV9: [1.4] -> [C-][0m [32m✔[0m
+[36m│     │  ├─[0m [34mV10: [1.2] -> [D+] (dataset)[0m [32m✔[0m
+[36m│     │  ├─[0m [34mV11: [0.8] -> [D][0m [32m✔[0m
+[36m│     │  ├─[0m [34mV12: [0.5] -> [D-] (dataset)[0m [32m✔[0m
+[36m│     │  ├─[0m [34mV13: [0.0] -> [E] (dataset)[0m [32m✔[0m
+[36m│     │  ├─[0m [34mV14: dataset 5-element call[0m [32m✔[0m
+[36m│     │  ├─[0m [34mV15: order preserved under repeats [4.0,0.0,4.0,0.0][0m [32m✔[0m
+[36m│     │  └─[0m [34mV16: every-band batch reaches all 13 letters[0m [32m✔[0m
+[36m│     ├─[0m [36mBoundary partitions — B1..B12[0m [32m✔[0m
+[36m│     │  ├─[0m [34mB1: 4.0 -> A+ (== top); 3.99 -> A (just below)[0m [32m✔[0m
+[36m│     │  ├─[0m [34mB2: 3.69 -> A-, 3.7 -> A-, 3.71 -> A[0m [32m✔[0m
+[36m│     │  ├─[0m [34mB3: 3.29 -> B+, 3.3 -> B+, 3.31 -> A-[0m [32m✔[0m
+[36m│     │  ├─[0m [34mB4: 2.99 -> B, 3.0 -> B, 3.01 -> B+[0m [32m✔[0m
+[36m│     │  ├─[0m [34mB5: 2.69 -> B-, 2.7 -> B-, 2.71 -> B[0m [32m✔[0m
+[36m│     │  ├─[0m [34mB6: 2.29 -> C+, 2.3 -> C+, 2.31 -> B-[0m [32m✔[0m
+[36m│     │  ├─[0m [34mB7: 1.99 -> C, 2.0 -> C, 2.01 -> C+[0m [32m✔[0m
+[36m│     │  ├─[0m [34mB8: 1.69 -> C-, 1.7 -> C-, 1.71 -> C[0m [32m✔[0m
+[36m│     │  ├─[0m [34mB9: 1.29 -> D+, 1.3 -> D+, 1.31 -> C-[0m [32m✔[0m
+[36m│     │  ├─[0m [34mB10: 0.99 -> D, 1.0 -> D, 1.01 -> D+[0m [32m✔[0m
+[36m│     │  ├─[0m [34mB11: 0.69 -> D-, 0.7 -> D-, 0.71 -> D[0m [32m✔[0m
+[36m│     │  └─[0m [34mB12: 0.0 -> E, 0.01 -> D-[0m [32m✔[0m
+[36m│     └─[0m [36mPinned undefined-by-spec behavior — U1..U4[0m [32m✔[0m
+[36m│        ├─[0m [34mU4: -0.0 -> [E] (Java IEEE-754: -0.0 == 0.0 is true; pinned)[0m [32m✔[0m
+[36m│        ├─[0m [34mU3: negative GPA (-0.5) -> [E] via the else branch (pinned)[0m [32m✔[0m
+[36m│        ├─[0m [34mU2: GPA above range (5.0) -> [A] via the > 3.7 branch (pinned)[0m [32m✔[0m
+[36m│        └─[0m [34mU1: empty list -> empty list[0m [32m✔[0m
+[36m└─[0m [36mJUnit Vintage[0m [32m✔[0m
+
+Test run finished after 83 ms
+[         7 containers found      ]
+[         0 containers skipped    ]
+[         7 containers started    ]
+[         0 containers aborted    ]
+[         7 containers successful ]
+[         0 containers failed     ]
+[        32 tests found           ]
+[         0 tests skipped         ]
+[        32 tests started         ]
+[         0 tests aborted         ]
+[        32 tests successful      ]
+[         0 tests failed          ]
+

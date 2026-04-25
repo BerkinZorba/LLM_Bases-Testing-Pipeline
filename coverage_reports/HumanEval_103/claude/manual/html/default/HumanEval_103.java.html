@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HumanEval_103.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">HumanEval_103.java</span></div><h1>HumanEval_103.java</h1><pre class="source lang-java linenums">import java.util.*;
+import java.lang.*;
+
+<span class="fc" id="L4">class Solution {</span>
+    /**
+    You are given two positive integers n and m, and your task is to compute the
+    average of the integers from n through m (including n and m).
+    Round the answer to the nearest integer and convert that to binary.
+    If n is greater than m, return -1.
+    Example:
+    roundedAvg(1, 5) =&gt; &quot;11&quot;
+    roundedAvg(7, 5) =&gt; -1
+    roundedAvg(10, 20) =&gt; &quot;1111&quot;
+    roundedAvg(20, 33) =&gt; &quot;11011&quot;
+     */
+    public Object roundedAvg(int n, int m) {
+<span class="fc bfc" id="L17" title="All 2 branches covered.">        if (n &gt; m) {</span>
+<span class="fc" id="L18">            return -1;</span>
+        }
+<span class="fc" id="L20">        long sum = 0L;</span>
+<span class="fc bfc" id="L21" title="All 2 branches covered.">        for (int i = n; i &lt;= m; i++) {</span>
+<span class="fc" id="L22">            sum += i;</span>
+        }
+<span class="fc" id="L24">        long count = (long) m - n + 1;</span>
+<span class="fc" id="L25">        long avg = Math.round((double) sum / (double) count);</span>
+<span class="fc" id="L26">        return Long.toBinaryString(avg);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

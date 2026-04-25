@@ -1,0 +1,56 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+[36m╷[0m
+[36m├─[0m [36mJUnit Platform Suite[0m [32m✔[0m
+[36m├─[0m [36mJUnit Jupiter[0m [32m✔[0m
+[36m│  └─[0m [36mHumanEval_059_ImprovedTest[0m [32m✔[0m
+[36m│     ├─[0m [36mSqrt-loop boundary cases[0m [32m✔[0m
+[36m│     │  ├─[0m [34m25 = 5^2 -> 5 (factor*factor == x exactly)[0m [32m✔[0m
+[36m│     │  ├─[0m [34m49 = 7^2 -> 7 (next perfect prime square)[0m [32m✔[0m
+[36m│     │  ├─[0m [34m50 = 2 * 5^2 -> 5 (mixed: small factor then perfect square)[0m [32m✔[0m
+[36m│     │  └─[0m [34m121 = 11^2 -> 11[0m [32m✔[0m
+[36m│     ├─[0m [36mPure prime powers (final-if false branch)[0m [32m✔[0m
+[36m│     │  ├─[0m [34m1024 = 2^10 -> 2[0m [32m✔[0m
+[36m│     │  ├─[0m [34m2048 = 2^11 -> 2 (prompt example, deep inner-while)[0m [32m✔[0m
+[36m│     │  ├─[0m [34m2401 = 7^4 -> 7 (factor advances past 2,3,5)[0m [32m✔[0m
+[36m│     │  └─[0m [34m3125 = 5^5 -> 5[0m [32m✔[0m
+[36m│     ├─[0m [36mMulti-prime composites (inner-while false branch many times)[0m [32m✔[0m
+[36m│     │  ├─[0m [34m2*3*5*7 = 210 -> 7[0m [32m✔[0m
+[36m│     │  ├─[0m [34m2^4 * 3^2 * 5 = 720 -> 5 (largest factor is mid-sized)[0m [32m✔[0m
+[36m│     │  └─[0m [34m2*3*5*7*11 = 2310 -> 11[0m [32m✔[0m
+[36m│     ├─[0m [36mDataset parity (mirrors Main.java exactly)[0m [32m✔[0m
+[36m│     │  ├─[0m [34m13195 = 5 * 7 * 13 * 29 -> 29[0m [32m✔[0m
+[36m│     │  ├─[0m [34m15 = 3 * 5 -> 5[0m [32m✔[0m
+[36m│     │  ├─[0m [34m27 = 3^3 -> 3[0m [32m✔[0m
+[36m│     │  ├─[0m [34m63 = 3^2 * 7 -> 7[0m [32m✔[0m
+[36m│     │  └─[0m [34m330 = 2 * 3 * 5 * 11 -> 11[0m [32m✔[0m
+[36m│     ├─[0m [36mSemiprimes with a large prime > sqrt(n) (final-if true branch)[0m [32m✔[0m
+[36m│     │  ├─[0m [34m1000003*2 too large for int — use 2 * 9973 = 19946 -> 9973[0m [32m✔[0m
+[36m│     │  ├─[0m [34m22 = 2 * 11 -> 11[0m [32m✔[0m
+[36m│     │  ├─[0m [34m26 = 2 * 13 -> 13[0m [32m✔[0m
+[36m│     │  └─[0m [34m9991 = 97 * 103 -> 103 (both factors near sqrt)[0m [32m✔[0m
+[36m│     ├─[0m [36mFunctional invariants[0m [32m✔[0m
+[36m│     │  ├─[0m [34mMultiplying n by a smaller prime never decreases the answer[0m [32m✔[0m
+[36m│     │  └─[0m [34mMultiplying n by a larger prime raises the answer to that prime[0m [32m✔[0m
+[36m│     └─[0m [36mSmallest composites (loop-entry boundaries)[0m [32m✔[0m
+[36m│        ├─[0m [34m6 = 2 * 3 -> 3 (smallest semiprime with distinct primes)[0m [32m✔[0m
+[36m│        ├─[0m [34m4 = 2^2 -> 2 (smallest composite, prime square)[0m [32m✔[0m
+[36m│        ├─[0m [34m9 = 3^2 -> 3 (next prime square)[0m [32m✔[0m
+[36m│        └─[0m [34m8 = 2^3 -> 2 (cube of smallest prime)[0m [32m✔[0m
+[36m└─[0m [36mJUnit Vintage[0m [32m✔[0m
+
+Test run finished after 91 ms
+[        11 containers found      ]
+[         0 containers skipped    ]
+[        11 containers started    ]
+[         0 containers aborted    ]
+[        11 containers successful ]
+[         0 containers failed     ]
+[        26 tests found           ]
+[         0 tests skipped         ]
+[        26 tests started         ]
+[         0 tests aborted         ]
+[        26 tests successful      ]
+[         0 tests failed          ]
+

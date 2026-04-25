@@ -1,0 +1,37 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  └─ HumanEval_059_ImprovedTest ✔
+│     ├─ Composite with multiple odd factors returns the largest one ✔
+│     ├─ Dataset expectations and branch-focused composite cases ✔
+│     │  ├─ "dataset 15" -> 5 ✔
+│     │  ├─ "dataset 27" -> 3 ✔
+│     │  ├─ "dataset 63" -> 7 ✔
+│     │  ├─ "dataset 330" -> 11 ✔
+│     │  ├─ "dataset 13195" -> 29 ✔
+│     │  ├─ "power of two" -> 2 ✔
+│     │  ├─ "repeated odd prime" -> 3 ✔
+│     │  ├─ "perfect square of odd prime" -> 7 ✔
+│     │  ├─ "mixed factors ending in larger prime" -> 7 ✔
+│     │  └─ "semi-prime with large tail factor" -> 23 ✔
+│     ├─ An odd composite can reduce to a final prime larger than the current divisor ✔
+│     └─ Removing repeated factor two leaves an odd prime tail ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 127 ms
+[         5 containers found      ]
+[         0 containers skipped    ]
+[         5 containers started    ]
+[         0 containers aborted    ]
+[         5 containers successful ]
+[         0 containers failed     ]
+[        13 tests found           ]
+[         0 tests skipped         ]
+[        13 tests started         ]
+[         0 tests aborted         ]
+[        13 tests successful      ]
+[         0 tests failed          ]
+

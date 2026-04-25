@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HumanEval_007_ManualTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">HumanEval_007_ManualTest.java</span></div><h1>HumanEval_007_ManualTest.java</h1><pre class="source lang-java linenums">import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+/**
+ * Codex-authored manual suite derived from tests/manual_tests/codex/HumanEval_007_blackbox.md.
+ */
+<span class="fc" id="L19">public class HumanEval_007_ManualTest {</span>
+
+<span class="fc" id="L21">    private final Solution solution = new Solution();</span>
+
+    @Nested
+    @DisplayName(&quot;Valid equivalence classes&quot;)
+<span class="fc" id="L25">    class ValidClasses {</span>
+
+        static Stream&lt;Arguments&gt; validClasses() {
+<span class="fc" id="L28">            return Stream.of(</span>
+<span class="fc" id="L29">                    Arguments.of(&quot;V1&quot;, List.of(), &quot;x&quot;, List.of()),</span>
+<span class="fc" id="L30">                    Arguments.of(&quot;V2&quot;, Arrays.asList(&quot;red&quot;, &quot;blue&quot;), &quot;z&quot;, List.of()),</span>
+<span class="fc" id="L31">                    Arguments.of(&quot;V3&quot;, List.of(&quot;same&quot;), &quot;same&quot;, List.of(&quot;same&quot;)),</span>
+<span class="fc" id="L32">                    Arguments.of(&quot;V4&quot;, Arrays.asList(&quot;start&quot;, &quot;branch&quot;), &quot;sta&quot;, List.of(&quot;start&quot;)),</span>
+<span class="fc" id="L33">                    Arguments.of(&quot;V5&quot;, Arrays.asList(&quot;planet&quot;, &quot;lane&quot;, &quot;plain&quot;), &quot;lan&quot;, Arrays.asList(&quot;planet&quot;, &quot;lane&quot;)),</span>
+<span class="fc" id="L34">                    Arguments.of(&quot;V6&quot;, Arrays.asList(&quot;ending&quot;, &quot;pending&quot;, &quot;end&quot;), &quot;ing&quot;, Arrays.asList(&quot;ending&quot;, &quot;pending&quot;)),</span>
+<span class="fc" id="L35">                    Arguments.of(&quot;V7&quot;, Arrays.asList(&quot;aa&quot;, &quot;bb&quot;, &quot;aa&quot;), &quot;aa&quot;, Arrays.asList(&quot;aa&quot;, &quot;aa&quot;)),</span>
+<span class="fc" id="L36">                    Arguments.of(&quot;V8&quot;, Arrays.asList(&quot;&quot;, &quot;abc&quot;), &quot;&quot;, Arrays.asList(&quot;&quot;, &quot;abc&quot;)),</span>
+<span class="fc" id="L37">                    Arguments.of(&quot;V9&quot;, Arrays.asList(&quot;&quot;, &quot;abc&quot;), &quot;a&quot;, List.of(&quot;abc&quot;)),</span>
+<span class="fc" id="L38">                    Arguments.of(&quot;V10&quot;, Arrays.asList(&quot;Dog&quot;, &quot;dog&quot;, &quot;hotDog&quot;), &quot;Dog&quot;, Arrays.asList(&quot;Dog&quot;, &quot;hotDog&quot;)),</span>
+<span class="fc" id="L39">                    Arguments.of(&quot;V11&quot;, Arrays.asList(&quot;a b&quot;, &quot;a-b&quot;, &quot;ab&quot;), &quot;a-&quot;, List.of(&quot;a-b&quot;)),</span>
+<span class="fc" id="L40">                    Arguments.of(&quot;V12&quot;, Arrays.asList(&quot;ışık&quot;, &quot;isik&quot;, &quot;güz&quot;), &quot;ış&quot;, List.of(&quot;ışık&quot;))</span>
+            );
+        }
+
+        @ParameterizedTest(name = &quot;{0}&quot;)
+        @MethodSource(&quot;validClasses&quot;)
+        void validEquivalenceClasses(String id, List&lt;String&gt; input, String substring, List&lt;String&gt; expected) {
+<span class="fc" id="L47">            assertEquals(expected, solution.filterBySubstring(new ArrayList&lt;&gt;(input), substring),</span>
+<span class="nc" id="L48">                    () -&gt; id + &quot; substring=\&quot;&quot; + substring + &quot;\&quot;&quot;);</span>
+<span class="fc" id="L49">        }</span>
+    }
+
+    @Nested
+    @DisplayName(&quot;Boundaries&quot;)
+<span class="fc" id="L54">    class Boundaries {</span>
+
+        @Test
+        @DisplayName(&quot;List length around zero and one&quot;)
+        void listLengthBoundary() {
+<span class="fc" id="L59">            assertEquals(List.of(), solution.filterBySubstring(new ArrayList&lt;&gt;(List.of()), &quot;a&quot;));</span>
+<span class="fc" id="L60">            assertEquals(List.of(&quot;a&quot;), solution.filterBySubstring(new ArrayList&lt;&gt;(List.of(&quot;a&quot;)), &quot;a&quot;));</span>
+<span class="fc" id="L61">            assertEquals(Arrays.asList(&quot;a&quot;, &quot;cab&quot;),</span>
+<span class="fc" id="L62">                    solution.filterBySubstring(new ArrayList&lt;&gt;(Arrays.asList(&quot;a&quot;, &quot;b&quot;, &quot;cab&quot;)), &quot;a&quot;));</span>
+<span class="fc" id="L63">        }</span>
+
+        @Test
+        @DisplayName(&quot;Substring length empty, one, many&quot;)
+        void substringLengthBoundary() {
+<span class="fc" id="L68">            assertEquals(Arrays.asList(&quot;&quot;, &quot;a&quot;), solution.filterBySubstring(new ArrayList&lt;&gt;(Arrays.asList(&quot;&quot;, &quot;a&quot;)), &quot;&quot;));</span>
+<span class="fc" id="L69">            assertEquals(List.of(&quot;a&quot;), solution.filterBySubstring(new ArrayList&lt;&gt;(Arrays.asList(&quot;&quot;, &quot;a&quot;)), &quot;a&quot;));</span>
+<span class="fc" id="L70">            assertEquals(List.of(&quot;abc&quot;), solution.filterBySubstring(new ArrayList&lt;&gt;(Arrays.asList(&quot;ab&quot;, &quot;abc&quot;)), &quot;abc&quot;));</span>
+<span class="fc" id="L71">        }</span>
+
+        @Test
+        @DisplayName(&quot;Whole, prefix, middle, suffix, and absent positions&quot;)
+        void matchPositionBoundary() {
+<span class="fc" id="L76">            assertEquals(Arrays.asList(&quot;abc&quot;, &quot;abcd&quot;, &quot;zabc&quot;, &quot;zzabcyy&quot;),</span>
+<span class="fc" id="L77">                    solution.filterBySubstring(new ArrayList&lt;&gt;(Arrays.asList(&quot;abc&quot;, &quot;abcd&quot;, &quot;zabc&quot;, &quot;zzabcyy&quot;, &quot;ab&quot;)), &quot;abc&quot;));</span>
+<span class="fc" id="L78">        }</span>
+    }
+
+    @Nested
+    @DisplayName(&quot;Invalid or underspecified inputs&quot;)
+<span class="fc" id="L83">    class InvalidOrPinned {</span>
+
+        @Test
+        @DisplayName(&quot;Null list throws&quot;)
+        void nullListThrows() {
+<span class="pc" id="L88">            assertThrows(NullPointerException.class, () -&gt; solution.filterBySubstring(null, &quot;x&quot;));</span>
+<span class="fc" id="L89">        }</span>
+
+        @Test
+        @DisplayName(&quot;Null substring throws&quot;)
+        void nullSubstringThrows() {
+<span class="fc" id="L94">            assertThrows(NullPointerException.class,</span>
+<span class="nc" id="L95">                    () -&gt; solution.filterBySubstring(new ArrayList&lt;&gt;(List.of(&quot;abc&quot;)), null));</span>
+<span class="fc" id="L96">        }</span>
+
+        @Test
+        @DisplayName(&quot;Null element throws once inspected&quot;)
+        void nullElementThrows() {
+<span class="fc" id="L101">            assertThrows(NullPointerException.class,</span>
+<span class="nc" id="L102">                    () -&gt; solution.filterBySubstring(new ArrayList&lt;&gt;(Arrays.asList(&quot;abc&quot;, null)), &quot;a&quot;));</span>
+<span class="fc" id="L103">        }</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

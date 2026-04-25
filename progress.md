@@ -245,6 +245,17 @@ Select 30 prompts with balanced difficulty
 - JaCoCo coverage exported to `coverage_reports/HumanEval_040/claude/{base,improved,manual}/`. All three suites (run against v2): 68/68 instr, 10/10 branch, 17/17 line, 7/7 CC, 2/2 method.
 - Per-prompt summary: `analysis/HumanEval_040_claude.md`.
 
+### 2026-04-25 — HumanEval_019 (Claude)
+
+- Logged initial generation in `llm_logs/claude/HumanEval_019_initial.md`; generated code is `generated_code/claude/HumanEval_019.java` (null/empty guard + HashMap word-to-int + `Arrays.sort` + `Comparator.comparingInt`). Minor dead code: `numToWord` array declared but unused.
+- Adjusted dataset `Main.java` at `tests/base_tests/adjusted/HumanEval_019/Main.java` (added `import java.util.*;` and `import java.lang.*;`). Adjusted harness exits 0.
+- JUnit 6 base port at `tests/base_tests/claude/HumanEval_019_BaseTest.java` — 4/4 pass.
+- Base coverage on `Solution`: 135/135 instr, **3/4 branch**, 17/17 line, 3/4 CC, 2/2 method. The `numbers == null` true branch is not exercised by the dataset harness.
+- Improved suite at `tests/improved_tests/claude/HumanEval_019_ImprovedTest.java` — 12/12 pass. Closes the null-guard branch; adds whitespace-only, all-ten-words, duplicates, and two-equal-word cases.
+- Manual black-box notes + suite at `tests/manual_tests/claude/HumanEval_019_blackbox.md` and `HumanEval_019_ManualTest.java` — 16/16 pass. Pinned: null → "", unknown word → NPE.
+- JaCoCo coverage exported to `coverage_reports/HumanEval_019/claude/{base,improved,manual}/`. Improved and manual: 135/135 instr, 4/4 branch, 17/17 line, 4/4 CC, 2/2 method.
+- No spec defects → no refactor loop triggered. Per-prompt summary: `analysis/HumanEval_019_claude.md`.
+
 ### 2026-04-25 — HumanEval_018 (Codex)
 
 - Applied the Phase 1 Codex workflow to existing `generated_code/codex/HumanEval_018.java`; generated code was not modified before base testing.
@@ -277,3 +288,14 @@ Select 30 prompts with balanced difficulty
 - Manual black-box notes + suite at `tests/manual_tests/codex/HumanEval_040_blackbox.md` and `HumanEval_040_ManualTest.java` — 17/17 pass. Pinned undefined-by-spec behavior for null, empty, singleton, and length-two inputs.
 - JaCoCo coverage exported to `coverage_reports/HumanEval_040/codex/{base,improved,manual}/`: base 70/70 instr and 11/12 branch; improved/manual 70/70 instr and 12/12 branch.
 - Per-prompt analysis added at `analysis/HumanEval_040/HumanEval_040_codex.md`. No defects against the prompt spec; no refactor loop triggered.
+
+### 2026-04-25 — HumanEval_019 (Codex)
+
+- Applied the Phase 1 Codex workflow to existing `generated_code/codex/HumanEval_019.java`; generated code was not modified before base testing.
+- Added adjusted dataset harness at `tests/base_tests/adjusted/HumanEval_019/Main.java` by adding `import java.util.*;` only; assertion logic and generated code unchanged. Adjusted harness compiled with `javac --release 21` and exited 0.
+- Logged the existing Codex generation at `llm_logs/codex/HumanEval_019_initial.md`.
+- JUnit 6 base port at `tests/base_tests/codex/HumanEval_019_BaseTest.java` — 4/4 pass.
+- Improved suite at `tests/improved_tests/codex/HumanEval_019_ImprovedTest.java` — 13/13 pass. Covers full vocabulary ordering, duplicates, repeated values, null input, invalid tokens, and delimiter edge cases.
+- Manual black-box notes + suite at `tests/manual_tests/codex/HumanEval_019_blackbox.md` and `HumanEval_019_ManualTest.java` — 16/16 pass. Pinned undefined-by-spec behavior for null, invalid tokens, leading/extra spaces, and single invalid token without comparison.
+- JaCoCo coverage exported to `coverage_reports/HumanEval_019/codex/{base,improved,manual}/`: base 90/90 instr and 3/4 branch; improved/manual 90/90 instr and 4/4 branch.
+- Per-prompt analysis added at `analysis/HumanEval_019/HumanEval_019_codex.md`. No defects against the prompt spec; no refactor loop triggered.

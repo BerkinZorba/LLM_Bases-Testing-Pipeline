@@ -1,0 +1,40 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+.
++-- JUnit Platform Suite [OK]
++-- JUnit Jupiter [OK]
+| '-- HumanEval_019_ManualTest [OK]
+|   +-- Valid equivalence classes [OK]
+|   | +-- "V1": """" -> """" [OK]
+|   | +-- "V2": ""three"" -> ""three"" [OK]
+|   | +-- "V3": ""three five nine"" -> ""three five nine"" [OK]
+|   | +-- "V4": ""nine eight seven six five four three two one zero"" -> ""zero one two th... [OK]
+|   | +-- "V5": ""five zero four seven nine eight"" -> ""zero four five seven eight nine"" [OK]
+|   | +-- "V6": ""two two one"" -> ""one two two"" [OK]
+|   | +-- "V7": ""zero zero zero"" -> ""zero zero zero"" [OK]
+|   | '-- "V8": ""one zero one zero"" -> ""zero zero one one"" [OK]
+|   +-- Different case token requiring comparison throws NullPointerException [OK]
+|   +-- Boundary: one token [OK]
+|   +-- Single invalid token is returned unchanged [OK]
+|   +-- Boundary: lowest and highest value [OK]
+|   +-- Null input is pinned to empty string [OK]
+|   +-- Boundary: two tokens needing swap [OK]
+|   +-- Invalid token throws NullPointerException [OK]
+|   '-- Leading space creates invalid empty token [OK]
+'-- JUnit Vintage [OK]
+
+Test run finished after 79 ms
+[         5 containers found      ]
+[         0 containers skipped    ]
+[         5 containers started    ]
+[         0 containers aborted    ]
+[         5 containers successful ]
+[         0 containers failed     ]
+[        16 tests found           ]
+[         0 tests skipped         ]
+[        16 tests started         ]
+[         0 tests aborted         ]
+[        16 tests successful      ]
+[         0 tests failed          ]
+

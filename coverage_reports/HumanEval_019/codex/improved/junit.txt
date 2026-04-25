@@ -1,0 +1,38 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+.
++-- JUnit Platform Suite [OK]
++-- JUnit Jupiter [OK]
+| '-- HumanEval_019_ImprovedTest [OK]
+|   +-- Extra spaces create an invalid empty token [OK]
+|   +-- Invalid numeral word throws NullPointerException [OK]
+|   +-- Extended valid cases [OK]
+|   | +-- ""nine eight seven six five four three two one zero"" -> ""zero one two three fo... [OK]
+|   | +-- ""two two one"" -> ""one two two"" [OK]
+|   | +-- ""zero zero zero"" -> ""zero zero zero"" [OK]
+|   | +-- ""one zero one zero"" -> ""zero zero one one"" [OK]
+|   | +-- ""six three six three"" -> ""three three six six"" [OK]
+|   | '-- ""eight two five"" -> ""two five eight"" [OK]
+|   +-- Null input is pinned to empty string [OK]
+|   '-- Dataset expectations [OK]
+|     +-- """" -> """" [OK]
+|     +-- ""three"" -> ""three"" [OK]
+|     +-- ""three five nine"" -> ""three five nine"" [OK]
+|     '-- ""five zero four seven nine eight"" -> ""zero four five seven eight nine"" [OK]
+'-- JUnit Vintage [OK]
+
+Test run finished after 79 ms
+[         6 containers found      ]
+[         0 containers skipped    ]
+[         6 containers started    ]
+[         0 containers aborted    ]
+[         6 containers successful ]
+[         0 containers failed     ]
+[        13 tests found           ]
+[         0 tests skipped         ]
+[        13 tests started         ]
+[         0 tests aborted         ]
+[        13 tests successful      ]
+[         0 tests failed          ]
+

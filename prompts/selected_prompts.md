@@ -318,7 +318,7 @@ class Solution {
     farthest from zero. For example closest_integer("14.5") should
     return 15 and closest_integer("-14.5") should return -15.
      */
-    public int countUpper(String value) {
+    public int closest_integer(String value) {
 ```
 
 ## Java/100

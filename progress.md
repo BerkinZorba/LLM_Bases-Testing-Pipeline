@@ -345,3 +345,26 @@ Select 30 prompts with balanced difficulty
 - Manual black-box notes + suite at `tests/manual_tests/codex/HumanEval_093_blackbox.md` and `HumanEval_093_ManualTest.java` — 15/15 pass. Pinned undefined-by-spec behavior for null, empty, spaces, digits, and punctuation.
 - JaCoCo coverage exported to `coverage_reports/HumanEval_093/codex/{base,improved,manual}/`: base 91/93 instr and 20/22 branch; improved/manual 93/93 instr and 22/22 branch.
 - Per-prompt analysis added at `analysis/HumanEval_093/HumanEval_093_codex.md`. No defects against the prompt spec; no refactor loop triggered.
+
+### 2026-04-25 — HumanEval_099 (Codex)
+
+- Applied the Phase 1 Codex workflow to existing `generated_code/codex/HumanEval_099.java`; generated code was not modified before base testing.
+- Added adjusted dataset harness at `tests/base_tests/adjusted/HumanEval_099/Main.java` by adding `import java.util.*;` and changing the incompatible method calls from `countUpper` to the selected-prompt API `closest_integer`; assertion inputs and expected values unchanged. Adjusted harness compiled with `javac --release 21` and exited 0.
+- Logged the existing Codex generation at `llm_logs/codex/HumanEval_099_initial.md`.
+- JUnit 6 base port at `tests/base_tests/codex/HumanEval_099_BaseTest.java` — 5/5 pass.
+- Improved suite at `tests/improved_tests/codex/HumanEval_099_ImprovedTest.java` — 18/18 pass. Covers positive/negative rounding below, at, and above `.5`, near-zero boundaries, leading zeros, null, empty, and invalid numeric strings.
+- Manual black-box notes + suite at `tests/manual_tests/codex/HumanEval_099_blackbox.md` and `HumanEval_099_ManualTest.java` — 16/16 pass. Pinned undefined-by-spec behavior for null, empty, and invalid numeric strings.
+- JaCoCo coverage exported to `coverage_reports/HumanEval_099/codex/{base,improved,manual}/`: base 27/29 instr and 4/6 branch; improved/manual 29/29 instr and 6/6 branch.
+- Per-prompt analysis added at `analysis/HumanEval_099/HumanEval_099_codex.md`. No defects against the prompt spec; no refactor loop triggered.
+
+### 2026-04-25 — HumanEval_099 (Claude)
+
+- Applied the Phase 1 Claude workflow to existing `generated_code/claude/HumanEval_099.java`; generated code was not modified before base testing.
+- Discovered the original dataset harness (`tests/base_tests/original/HumanEval_099/Main.java`) calls `s.countUpper(...)`, which is the wrong method name (copy-paste error from a different problem). Fixed to `s.closestInteger(...)` in the adjusted harness. Documented in `analysis/base_test_adjustments.md` (file created this step).
+- Logged the existing Claude generation at `llm_logs/claude/HumanEval_099_initial.md`. Generation was complete and correct on the first attempt; no refactor loop triggered.
+- JUnit 6 base port at `tests/base_tests/claude/HumanEval_099_BaseTest.java` — 5/5 pass. Base coverage: 28/28 instr, 4/4 branch (100%) — the dataset examples include both positive and negative halfway cases, so all branches are covered immediately.
+- Improved suite at `tests/improved_tests/claude/HumanEval_099_ImprovedTest.java` — 36/36 pass. Adds the -14.5 prompt note example, full grid of halfway/non-halfway/exact-integer parameterized cases, and invalid-input exception pinning.
+- Manual black-box notes at `tests/manual_tests/claude/HumanEval_099_blackbox.md`. Defined 13 valid equivalence classes (V1–V13) and 3 invalid classes (I1–I3: null→NPE, empty/non-numeric→NFE). Documented boundary values around the x.5 decision point.
+- Manual suite at `tests/manual_tests/claude/HumanEval_099_ManualTest.java` — 26/26 pass. Manual coverage: 28/28 instr, 4/4 branch.
+- JaCoCo coverage exported to `coverage_reports/HumanEval_099/claude/{base,improved,manual}/`.
+- Per-prompt analysis added at `analysis/HumanEval_099_claude.md`. Coverage rows appended to `analysis/coverage_summary.md`.

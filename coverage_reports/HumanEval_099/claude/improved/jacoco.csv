@@ -1,0 +1,9 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+JaCoCo Coverage Report,default,HumanEval_099_ImprovedTest.DatasetCases,0,46,0,0,0,6,0,6,0,6
+JaCoCo Coverage Report,default,HumanEval_099_ImprovedTest,0,8,0,0,0,2,0,1,0,1
+JaCoCo Coverage Report,default,HumanEval_099_ImprovedTest.PromptNoteExamples,0,22,0,0,0,5,0,3,0,3
+JaCoCo Coverage Report,default,HumanEval_099_ImprovedTest.ExactIntegers,0,14,0,0,0,3,0,2,0,2
+JaCoCo Coverage Report,default,HumanEval_099_ImprovedTest.HalfwayCases,0,14,0,0,0,3,0,2,0,2
+JaCoCo Coverage Report,default,HumanEval_099_ImprovedTest.SpecUndefined,21,24,0,0,0,7,3,4,3,4
+JaCoCo Coverage Report,default,HumanEval_099_ImprovedTest.NonHalfwayCases,0,14,0,0,0,3,0,2,0,2
+JaCoCo Coverage Report,default,Solution,0,28,0,4,0,5,0,4,0,2

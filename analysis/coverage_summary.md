@@ -34,6 +34,12 @@ Source: per-suite JaCoCo CSV under `coverage_reports/<HumanEval_XXX>/<model>/<su
 | HumanEval_089 | codex  | base     | 8  | 8  | 47/49 | 4/6   | 7/8   | 3/5 | 2/2 |
 | HumanEval_089 | codex  | improved | 17 | 17 | 49/49 | 6/6   | 8/8   | 5/5 | 2/2 |
 | HumanEval_089 | codex  | manual   | 14 | 14 | 49/49 | 6/6   | 8/8   | 5/5 | 2/2 |
-| HumanEval_089 | claude | base     | 8  | 8  | 51/74 | 5/10  | 8/11  | 3/7 | 2/2 |
-| HumanEval_089 | claude | improved | 18 | 18 | 74/74 | 10/10 | 11/11 | 7/7 | 2/2 |
-| HumanEval_089 | claude | manual   | 18 | 18 | 74/74 | 10/10 | 11/11 | 7/7 | 2/2 |
+| HumanEval_089 | claude | base     | 8  | 8  | 51/74   | 5/10  | 8/11  | 3/7 | 2/2 |
+| HumanEval_089 | claude | improved | 18 | 18 | 74/74   | 10/10 | 11/11 | 7/7 | 2/2 |
+| HumanEval_089 | claude | manual   | 18 | 18 | 74/74   | 10/10 | 11/11 | 7/7 | 2/2 |
+| HumanEval_093 | claude | base     | 5  | 5  | 120/122 | 10/12 | 13/13 | 6/8 | 2/2 |
+| HumanEval_093 | claude | improved | 22 | 22 | 122/122 | 12/12 | 13/13 | 8/8 | 2/2 |
+| HumanEval_093 | claude | manual   | 19 | 19 | 122/122 | 12/12 | 13/13 | 8/8 | 2/2 |
+| HumanEval_093 | codex  | base     | 5  | 5  | 91/93 | 20/22 | 15/16 | 12/14 | 3/3 |
+| HumanEval_093 | codex  | improved | 15 | 15 | 93/93 | 22/22 | 16/16 | 14/14 | 3/3 |
+| HumanEval_093 | codex  | manual   | 15 | 15 | 93/93 | 22/22 | 16/16 | 14/14 | 3/3 |

@@ -1,0 +1,47 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  └─ HumanEval_093_ManualTest ✔
+│     ├─ Extended classes — space pass-through (V13-V14) ✔
+│     │  ├─ V13: single space passes through ✔
+│     │  └─ V14: leading and trailing spaces preserved, letters encoded ✔
+│     ├─ Boundary conditions ✔
+│     │  ├─ Each individual vowel isolated: a,e,i,o,u and A,E,I,O,U ✔
+│     │  ├─ Non-vowel y and Y: only swap, no +2 shift ✔
+│     │  ├─ String length 0 → 1 (consonant) → 1 (vowel) ✔
+│     │  └─ Last vowel: u → W (u swapped to U, U+2=W) ✔
+│     ├─ Valid equivalence classes — spec-defined (V1-V12) ✔
+│     │  └─ specDefinedExpectations(String, String, String) ✔
+│     │     ├─ "V1  empty string" ✔
+│     │     ├─ "V2  single lowercase vowel a" ✔
+│     │     ├─ "V3  single uppercase vowel E" ✔
+│     │     ├─ "V4  single lowercase consonant" ✔
+│     │     ├─ "V5  single uppercase consonant" ✔
+│     │     ├─ "V6  all lowercase vowels" ✔
+│     │     ├─ "V7  all uppercase vowels" ✔
+│     │     ├─ "V8  mixed consonants" ✔
+│     │     ├─ "V9  lowercase vowels+consonants" ✔
+│     │     ├─ "V10 uppercase vowels+consonants" ✔
+│     │     ├─ "V11 full mixed case+spaces" ✔
+│     │     └─ "V12 y/Y are not vowels" ✔
+│     └─ Invalid / undefined-by-spec inputs (I1 — pinned) ✔
+│        └─ I1: null input returns empty string ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 108 ms
+[         9 containers found      ]
+[         0 containers skipped    ]
+[         9 containers started    ]
+[         0 containers aborted    ]
+[         9 containers successful ]
+[         0 containers failed     ]
+[        19 tests found           ]
+[         0 tests skipped         ]
+[        19 tests started         ]
+[         0 tests aborted         ]
+[        19 tests successful      ]
+[         0 tests failed          ]
+

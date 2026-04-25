@@ -1,0 +1,54 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  └─ HumanEval_093_ImprovedTest ✔
+│     ├─ Lowercase vowels: swap case then shift +2 ✔
+│     │  └─ lowercaseVowelShift(String, String) ✔
+│     │     ├─ encode(""a"") = ""C"" ✔
+│     │     ├─ encode(""e"") = ""G"" ✔
+│     │     ├─ encode(""i"") = ""K"" ✔
+│     │     ├─ encode(""o"") = ""Q"" ✔
+│     │     └─ encode(""u"") = ""W"" ✔
+│     ├─ Dataset cases — one assertion per row ✔
+│     │  └─ datasetExpectations(String, String) ✔
+│     │     ├─ encode(""TEST"") = ""tgst"" ✔
+│     │     ├─ encode(""Mudasir"") = ""mWDCSKR"" ✔
+│     │     ├─ encode(""YES"") = ""ygs"" ✔
+│     │     ├─ encode(""This is a message"") = ""tHKS KS C MGSSCGG"" ✔
+│     │     └─ encode(""I DoNt KnOw WhAt tO WrItE"") = ""k dQnT kNqW wHcT Tq wRkTg"" ✔
+│     ├─ Space pass-through ✔
+│     │  ├─ Single space passes through unchanged ✔
+│     │  └─ Space-only string passes through unchanged ✔
+│     ├─ Consonants: swap case only, no shift ✔
+│     │  ├─ Lowercase consonant → uppercase (no shift) ✔
+│     │  ├─ Uppercase consonant → lowercase (no shift) ✔
+│     │  └─ Y and y are not vowels — swapped but not shifted ✔
+│     ├─ Guard branches ✔
+│     │  ├─ Empty string returns empty string ✔
+│     │  └─ null input returns empty string ✔
+│     └─ Uppercase vowels: swap case then shift +2 ✔
+│        └─ uppercaseVowelShift(String, String) ✔
+│           ├─ encode(""A"") = ""c"" ✔
+│           ├─ encode(""E"") = ""g"" ✔
+│           ├─ encode(""I"") = ""k"" ✔
+│           ├─ encode(""O"") = ""q"" ✔
+│           └─ encode(""U"") = ""w"" ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 114 ms
+[        13 containers found      ]
+[         0 containers skipped    ]
+[        13 containers started    ]
+[         0 containers aborted    ]
+[        13 containers successful ]
+[         0 containers failed     ]
+[        22 tests found           ]
+[         0 tests skipped         ]
+[        22 tests started         ]
+[         0 tests aborted         ]
+[        22 tests successful      ]
+[         0 tests failed          ]
+

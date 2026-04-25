@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HumanEval_093_ManualTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">HumanEval_093_ManualTest.java</span></div><h1>HumanEval_093_ManualTest.java</h1><pre class="source lang-java linenums">import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+/**
+ * Codex-authored executable manual suite derived from the black-box analysis.
+ */
+<span class="fc" id="L14">public class HumanEval_093_ManualTest {</span>
+
+<span class="fc" id="L16">    private final Solution solution = new Solution();</span>
+
+    static Stream&lt;Arguments&gt; validClasses() {
+<span class="fc" id="L19">        return Stream.of(</span>
+<span class="fc" id="L20">                Arguments.of(&quot;V1&quot;, &quot;bcdfg&quot;, &quot;BCDFG&quot;),</span>
+<span class="fc" id="L21">                Arguments.of(&quot;V2&quot;, &quot;BCDFG&quot;, &quot;bcdfg&quot;),</span>
+<span class="fc" id="L22">                Arguments.of(&quot;V3&quot;, &quot;aeiou&quot;, &quot;CGKQW&quot;),</span>
+<span class="fc" id="L23">                Arguments.of(&quot;V4&quot;, &quot;AEIOU&quot;, &quot;cgkqw&quot;),</span>
+<span class="fc" id="L24">                Arguments.of(&quot;V5&quot;, &quot;test&quot;, &quot;TGST&quot;),</span>
+<span class="fc" id="L25">                Arguments.of(&quot;V6&quot;, &quot;Mudasir&quot;, &quot;mWDCSKR&quot;),</span>
+<span class="fc" id="L26">                Arguments.of(&quot;V7&quot;, &quot;aA&quot;, &quot;Cc&quot;),</span>
+<span class="fc" id="L27">                Arguments.of(&quot;V8&quot;, &quot;zZ&quot;, &quot;Zz&quot;)</span>
+        );
+    }
+
+    @ParameterizedTest(name = &quot;{0}: \&quot;{1}\&quot; -&gt; \&quot;{2}\&quot;&quot;)
+    @MethodSource(&quot;validClasses&quot;)
+    @DisplayName(&quot;Valid equivalence classes&quot;)
+    void validEquivalenceClasses(String id, String input, String expected) {
+<span class="fc" id="L35">        assertEquals(expected, solution.encode(input));</span>
+<span class="fc" id="L36">    }</span>
+
+    @Test
+    @DisplayName(&quot;Boundary: null reference&quot;)
+    void nullReferenceReturnsEmptyString() {
+<span class="fc" id="L41">        assertEquals(&quot;&quot;, solution.encode(null));</span>
+<span class="fc" id="L42">    }</span>
+
+    @Test
+    @DisplayName(&quot;Boundary: empty string&quot;)
+    void emptyStringReturnsEmptyString() {
+<span class="fc" id="L47">        assertEquals(&quot;&quot;, solution.encode(&quot;&quot;));</span>
+<span class="fc" id="L48">    }</span>
+
+    @Test
+    @DisplayName(&quot;Boundary: single lowercase vowel&quot;)
+    void singleLowercaseVowel() {
+<span class="fc" id="L53">        assertEquals(&quot;C&quot;, solution.encode(&quot;a&quot;));</span>
+<span class="fc" id="L54">    }</span>
+
+    @Test
+    @DisplayName(&quot;Boundary: single uppercase vowel&quot;)
+    void singleUppercaseVowel() {
+<span class="fc" id="L59">        assertEquals(&quot;c&quot;, solution.encode(&quot;A&quot;));</span>
+<span class="fc" id="L60">    }</span>
+
+    @Test
+    @DisplayName(&quot;Boundary: single lowercase consonant&quot;)
+    void singleLowercaseConsonant() {
+<span class="fc" id="L65">        assertEquals(&quot;B&quot;, solution.encode(&quot;b&quot;));</span>
+<span class="fc" id="L66">    }</span>
+
+    @Test
+    @DisplayName(&quot;Boundary: single uppercase consonant&quot;)
+    void singleUppercaseConsonant() {
+<span class="fc" id="L71">        assertEquals(&quot;b&quot;, solution.encode(&quot;B&quot;));</span>
+<span class="fc" id="L72">    }</span>
+
+    @Test
+    @DisplayName(&quot;Spaces, digits, and punctuation are pinned as unchanged&quot;)
+    void nonLettersRemainUnchanged() {
+<span class="fc" id="L77">        assertEquals(&quot;C 1!&quot;, solution.encode(&quot;a 1!&quot;));</span>
+<span class="fc" id="L78">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

@@ -322,3 +322,26 @@ Select 30 prompts with balanced difficulty
 - Manual suite at `tests/manual_tests/claude/HumanEval_089_ManualTest.java` — 18/18 pass. Manual coverage: 74/74 instr, 10/10 branch.
 - JaCoCo coverage exported to `coverage_reports/HumanEval_089/claude/{base,improved,manual}/`.
 - Per-prompt analysis added at `analysis/HumanEval_089_claude.md`. Coverage rows appended to `analysis/coverage_summary.md`.
+
+### 2026-04-25 — HumanEval_093 (Claude)
+
+- Applied the Phase 1 Claude workflow to existing `generated_code/claude/HumanEval_093.java`; generated code was not modified before base testing.
+- Added adjusted dataset harness at `tests/base_tests/adjusted/HumanEval_093/Main.java` by adding `import java.util.*;` and `import java.lang.*;`; assertion logic and generated code unchanged. Adjusted harness compiled with `javac --release 21` and exited 0.
+- Logged the existing Claude generation at `llm_logs/claude/HumanEval_093_initial.md`. Generation was complete and correct on the first attempt; no refactor loop triggered.
+- JUnit 6 base port at `tests/base_tests/claude/HumanEval_093_BaseTest.java` — 5/5 pass. Base coverage: 120/122 instr, 10/12 branch. Missed branches: null guard true, empty-string guard true.
+- Improved suite at `tests/improved_tests/claude/HumanEval_093_ImprovedTest.java` — 22/22 pass. Adds null/empty guards, per-vowel parameterized rows for all 10 vowels, isolated consonant tests, y/Y non-vowel verification, space pass-through. Improved coverage: 122/122 instr, 12/12 branch.
+- Manual black-box notes at `tests/manual_tests/claude/HumanEval_093_blackbox.md`. Defined 14 equivalence classes (V1–V14) and 1 invalid class (I1: null). Pinned spec-undefined behaviors: space pass-through, null returns "".
+- Manual suite at `tests/manual_tests/claude/HumanEval_093_ManualTest.java` — 19/19 pass. Manual coverage: 122/122 instr, 12/12 branch.
+- JaCoCo coverage exported to `coverage_reports/HumanEval_093/claude/{base,improved,manual}/`.
+- Per-prompt analysis added at `analysis/HumanEval_093_claude.md`. Coverage rows appended to `analysis/coverage_summary.md`.
+
+### 2026-04-25 — HumanEval_093 (Codex)
+
+- Applied the Phase 1 Codex workflow to existing `generated_code/codex/HumanEval_093.java`; generated code was not modified before base testing.
+- Added adjusted dataset harness at `tests/base_tests/adjusted/HumanEval_093/Main.java` by adding `import java.util.*;` only; assertion logic and generated code unchanged. Adjusted harness compiled with `javac --release 21` and exited 0.
+- Logged the existing Codex generation at `llm_logs/codex/HumanEval_093_initial.md`.
+- JUnit 6 base port at `tests/base_tests/codex/HumanEval_093_BaseTest.java` — 5/5 pass.
+- Improved suite at `tests/improved_tests/codex/HumanEval_093_ImprovedTest.java` — 15/15 pass after correcting one non-letter expected output where the leading vowel still transforms.
+- Manual black-box notes + suite at `tests/manual_tests/codex/HumanEval_093_blackbox.md` and `HumanEval_093_ManualTest.java` — 15/15 pass. Pinned undefined-by-spec behavior for null, empty, spaces, digits, and punctuation.
+- JaCoCo coverage exported to `coverage_reports/HumanEval_093/codex/{base,improved,manual}/`: base 91/93 instr and 20/22 branch; improved/manual 93/93 instr and 22/22 branch.
+- Per-prompt analysis added at `analysis/HumanEval_093/HumanEval_093_codex.md`. No defects against the prompt spec; no refactor loop triggered.

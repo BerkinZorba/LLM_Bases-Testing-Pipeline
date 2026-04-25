@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HumanEval_093.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">HumanEval_093.java</span></div><h1>HumanEval_093.java</h1><pre class="source lang-java linenums">import java.util.*;
+import java.lang.*;
+
+<span class="fc" id="L4">class Solution {</span>
+    /**
+     * Write a function that takes a message, and encodes in such a
+     * way that it swaps case of all letters, replaces all vowels in
+     * the message with the letter that appears 2 places ahead of that
+     * vowel in the english alphabet.
+     * Assume only letters.
+     *
+     * Examples:
+     * &gt;&gt;&gt; encode(&quot;test&quot;)
+     * &quot;TGST&quot;
+     * &gt;&gt;&gt; encode(&quot;This is a message&quot;)
+     * &quot;tHKS KS C MGSSCGG&quot;
+     */
+    public String encode(String message) {
+<span class="pc bpc" id="L19" title="2 of 4 branches missed.">        if (message == null || message.isEmpty()) return &quot;&quot;;</span>
+
+<span class="fc" id="L21">        Set&lt;Character&gt; vowels = new HashSet&lt;&gt;(Arrays.asList('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'));</span>
+<span class="fc" id="L22">        StringBuilder result = new StringBuilder();</span>
+
+<span class="fc bfc" id="L24" title="All 2 branches covered.">        for (char c : message.toCharArray()) {</span>
+<span class="fc bfc" id="L25" title="All 2 branches covered.">            if (c == ' ') {</span>
+<span class="fc" id="L26">                result.append(c);</span>
+<span class="fc" id="L27">                continue;</span>
+            }
+
+            // Step 1: swap case
+<span class="fc bfc" id="L31" title="All 2 branches covered.">            char swapped = Character.isUpperCase(c) ? Character.toLowerCase(c) : Character.toUpperCase(c);</span>
+
+            // Step 2: if original was a vowel, shift the swapped char by 2
+<span class="fc bfc" id="L34" title="All 2 branches covered.">            if (vowels.contains(c)) {</span>
+<span class="fc" id="L35">                swapped = (char) (swapped + 2);</span>
+            }
+
+<span class="fc" id="L38">            result.append(swapped);</span>
+        }
+
+<span class="fc" id="L41">        return result.toString();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

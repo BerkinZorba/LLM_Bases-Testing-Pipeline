@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HumanEval_040_ManualTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">HumanEval_040_ManualTest.java</span></div><h1>HumanEval_040_ManualTest.java</h1><pre class="source lang-java linenums">import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+/**
+ * Codex-authored executable manual suite derived from the black-box analysis.
+ */
+<span class="fc" id="L17">public class HumanEval_040_ManualTest {</span>
+
+<span class="fc" id="L19">    private final Solution solution = new Solution();</span>
+
+    static Stream&lt;Arguments&gt; validClasses() {
+<span class="fc" id="L22">        return Stream.of(</span>
+<span class="fc" id="L23">                Arguments.of(&quot;V1&quot;, Arrays.asList(1, 2), false),</span>
+<span class="fc" id="L24">                Arguments.of(&quot;V2&quot;, Arrays.asList(-1, 0, 1), true),</span>
+<span class="fc" id="L25">                Arguments.of(&quot;V3&quot;, Arrays.asList(1, 2, 4), false),</span>
+<span class="fc" id="L26">                Arguments.of(&quot;V4&quot;, Arrays.asList(1, 2, 3, 7), false),</span>
+<span class="fc" id="L27">                Arguments.of(&quot;V5&quot;, Arrays.asList(-5, -4, -1), false),</span>
+<span class="fc" id="L28">                Arguments.of(&quot;V6&quot;, Arrays.asList(-2, -2, 4, 8), true),</span>
+<span class="fc" id="L29">                Arguments.of(&quot;V7&quot;, Arrays.asList(0, 0, 0), true),</span>
+<span class="fc" id="L30">                Arguments.of(&quot;V8&quot;, Arrays.asList(0, 1, 2), false),</span>
+<span class="fc" id="L31">                Arguments.of(&quot;V9&quot;, Arrays.asList(2, 4, -5, 3, 9, 7), true),</span>
+<span class="fc" id="L32">                Arguments.of(&quot;V10&quot;, Arrays.asList(100, 3, 5, -100), false)</span>
+        );
+    }
+
+    @ParameterizedTest(name = &quot;{0}: {1} -&gt; {2}&quot;)
+    @MethodSource(&quot;validClasses&quot;)
+    @DisplayName(&quot;Valid equivalence classes&quot;)
+    void validEquivalenceClasses(String id, List&lt;Integer&gt; input, boolean expected) {
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        if (expected) {</span>
+<span class="fc" id="L41">            assertTrue(solution.triplesSumToZero(input));</span>
+        } else {
+<span class="fc" id="L43">            assertFalse(solution.triplesSumToZero(input));</span>
+        }
+<span class="fc" id="L45">    }</span>
+
+    @Test
+    @DisplayName(&quot;Boundary: length zero&quot;)
+    void lengthZeroReturnsFalse() {
+<span class="fc" id="L50">        assertFalse(solution.triplesSumToZero(List.of()));</span>
+<span class="fc" id="L51">    }</span>
+
+    @Test
+    @DisplayName(&quot;Boundary: length one&quot;)
+    void lengthOneReturnsFalse() {
+<span class="fc" id="L56">        assertFalse(solution.triplesSumToZero(List.of(1)));</span>
+<span class="fc" id="L57">    }</span>
+
+    @Test
+    @DisplayName(&quot;Boundary: length two&quot;)
+    void lengthTwoReturnsFalse() {
+<span class="fc" id="L62">        assertFalse(solution.triplesSumToZero(Arrays.asList(1, -1)));</span>
+<span class="fc" id="L63">    }</span>
+
+    @Test
+    @DisplayName(&quot;Boundary: exactly three values summing to zero&quot;)
+    void lengthThreeTrueBoundary() {
+<span class="fc" id="L68">        assertTrue(solution.triplesSumToZero(Arrays.asList(-1, 0, 1)));</span>
+<span class="fc" id="L69">    }</span>
+
+    @Test
+    @DisplayName(&quot;Boundary: duplicate values as distinct elements&quot;)
+    void duplicateValuesAsDistinctElements() {
+<span class="fc" id="L74">        assertTrue(solution.triplesSumToZero(Arrays.asList(-2, -2, 4)));</span>
+<span class="fc" id="L75">    }</span>
+
+    @Test
+    @DisplayName(&quot;Null list is pinned to false&quot;)
+    void nullListReturnsFalse() {
+<span class="fc" id="L80">        assertFalse(solution.triplesSumToZero(null));</span>
+<span class="fc" id="L81">    }</span>
+
+    @Test
+    @DisplayName(&quot;Original input list order remains unchanged&quot;)
+    void originalInputOrderRemainsUnchanged() {
+<span class="fc" id="L86">        List&lt;Integer&gt; input = Arrays.asList(3, -2, 1, 1);</span>
+
+<span class="fc" id="L88">        assertTrue(solution.triplesSumToZero(input));</span>
+<span class="fc" id="L89">        assertTrue(input.equals(Arrays.asList(3, -2, 1, 1)));</span>
+<span class="fc" id="L90">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

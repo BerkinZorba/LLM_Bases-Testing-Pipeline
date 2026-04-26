@@ -1,0 +1,40 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+.
++-- JUnit Platform Suite [OK]
++-- JUnit Jupiter [OK]
+| '-- HumanEval_093_ImprovedTest [OK]
+|   +-- Empty input returns empty string [OK]
+|   +-- Non-letters are pinned as unchanged [OK]
+|   +-- Null input is pinned to empty string [OK]
+|   +-- Dataset expectations [OK]
+|   | +-- ""TEST"" -> ""tgst"" [OK]
+|   | +-- ""Mudasir"" -> ""mWDCSKR"" [OK]
+|   | +-- ""YES"" -> ""ygs"" [OK]
+|   | +-- ""This is a message"" -> ""tHKS KS C MGSSCGG"" [OK]
+|   | '-- ""I DoNt KnOw WhAt tO WrItE"" -> ""k dQnT kNqW wHcT Tq wRkTg"" [OK]
+|   '-- Extended valid letter cases [OK]
+|     +-- ""test"" -> ""TGST"" [OK]
+|     +-- ""aeiou"" -> ""CGKQW"" [OK]
+|     +-- ""AEIOU"" -> ""cgkqw"" [OK]
+|     +-- ""bcdfg"" -> ""BCDFG"" [OK]
+|     +-- ""BCDFG"" -> ""bcdfg"" [OK]
+|     +-- ""aA"" -> ""Cc"" [OK]
+|     '-- ""zZ"" -> ""Zz"" [OK]
+'-- JUnit Vintage [OK]
+
+Test run finished after 75 ms
+[         6 containers found      ]
+[         0 containers skipped    ]
+[         6 containers started    ]
+[         0 containers aborted    ]
+[         6 containers successful ]
+[         0 containers failed     ]
+[        15 tests found           ]
+[         0 tests skipped         ]
+[        15 tests started         ]
+[         0 tests aborted         ]
+[        15 tests successful      ]
+[         0 tests failed          ]
+

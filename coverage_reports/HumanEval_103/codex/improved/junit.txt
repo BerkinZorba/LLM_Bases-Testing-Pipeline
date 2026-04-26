@@ -1,0 +1,36 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  └─ HumanEval_103_ImprovedTest ✔
+│     ├─ halfPointWithOddEndpointSumRoundsUpForPositiveInputs() ✔
+│     ├─ descendingRangeReturnsMinusOneAsInteger() ✔
+│     ├─ Returns the binary encoding of the rounded inclusive average ✔
+│     │  ├─ roundedAvg(1, 1) = "1" ✔
+│     │  ├─ roundedAvg(1, 2) = "10" ✔
+│     │  ├─ roundedAvg(1, 4) = "11" ✔
+│     │  ├─ roundedAvg(1, 6) = "100" ✔
+│     │  ├─ roundedAvg(10, 20) = "1111" ✔
+│     │  ├─ roundedAvg(20, 33) = "11011" ✔
+│     │  └─ roundedAvg(1000, 1001) = "1111101001" ✔
+│     ├─ evenEndpointSumNeedsNoRounding() ✔
+│     ├─ singleValueRangeReturnsBinaryOfThatValue() ✔
+│     └─ largeButSafeEndpointsAvoidIntermediateOverflow() ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 80 ms
+[         5 containers found      ]
+[         0 containers skipped    ]
+[         5 containers started    ]
+[         0 containers aborted    ]
+[         5 containers successful ]
+[         0 containers failed     ]
+[        12 tests found           ]
+[         0 tests skipped         ]
+[        12 tests started         ]
+[         0 tests aborted         ]
+[        12 tests successful      ]
+[         0 tests failed          ]
+

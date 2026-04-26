@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HumanEval_129_ManualTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">HumanEval_129_ManualTest.java</span></div><h1>HumanEval_129_ManualTest.java</h1><pre class="source lang-java linenums">import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+/**
+ * Codex-authored executable manual suite derived from the black-box analysis.
+ */
+<span class="fc" id="L16">public class HumanEval_129_ManualTest {</span>
+
+<span class="fc" id="L18">    private final Solution solution = new Solution();</span>
+
+    static Stream&lt;Arguments&gt; validClasses() {
+<span class="fc" id="L21">        return Stream.of(</span>
+<span class="fc" id="L22">                Arguments.of(&quot;V1&quot;, grid(new int[][]{{5, 9, 3}, {4, 1, 6}, {7, 8, 2}}), 1, List.of(1)),</span>
+<span class="fc" id="L23">                Arguments.of(&quot;V2&quot;, grid(new int[][]{{1, 2}, {3, 4}}), 5, Arrays.asList(1, 2, 1, 2, 1)),</span>
+<span class="fc" id="L24">                Arguments.of(&quot;V3&quot;, grid(new int[][]{{4, 3}, {1, 2}}), 6, Arrays.asList(1, 2, 1, 2, 1, 2)),</span>
+<span class="fc" id="L25">                Arguments.of(&quot;V4&quot;, grid(new int[][]{{9, 1, 8}, {4, 2, 3}, {7, 5, 6}}), 4, Arrays.asList(1, 2, 1, 2)),</span>
+<span class="fc" id="L26">                Arguments.of(&quot;V5&quot;, grid(new int[][]{{9, 2, 8}, {4, 1, 3}, {7, 5, 6}}), 6, Arrays.asList(1, 2, 1, 2, 1, 2)),</span>
+<span class="fc" id="L27">                Arguments.of(&quot;V6&quot;, grid(new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}), 3, Arrays.asList(1, 2, 1)),</span>
+<span class="fc" id="L28">                Arguments.of(&quot;V7&quot;, grid(new int[][]{{12, 13, 10, 1}, {9, 3, 15, 6}, {5, 16, 14, 4}, {11, 8, 7, 2}}), 12,</span>
+<span class="fc" id="L29">                        Arrays.asList(1, 6, 1, 6, 1, 6, 1, 6, 1, 6, 1, 6))</span>
+        );
+    }
+
+    @ParameterizedTest(name = &quot;{0}: k={2}, path={3}&quot;)
+    @MethodSource(&quot;validClasses&quot;)
+    @DisplayName(&quot;Valid equivalence classes&quot;)
+    void validEquivalenceClasses(String id, List&lt;List&lt;Integer&gt;&gt; grid, int k, List&lt;Integer&gt; expected) {
+<span class="fc" id="L37">        assertEquals(expected, solution.minPath(grid, k));</span>
+<span class="fc" id="L38">    }</span>
+
+    @Test
+    @DisplayName(&quot;Boundary: first move chooses smallest neighbor&quot;)
+    void firstMoveChoosesSmallestNeighbor() {
+<span class="fc" id="L43">        assertEquals(Arrays.asList(1, 2), solution.minPath(grid(new int[][]{{1, 4}, {2, 3}}), 2));</span>
+<span class="fc" id="L44">    }</span>
+
+    @Test
+    @DisplayName(&quot;Boundary: zero k&quot;)
+    void zeroKReturnsEmptyList() {
+<span class="fc" id="L49">        assertEquals(List.of(), solution.minPath(grid(new int[][]{{1, 2}, {3, 4}}), 0));</span>
+<span class="fc" id="L50">    }</span>
+
+    @Test
+    @DisplayName(&quot;Boundary: negative k&quot;)
+    void negativeKReturnsEmptyList() {
+<span class="fc" id="L55">        assertEquals(List.of(), solution.minPath(grid(new int[][]{{1, 2}, {3, 4}}), -1));</span>
+<span class="fc" id="L56">    }</span>
+
+    @Test
+    @DisplayName(&quot;Null grid returns empty list&quot;)
+    void nullGridReturnsEmptyList() {
+<span class="fc" id="L61">        assertEquals(List.of(), solution.minPath(null, 4));</span>
+<span class="fc" id="L62">    }</span>
+
+    @Test
+    @DisplayName(&quot;Empty grid returns empty list&quot;)
+    void emptyGridReturnsEmptyList() {
+<span class="fc" id="L67">        assertEquals(List.of(), solution.minPath(List.of(), 4));</span>
+<span class="fc" id="L68">    }</span>
+
+    private static List&lt;List&lt;Integer&gt;&gt; grid(int[][] values) {
+<span class="fc" id="L71">        return Arrays.stream(values)</span>
+<span class="fc" id="L72">                .map(row -&gt; Arrays.stream(row).boxed().toList())</span>
+<span class="fc" id="L73">                .toList();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

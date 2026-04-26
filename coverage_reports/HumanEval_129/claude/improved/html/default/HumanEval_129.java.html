@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HumanEval_129.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">HumanEval_129.java</span></div><h1>HumanEval_129.java</h1><pre class="source lang-java linenums">import java.util.*;
+import java.lang.*;
+
+<span class="fc" id="L4">class Solution {</span>
+    /**
+     * Given a grid with N rows and N columns (N &gt;= 2) and a positive integer k,
+     * find the minimum path of length k in the grid (lexicographically smallest).
+     * You can move to any neighbor cell sharing an edge.
+     * A path visits exactly k cells (not necessarily distinct).
+     */
+    public List&lt;Integer&gt; minPath(List&lt;List&lt;Integer&gt;&gt; grid, int k) {
+<span class="fc" id="L12">        int n = grid.size();</span>
+<span class="fc" id="L13">        int[][] dirs = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};</span>
+
+        // Find the minimum neighbor value for each cell
+        // Since we can revisit cells, optimal strategy is to bounce between
+        // a cell and its minimum neighbor repeatedly
+<span class="fc" id="L18">        int minVal = n * n + 1;</span>
+<span class="fc" id="L19">        int minRow = -1, minCol = -1;</span>
+
+        // Find cell with value 1 (global minimum)
+<span class="fc bfc" id="L22" title="All 2 branches covered.">        for (int i = 0; i &lt; n; i++) {</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">            for (int j = 0; j &lt; n; j++) {</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">                if (grid.get(i).get(j) == 1) {</span>
+<span class="fc" id="L25">                    minRow = i;</span>
+<span class="fc" id="L26">                    minCol = j;</span>
+                }
+            }
+        }
+
+        // Find minimum neighbor of cell with value 1
+<span class="fc" id="L32">        int minNeighbor = n * n + 1;</span>
+<span class="fc bfc" id="L33" title="All 2 branches covered.">        for (int[] dir : dirs) {</span>
+<span class="fc" id="L34">            int ni = minRow + dir[0];</span>
+<span class="fc" id="L35">            int nj = minCol + dir[1];</span>
+<span class="fc bfc" id="L36" title="All 8 branches covered.">            if (ni &gt;= 0 &amp;&amp; ni &lt; n &amp;&amp; nj &gt;= 0 &amp;&amp; nj &lt; n) {</span>
+<span class="fc" id="L37">                minNeighbor = Math.min(minNeighbor, grid.get(ni).get(nj));</span>
+            }
+        }
+
+        // Build result: alternate between 1 and its min neighbor
+<span class="fc" id="L42">        List&lt;Integer&gt; result = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">        for (int i = 0; i &lt; k; i++) {</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">            result.add(i % 2 == 0 ? 1 : minNeighbor);</span>
+        }
+
+<span class="fc" id="L47">        return result;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

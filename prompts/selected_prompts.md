@@ -285,12 +285,12 @@ import java.lang.*;
 class Solution {
     /**
     Given a string s, count the number of uppercase vowels in even indices.
-    
+
     For example:
     countUpper("aBCdEf") returns 1
     countUpper("abcdefg") returns 0
     countUpper("dBBE") returns 0
-     */    
+     */
     public int countUpper(String s) {
 ```
 
@@ -318,7 +318,7 @@ class Solution {
     farthest from zero. For example closest_integer("14.5") should
     return 15 and closest_integer("-14.5") should return -15.
      */
-    public int countUpper(String value) {
+    public int closest_integer(String value) {
 ```
 
 ## Java/100
@@ -636,4 +636,3 @@ class Solution {
      */
     public List<Integer> minPath(List<List<Integer>> grid, int k) {
 ```
-

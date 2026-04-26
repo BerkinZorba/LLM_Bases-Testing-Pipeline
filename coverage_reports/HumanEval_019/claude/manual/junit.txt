@@ -1,0 +1,43 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  └─ HumanEval_019_ManualTest ✔
+│     ├─ Boundary analysis ✔
+│     │  ├─ Boundary words: zero (min) and nine (max) ✔
+│     │  ├─ Word count: 0 → 1 → 2 ✔
+│     │  └─ Duplicate boundary: none → one pair → all same ✔
+│     ├─ Valid equivalence classes (V1-V11) ✔
+│     │  └─ allValidClasses(String, String, String) ✔
+│     │     ├─ "V1  empty string" ✔
+│     │     ├─ "V2  single word" ✔
+│     │     ├─ "V3  two words already in order" ✔
+│     │     ├─ "V4  two words reversed" ✔
+│     │     ├─ "V5  three words random order" ✔
+│     │     ├─ "V6  all ten forward" ✔
+│     │     ├─ "V7  all ten reverse" ✔
+│     │     ├─ "V8  duplicate words" ✔
+│     │     ├─ "V9  all same word" ✔
+│     │     ├─ "V10 six-word unsorted" ✔
+│     │     └─ "V11 whitespace-only" ✔
+│     └─ Invalid / undefined-by-spec inputs (pinned behavior) ✔
+│        ├─ I1: null input returns empty string ✔
+│        └─ I2: unrecognised word causes NullPointerException ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 87 ms
+[         8 containers found      ]
+[         0 containers skipped    ]
+[         8 containers started    ]
+[         0 containers aborted    ]
+[         8 containers successful ]
+[         0 containers failed     ]
+[        16 tests found           ]
+[         0 tests skipped         ]
+[        16 tests started         ]
+[         0 tests aborted         ]
+[        16 tests successful      ]
+[         0 tests failed          ]
+

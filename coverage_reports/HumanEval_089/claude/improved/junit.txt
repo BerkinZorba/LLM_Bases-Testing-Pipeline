@@ -1,0 +1,47 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  └─ HumanEval_089_ImprovedTest ✔
+│     ├─ Dataset cases — one assertion per row ✔
+│     │  └─ datasetExpectations(String, String) ✔
+│     │     ├─ encrypt(""hi"") = ""lm"" ✔
+│     │     ├─ encrypt(""asdfghjkl"") = ""ewhjklnop"" ✔
+│     │     ├─ encrypt(""gf"") = ""kj"" ✔
+│     │     ├─ encrypt(""et"") = ""ix"" ✔
+│     │     ├─ encrypt(""faewfawefaewg"") = ""jeiajeaijeiak"" ✔
+│     │     ├─ encrypt(""hellomyfriend"") = ""lippsqcjvmirh"" ✔
+│     │     ├─ encrypt(""dxzdlmnilfuhmilufhlihufnmlimnufhlimnufhfucufh"") = ""hbdhpqrmpjylqmpyj... ✔
+│     │     └─ encrypt(""a"") = ""e"" ✔
+│     ├─ Uppercase letter rotation ✔
+│     │  ├─ Uppercase A→E, B→F ✔
+│     │  ├─ Uppercase wrap-around W→A, X→B, Y→C, Z→D ✔
+│     │  └─ Mixed lower and upper case — each rotated independently ✔
+│     ├─ Non-alphabetic characters ✔
+│     │  ├─ Punctuation passes through unchanged ✔
+│     │  ├─ Spaces pass through unchanged ✔
+│     │  └─ Digits pass through unchanged ✔
+│     ├─ Guard branches ✔
+│     │  ├─ Empty string returns empty string ✔
+│     │  └─ null input returns empty string ✔
+│     └─ Wrap-around at end of lowercase alphabet ✔
+│        ├─ w→a, x→b, y→c, z→d ✔
+│        └─ Letters just before wrap: s→w, t→x, u→y, v→z ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 97 ms
+[        10 containers found      ]
+[         0 containers skipped    ]
+[        10 containers started    ]
+[         0 containers aborted    ]
+[        10 containers successful ]
+[         0 containers failed     ]
+[        18 tests found           ]
+[         0 tests skipped         ]
+[        18 tests started         ]
+[         0 tests aborted         ]
+[        18 tests successful      ]
+[         0 tests failed          ]
+

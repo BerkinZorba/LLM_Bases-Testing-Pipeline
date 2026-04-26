@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HumanEval_129_ImprovedTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">HumanEval_129_ImprovedTest.java</span></div><h1>HumanEval_129_ImprovedTest.java</h1><pre class="source lang-java linenums">import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+/**
+ * Codex-authored improved JUnit 6 suite for HumanEval_129.
+ *
+ * Design goals:
+ * - split the dataset's assertion-list harness into attributable checks;
+ * - cover positions where 1 is in a corner, edge, and interior;
+ * - add boundary cases for k &lt;= 0 and null/empty grids as underspecified inputs.
+ */
+<span class="fc" id="L21">public class HumanEval_129_ImprovedTest {</span>
+
+<span class="fc" id="L23">    private final Solution solution = new Solution();</span>
+
+    static Stream&lt;Arguments&gt; datasetCases() {
+<span class="fc" id="L26">        return Stream.of(</span>
+<span class="fc" id="L27">                Arguments.of(grid(new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}), 3, Arrays.asList(1, 2, 1)),</span>
+<span class="fc" id="L28">                Arguments.of(grid(new int[][]{{5, 9, 3}, {4, 1, 6}, {7, 8, 2}}), 1, List.of(1)),</span>
+<span class="fc" id="L29">                Arguments.of(grid(new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}}), 4, Arrays.asList(1, 2, 1, 2)),</span>
+<span class="fc" id="L30">                Arguments.of(grid(new int[][]{{2, 7, 4}, {3, 1, 5}, {6, 8, 9}}), 8, Arrays.asList(1, 3, 1, 3, 1, 3, 1, 3))</span>
+        );
+    }
+
+    static Stream&lt;Arguments&gt; extendedCases() {
+<span class="fc" id="L35">        return Stream.of(</span>
+<span class="fc" id="L36">                Arguments.of(grid(new int[][]{{1, 4}, {2, 3}}), 1, List.of(1)),</span>
+<span class="fc" id="L37">                Arguments.of(grid(new int[][]{{1, 4}, {2, 3}}), 2, Arrays.asList(1, 2)),</span>
+<span class="fc" id="L38">                Arguments.of(grid(new int[][]{{1, 4}, {2, 3}}), 5, Arrays.asList(1, 2, 1, 2, 1)),</span>
+<span class="fc" id="L39">                Arguments.of(grid(new int[][]{{9, 2, 8}, {4, 1, 3}, {7, 5, 6}}), 6, Arrays.asList(1, 2, 1, 2, 1, 2)),</span>
+<span class="fc" id="L40">                Arguments.of(grid(new int[][]{{9, 1, 8}, {4, 2, 3}, {7, 5, 6}}), 4, Arrays.asList(1, 2, 1, 2)),</span>
+<span class="fc" id="L41">                Arguments.of(grid(new int[][]{{4, 3}, {1, 2}}), 6, Arrays.asList(1, 2, 1, 2, 1, 2))</span>
+        );
+    }
+
+    @ParameterizedTest(name = &quot;k={1}, path={2}&quot;)
+    @MethodSource(&quot;datasetCases&quot;)
+    @DisplayName(&quot;Dataset expectations&quot;)
+    void datasetExpectations(List&lt;List&lt;Integer&gt;&gt; grid, int k, List&lt;Integer&gt; expected) {
+<span class="fc" id="L49">        assertEquals(expected, solution.minPath(grid, k));</span>
+<span class="fc" id="L50">    }</span>
+
+    @ParameterizedTest(name = &quot;k={1}, path={2}&quot;)
+    @MethodSource(&quot;extendedCases&quot;)
+    @DisplayName(&quot;Extended position and boundary cases&quot;)
+    void extendedPositionAndBoundaryCases(List&lt;List&lt;Integer&gt;&gt; grid, int k, List&lt;Integer&gt; expected) {
+<span class="fc" id="L56">        assertEquals(expected, solution.minPath(grid, k));</span>
+<span class="fc" id="L57">    }</span>
+
+    @Test
+    @DisplayName(&quot;Zero k is pinned to empty list&quot;)
+    void zeroKReturnsEmptyList() {
+<span class="fc" id="L62">        assertEquals(List.of(), solution.minPath(grid(new int[][]{{1, 2}, {3, 4}}), 0));</span>
+<span class="fc" id="L63">    }</span>
+
+    @Test
+    @DisplayName(&quot;Negative k is pinned to empty list&quot;)
+    void negativeKReturnsEmptyList() {
+<span class="fc" id="L68">        assertEquals(List.of(), solution.minPath(grid(new int[][]{{1, 2}, {3, 4}}), -1));</span>
+<span class="fc" id="L69">    }</span>
+
+    @Test
+    @DisplayName(&quot;Null grid is pinned to empty list&quot;)
+    void nullGridReturnsEmptyList() {
+<span class="fc" id="L74">        assertEquals(List.of(), solution.minPath(null, 3));</span>
+<span class="fc" id="L75">    }</span>
+
+    @Test
+    @DisplayName(&quot;Empty grid is pinned to empty list&quot;)
+    void emptyGridReturnsEmptyList() {
+<span class="fc" id="L80">        assertEquals(List.of(), solution.minPath(List.of(), 3));</span>
+<span class="fc" id="L81">    }</span>
+
+    private static List&lt;List&lt;Integer&gt;&gt; grid(int[][] values) {
+<span class="fc" id="L84">        return Arrays.stream(values)</span>
+<span class="fc" id="L85">                .map(row -&gt; Arrays.stream(row).boxed().toList())</span>
+<span class="fc" id="L86">                .toList();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

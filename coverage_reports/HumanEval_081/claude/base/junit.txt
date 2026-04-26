@@ -1,0 +1,29 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+[36m╷[0m
+[36m├─[0m [36mJUnit Platform Suite[0m [32m✔[0m
+[36m├─[0m [36mJUnit Jupiter[0m [32m✔[0m
+[36m│  └─[0m [36mHumanEval_081_BaseTest[0m [32m✔[0m
+[36m│     ├─[0m [34mdatasetExample_mixedFiveGrades()[0m [32m✔[0m
+[36m│     ├─[0m [34msingleton_zeroFive_returnsDMinus()[0m [32m✔[0m
+[36m│     ├─[0m [34mzeroAndZeroSeven_returnEAndDMinus()[0m [32m✔[0m
+[36m│     ├─[0m [34mmixedFive_lowMidRange()[0m [32m✔[0m
+[36m│     ├─[0m [34msingleton_zero_returnsE()[0m [32m✔[0m
+[36m│     └─[0m [34msingleton_oneTwo_returnsDPlus()[0m [32m✔[0m
+[36m└─[0m [36mJUnit Vintage[0m [32m✔[0m
+
+Test run finished after 55 ms
+[         4 containers found      ]
+[         0 containers skipped    ]
+[         4 containers started    ]
+[         0 containers aborted    ]
+[         4 containers successful ]
+[         0 containers failed     ]
+[         6 tests found           ]
+[         0 tests skipped         ]
+[         6 tests started         ]
+[         0 tests aborted         ]
+[         6 tests successful      ]
+[         0 tests failed          ]
+

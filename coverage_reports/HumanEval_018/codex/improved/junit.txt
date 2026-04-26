@@ -1,0 +1,42 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+.
++-- JUnit Platform Suite [OK]
++-- JUnit Jupiter [OK]
+| '-- HumanEval_018_ImprovedTest [OK]
+|   +-- Extended overlapping and boundary cases [OK]
+|   | +-- ""aaa"" contains ""a"" 3 times [OK]
+|   | +-- ""aaaa"" contains ""aa"" 3 times [OK]
+|   | +-- ""banana"" contains ""ana"" 2 times [OK]
+|   | +-- ""abc"" contains ""abc"" 1 times [OK]
+|   | +-- ""abc"" contains ""abcd"" 0 times [OK]
+|   | +-- ""abcabc"" contains ""bc"" 2 times [OK]
+|   | +-- ""mississippi"" contains ""issi"" 2 times [OK]
+|   | +-- ""CaseCASEcase"" contains ""case"" 1 times [OK]
+|   | +-- ""aaaaa"" contains ""aaa"" 3 times [OK]
+|   | '-- ""a b a b"" contains ""a b"" 2 times [OK]
+|   +-- Empty substring is pinned to zero [OK]
+|   +-- Repeated calls are stable [OK]
+|   +-- Absent substring returns zero after scanning all windows [OK]
+|   '-- Dataset expectations [OK]
+|     +-- """" contains ""x"" 0 times [OK]
+|     +-- ""xyxyxyx"" contains ""x"" 4 times [OK]
+|     +-- ""cacacacac"" contains ""cac"" 4 times [OK]
+|     '-- ""john doe"" contains ""john"" 1 times [OK]
+'-- JUnit Vintage [OK]
+
+Test run finished after 87 ms
+[         6 containers found      ]
+[         0 containers skipped    ]
+[         6 containers started    ]
+[         0 containers aborted    ]
+[         6 containers successful ]
+[         0 containers failed     ]
+[        17 tests found           ]
+[         0 tests skipped         ]
+[        17 tests started         ]
+[         0 tests aborted         ]
+[        17 tests successful      ]
+[         0 tests failed          ]
+

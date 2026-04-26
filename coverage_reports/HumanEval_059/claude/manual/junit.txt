@@ -1,0 +1,43 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+[36m╷[0m
+[36m├─[0m [36mJUnit Platform Suite[0m [32m✔[0m
+[36m├─[0m [36mJUnit Jupiter[0m [32m✔[0m
+[36m│  └─[0m [36mHumanEval_059_ManualTest[0m [32m✔[0m
+[36m│     ├─[0m [34mBoundary: 25 = 5^2 -> 5 (factor*factor == x exactly)[0m [32m✔[0m
+[36m│     ├─[0m [34mBoundary: 49 = 7^2 -> 7 (next perfect prime square)[0m [32m✔[0m
+[36m│     ├─[0m [34mV4: 27 = 3^3 -> 3 (dataset)[0m [32m✔[0m
+[36m│     ├─[0m [34mI2 (out of spec): n = 1 returns 1 (loop never enters)[0m [32m✔[0m
+[36m│     ├─[0m [34mV12a: 63 = 3^2 * 7 -> 7 (dataset)[0m [32m✔[0m
+[36m│     ├─[0m [34mV5: 2401 = 7^4 -> 7[0m [32m✔[0m
+[36m│     ├─[0m [34mI4 (out of spec): n = -15 returns 1 (loop guard false; x>1 false)[0m [32m✔[0m
+[36m│     ├─[0m [34mV2: 6 = 2*3 -> 3[0m [32m✔[0m
+[36m│     ├─[0m [34mI3 (out of spec): n = 0 returns 1 (loop guard false; x>1 false)[0m [32m✔[0m
+[36m│     ├─[0m [34mV1: 4 = 2^2 -> 2[0m [32m✔[0m
+[36m│     ├─[0m [34mI1 (out of spec): n = 7 (prime) returns n itself (7)[0m [32m✔[0m
+[36m│     ├─[0m [34mV11: 9991 = 97*103 -> 103[0m [32m✔[0m
+[36m│     ├─[0m [34mV3: 2048 = 2^11 -> 2 (prompt example)[0m [32m✔[0m
+[36m│     ├─[0m [34mV8: 13195 = 5*7*13*29 -> 29 (dataset, prompt example)[0m [32m✔[0m
+[36m│     ├─[0m [34mV7: 22 = 2*11 -> 11[0m [32m✔[0m
+[36m│     ├─[0m [34mBoundary: 1024 = 2^10 -> 2 (deep inner-while)[0m [32m✔[0m
+[36m│     ├─[0m [34mV10: 121 = 11^2 -> 11 (factor*factor == x)[0m [32m✔[0m
+[36m│     ├─[0m [34mV12b: 330 = 2*3*5*11 -> 11 (dataset)[0m [32m✔[0m
+[36m│     ├─[0m [34mV9: 720 = 2^4 * 3^2 * 5 -> 5[0m [32m✔[0m
+[36m│     └─[0m [34mV6: 15 = 3*5 -> 5 (dataset)[0m [32m✔[0m
+[36m└─[0m [36mJUnit Vintage[0m [32m✔[0m
+
+Test run finished after 95 ms
+[         4 containers found      ]
+[         0 containers skipped    ]
+[         4 containers started    ]
+[         0 containers aborted    ]
+[         4 containers successful ]
+[         0 containers failed     ]
+[        20 tests found           ]
+[         0 tests skipped         ]
+[        20 tests started         ]
+[         0 tests aborted         ]
+[        20 tests successful      ]
+[         0 tests failed          ]
+

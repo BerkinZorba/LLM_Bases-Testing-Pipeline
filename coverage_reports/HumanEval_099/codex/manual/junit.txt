@@ -1,0 +1,40 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+.
++-- JUnit Platform Suite [OK]
++-- JUnit Jupiter [OK]
+| '-- HumanEval_099_ManualTest [OK]
+|   +-- Boundary: just below negative half magnitude [OK]
+|   +-- Valid equivalence classes [OK]
+|   | +-- "V1": ""10"" -> 10 [OK]
+|   | +-- "V2": ""15.3"" -> 15 [OK]
+|   | +-- "V3": ""14.5"" -> 15 [OK]
+|   | +-- "V4": ""15.6"" -> 16 [OK]
+|   | +-- "V5": ""-14.49"" -> -14 [OK]
+|   | +-- "V6": ""-14.5"" -> -15 [OK]
+|   | +-- "V7": ""-14.51"" -> -15 [OK]
+|   | +-- "V8": ""0.5"" -> 1 [OK]
+|   | +-- "V9": ""-0.5"" -> -1 [OK]
+|   | '-- "V10": ""001.50"" -> 2 [OK]
+|   +-- Null input is pinned to zero [OK]
+|   +-- Empty input is pinned to zero [OK]
+|   +-- Boundary: exact zero [OK]
+|   +-- Boundary: just below positive half [OK]
+|   '-- Invalid numeric string throws NumberFormatException [OK]
+'-- JUnit Vintage [OK]
+
+Test run finished after 81 ms
+[         5 containers found      ]
+[         0 containers skipped    ]
+[         5 containers started    ]
+[         0 containers aborted    ]
+[         5 containers successful ]
+[         0 containers failed     ]
+[        16 tests found           ]
+[         0 tests skipped         ]
+[        16 tests started         ]
+[         0 tests aborted         ]
+[        16 tests successful      ]
+[         0 tests failed          ]
+

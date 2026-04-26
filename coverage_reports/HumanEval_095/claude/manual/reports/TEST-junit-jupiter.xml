@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="JUnit Jupiter" tests="24" skipped="0" failures="0" errors="0" time="0.035" hostname="ahmetmbp" timestamp="2026-04-26T02:10:52">
+<properties>
+<property name="apple.awt.application.name" value="ConsoleLauncher"/>
+<property name="file.encoding" value="UTF-8"/>
+<property name="file.separator" value="/"/>
+<property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+<property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+<property name="java.class.path" value="/Users/ahmet/misc/LLM_Bases-Testing-Pipeline/.tools/junit-platform-console-standalone.jar"/>
+<property name="java.class.version" value="69.0"/>
+<property name="java.home" value="/opt/homebrew/Cellar/openjdk/25.0.2/libexec/openjdk.jdk/Contents/Home"/>
+<property name="java.io.tmpdir" value="/var/folders/qn/yzz_d3jd6kvddzxc65dcxq700000gn/T/"/>
+<property name="java.library.path" value="/Users/ahmet/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+<property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+<property name="java.runtime.version" value="25.0.2"/>
+<property name="java.specification.name" value="Java Platform API Specification"/>
+<property name="java.specification.vendor" value="Oracle Corporation"/>
+<property name="java.specification.version" value="25"/>
+<property name="java.vendor" value="Homebrew"/>
+<property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
+<property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
+<property name="java.vendor.version" value="Homebrew"/>
+<property name="java.version" value="25.0.2"/>
+<property name="java.version.date" value="2026-01-20"/>
+<property name="java.vm.compressedOopsMode" value="Zero based"/>
+<property name="java.vm.info" value="mixed mode, sharing"/>
+<property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+<property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+<property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+<property name="java.vm.specification.version" value="25"/>
+<property name="java.vm.vendor" value="Homebrew"/>
+<property name="java.vm.version" value="25.0.2"/>
+<property name="jdk.debug" value="release"/>
+<property name="junit.docs.version" value="6.0.0"/>
+<property name="line.separator" value="&#10;"/>
+<property name="native.encoding" value="UTF-8"/>
+<property name="os.arch" value="aarch64"/>
+<property name="os.name" value="Mac OS X"/>
+<property name="os.version" value="15.6.1"/>
+<property name="path.separator" value=":"/>
+<property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+<property name="stderr.encoding" value="UTF-8"/>
+<property name="stdin.encoding" value="UTF-8"/>
+<property name="stdout.encoding" value="UTF-8"/>
+<property name="sun.arch.data.model" value="64"/>
+<property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/25.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
+<property name="sun.cpu.endian" value="little"/>
+<property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+<property name="sun.java.command" value="/Users/ahmet/misc/LLM_Bases-Testing-Pipeline/.tools/junit-platform-console-standalone.jar execute --class-path /Users/ahmet/misc/LLM_Bases-Testing-Pipeline/.build/HumanEval_095/claude/junit-manual --select-class HumanEval_095_ManualTest --reports-dir /Users/ahmet/misc/LLM_Bases-Testing-Pipeline/coverage_reports/HumanEval_095/claude/manual/reports --details=tree"/>
+<property name="sun.java.launcher" value="SUN_STANDARD"/>
+<property name="sun.jnu.encoding" value="UTF-8"/>
+<property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+<property name="user.country" value="TR"/>
+<property name="user.dir" value="/Users/ahmet/misc/LLM_Bases-Testing-Pipeline"/>
+<property name="user.home" value="/Users/ahmet"/>
+<property name="user.language" value="en"/>
+<property name="user.name" value="ahmet"/>
+<property name="user.timezone" value="Europe/Istanbul"/>
+</properties>
+<testcase name="size1Upper()" classname="HumanEval_095_ManualTest$Boundaries" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:HumanEval_095_ManualTest]/[nested-class:Boundaries]/[method:size1Upper()]
+display-name: size=1 upper -> true
+]]></system-out>
+</testcase>
+<testcase name="nonStringAfterValid()" classname="HumanEval_095_ManualTest$Boundaries" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:HumanEval_095_ManualTest]/[nested-class:Boundaries]/[method:nonStringAfterValid()]
+display-name: non-string key after a valid one -> false
+]]></system-out>
+</testcase>
+<testcase name="v8()" classname="HumanEval_095_ManualTest$Valid" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:HumanEval_095_ManualTest]/[nested-class:Valid]/[method:v8()]
+display-name: V8 caseless digits-only key alone
+]]></system-out>
+</testcase>
+<testcase name="size0()" classname="HumanEval_095_ManualTest$Boundaries" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:HumanEval_095_ManualTest]/[nested-class:Boundaries]/[method:size0()]
+display-name: size=0 -> false (empty)
+]]></system-out>
+</testcase>
+<testcase name="v9()" classname="HumanEval_095_ManualTest$Valid" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:HumanEval_095_ManualTest]/[nested-class:Valid]/[method:v9()]
+display-name: V9 caseless empty-string key alone
+]]></system-out>
+</testcase>
+<testcase name="v6()" classname="HumanEval_095_ManualTest$Valid" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:HumanEval_095_ManualTest]/[nested-class:Valid]/[method:v6()]
+display-name: V6 all-lower + caseless (digits) -> true
+]]></system-out>
+</testcase>
+<testcase name="v7()" classname="HumanEval_095_ManualTest$Valid" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:HumanEval_095_ManualTest]/[nested-class:Valid]/[method:v7()]
+display-name: V7 all-upper + caseless (digits) -> true
+]]></system-out>
+</testcase>
+<testcase name="v4()" classname="HumanEval_095_ManualTest$Valid" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:HumanEval_095_ManualTest]/[nested-class:Valid]/[method:v4()]
+display-name: V4 single all-upper key
+]]></system-out>
+</testcase>
+<testcase name="v5()" classname="HumanEval_095_ManualTest$Valid" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:HumanEval_095_ManualTest]/[nested-class:Valid]/[method:v5()]
+display-name: V5 multiple all-upper keys
+]]></system-out>
+</testcase>
+<testcase name="sizeLargeLower()" classname="HumanEval_095_ManualTest$Boundaries" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:HumanEval_095_ManualTest]/[nested-class:Boundaries]/[method:sizeLargeLower()]
+display-name: size=large all-lower -> true
+]]></system-out>
+</testcase>
+<testcase name="firstKeyNonString()" classname="HumanEval_095_ManualTest$Boundaries" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:HumanEval_095_ManualTest]/[nested-class:Boundaries]/[method:firstKeyNonString()]
+display-name: first-encountered key is non-string -> false
+]]></system-out>
+</testcase>
+<testcase name="size1Lower()" classname="HumanEval_095_ManualTest$Boundaries" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:HumanEval_095_ManualTest]/[nested-class:Boundaries]/[method:size1Lower()]
+display-name: size=1 lower -> true
+]]></system-out>
+</testcase>
+<testcase name="v2()" classname="HumanEval_095_ManualTest$Valid" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:HumanEval_095_ManualTest]/[nested-class:Valid]/[method:v2()]
+display-name: V2 multiple all-lower keys
+]]></system-out>
+</testcase>
+<testcase name="v3()" classname="HumanEval_095_ManualTest$Valid" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:HumanEval_095_ManualTest]/[nested-class:Valid]/[method:v3()]
+display-name: V3 all-lower keys with cased values (values irrelevant)
+]]></system-out>
+</testcase>
+<testcase name="v1()" classname="HumanEval_095_ManualTest$Valid" time="0.007">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:HumanEval_095_ManualTest]/[nested-class:Valid]/[method:v1()]
+display-name: V1 single all-lower key
+]]></system-out>
+</testcase>
+<testcase name="v13()" classname="HumanEval_095_ManualTest$Valid" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:HumanEval_095_ManualTest]/[nested-class:Valid]/[method:v13()]
+display-name: V13 single mixed-case key -> false
+]]></system-out>
+</testcase>
+<testcase name="i4()" classname="HumanEval_095_ManualTest$Invalid" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:HumanEval_095_ManualTest]/[nested-class:Invalid]/[method:i4()]
+display-name: I4 dataset row {"p", 5, "a"} -> false
+]]></system-out>
+</testcase>
+<testcase name="v10()" classname="HumanEval_095_ManualTest$Valid" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:HumanEval_095_ManualTest]/[nested-class:Valid]/[method:v10()]
+display-name: V10 caseless punctuation key alone
+]]></system-out>
+</testcase>
+<testcase name="i2()" classname="HumanEval_095_ManualTest$Invalid" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:HumanEval_095_ManualTest]/[nested-class:Invalid]/[method:i2()]
+display-name: I2 only an Integer key -> false
+]]></system-out>
+</testcase>
+<testcase name="i3()" classname="HumanEval_095_ManualTest$Invalid" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:HumanEval_095_ManualTest]/[nested-class:Invalid]/[method:i3()]
+display-name: I3 string key followed by Integer key -> false
+]]></system-out>
+</testcase>
+<testcase name="v12()" classname="HumanEval_095_ManualTest$Valid" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:HumanEval_095_ManualTest]/[nested-class:Valid]/[method:v12()]
+display-name: V12 title-case keys -> false
+]]></system-out>
+</testcase>
+<testcase name="v11()" classname="HumanEval_095_ManualTest$Valid" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:HumanEval_095_ManualTest]/[nested-class:Valid]/[method:v11()]
+display-name: V11 mixed lower + upper keys -> false
+]]></system-out>
+</testcase>
+<testcase name="i1()" classname="HumanEval_095_ManualTest$Invalid" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:HumanEval_095_ManualTest]/[nested-class:Invalid]/[method:i1()]
+display-name: I1 empty map -> false
+]]></system-out>
+</testcase>
+<testcase name="sizeLargeUpper()" classname="HumanEval_095_ManualTest$Boundaries" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:HumanEval_095_ManualTest]/[nested-class:Boundaries]/[method:sizeLargeUpper()]
+display-name: size=large all-upper -> true
+]]></system-out>
+</testcase>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]
+display-name: JUnit Jupiter
+]]></system-out>
+</testsuite>

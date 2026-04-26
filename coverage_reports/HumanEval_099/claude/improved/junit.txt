@@ -1,0 +1,68 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  └─ HumanEval_099_ImprovedTest ✔
+│     ├─ Halfway cases (x.5) ✔
+│     │  └─ halfwayCases(String, int) ✔
+│     │     ├─ closestInteger(""0.5"") = "1" ✔
+│     │     ├─ closestInteger(""-0.5"") = "-1" ✔
+│     │     ├─ closestInteger(""1.5"") = "2" ✔
+│     │     ├─ closestInteger(""-1.5"") = "-2" ✔
+│     │     ├─ closestInteger(""2.5"") = "3" ✔
+│     │     ├─ closestInteger(""-2.5"") = "-3" ✔
+│     │     ├─ closestInteger(""100.5"") = "101" ✔
+│     │     └─ closestInteger(""-100.5"") = "-101" ✔
+│     ├─ Prompt-stated note examples ✔
+│     │  ├─ closestInteger("-14.5") = -15 (away from zero, negative) ✔
+│     │  └─ closestInteger("14.5") = 15 (away from zero, positive) ✔
+│     ├─ Non-halfway decimals ✔
+│     │  └─ nonHalfwayCases(String, int) ✔
+│     │     ├─ closestInteger(""1.1"") = "1" ✔
+│     │     ├─ closestInteger(""1.4"") = "1" ✔
+│     │     ├─ closestInteger(""1.6"") = "2" ✔
+│     │     ├─ closestInteger(""1.9"") = "2" ✔
+│     │     ├─ closestInteger(""-1.1"") = "-1" ✔
+│     │     ├─ closestInteger(""-1.4"") = "-1" ✔
+│     │     ├─ closestInteger(""-1.6"") = "-2" ✔
+│     │     ├─ closestInteger(""-1.9"") = "-2" ✔
+│     │     ├─ closestInteger(""0.1"") = "0" ✔
+│     │     ├─ closestInteger(""0.9"") = "1" ✔
+│     │     ├─ closestInteger(""-0.1"") = "0" ✔
+│     │     └─ closestInteger(""-0.9"") = "-1" ✔
+│     ├─ Exact integers (no decimal / trailing .0) ✔
+│     │  └─ exactIntegers(String, int) ✔
+│     │     ├─ closestInteger(""0"") = "0" ✔
+│     │     ├─ closestInteger(""1"") = "1" ✔
+│     │     ├─ closestInteger(""-1"") = "-1" ✔
+│     │     ├─ closestInteger(""5.0"") = "5" ✔
+│     │     ├─ closestInteger(""-5.0"") = "-5" ✔
+│     │     └─ closestInteger(""999"") = "999" ✔
+│     ├─ Spec-undefined inputs — pinned behavior ✔
+│     │  ├─ null throws NullPointerException ✔
+│     │  ├─ Non-numeric string throws NumberFormatException ✔
+│     │  └─ Empty string throws NumberFormatException ✔
+│     └─ Dataset cases (named) ✔
+│        ├─ ten_returns10() ✔
+│        ├─ negFifteenPointFive_retNeg16() ✔
+│        ├─ zero_returns0() ✔
+│        ├─ fifteenPointThree_returns15() ✔
+│        └─ fourteenPointFive_returns15() ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 135 ms
+[        13 containers found      ]
+[         0 containers skipped    ]
+[        13 containers started    ]
+[         0 containers aborted    ]
+[        13 containers successful ]
+[         0 containers failed     ]
+[        36 tests found           ]
+[         0 tests skipped         ]
+[        36 tests started         ]
+[         0 tests aborted         ]
+[        36 tests successful      ]
+[         0 tests failed          ]
+

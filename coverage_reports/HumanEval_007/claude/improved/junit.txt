@@ -1,0 +1,37 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  └─ HumanEval_007_ImprovedTest ✔
+│     ├─ Dataset cases - one assertion per row ✔
+│     │  └─ datasetExpectations(String, List, String, List) ✔
+│     │     ├─ "empty input" ✔
+│     │     ├─ "exact xxx" ✔
+│     │     ├─ "broader xx" ✔
+│     │     └─ "middle run" ✔
+│     └─ Behavioral properties beyond the base suite ✔
+│        ├─ Preserves duplicate matching elements ✔
+│        ├─ Empty string element only matches empty substring ✔
+│        ├─ Empty substring matches every string, including empty strings ✔
+│        ├─ Repeated calls do not share result state ✔
+│        ├─ Returned list is a new list object ✔
+│        ├─ Preserves original order rather than sorting matches ✔
+│        └─ Case-sensitive matching ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 86 ms
+[         7 containers found      ]
+[         0 containers skipped    ]
+[         7 containers started    ]
+[         0 containers aborted    ]
+[         7 containers successful ]
+[         0 containers failed     ]
+[        11 tests found           ]
+[         0 tests skipped         ]
+[        11 tests started         ]
+[         0 tests aborted         ]
+[        11 tests successful      ]
+[         0 tests failed          ]
+

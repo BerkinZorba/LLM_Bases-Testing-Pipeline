@@ -1,0 +1,49 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  └─ HumanEval_018_ManualTest ✔
+│     ├─ Valid equivalence classes (V1-V15) ✔
+│     │  └─ allValidClasses(String, String, String, int) ✔
+│     │     ├─ "V1  empty string" ✔
+│     │     ├─ "V2  empty substring" ✔
+│     │     ├─ "V3  substring longer than string" ✔
+│     │     ├─ "V4  substring equals entire string" ✔
+│     │     ├─ "V5  no match" ✔
+│     │     ├─ "V6  single match — prefix" ✔
+│     │     ├─ "V7  single match — suffix" ✔
+│     │     ├─ "V8  single match — middle" ✔
+│     │     ├─ "V9  multiple non-overlapping" ✔
+│     │     ├─ "V10 overlapping two chars" ✔
+│     │     ├─ "V11 overlapping prompt example" ✔
+│     │     ├─ "V12 overlapping three chars" ✔
+│     │     ├─ "V13 single-char match" ✔
+│     │     ├─ "V14 alternating single char" ✔
+│     │     └─ "V15 all same single char" ✔
+│     ├─ Boundary analysis ✔
+│     │  ├─ String length: 0 → 1 → many ✔
+│     │  ├─ Match at first position only ✔
+│     │  ├─ Overlap boundary: aa in aaa vs aa in aa ✔
+│     │  ├─ Substring length: 0 → 1 → equals string → exceeds string ✔
+│     │  └─ Match at last valid position only ✔
+│     └─ Invalid / undefined-by-spec inputs (pinned behavior) ✔
+│        ├─ I2: null substring throws NullPointerException ✔
+│        └─ I1: null string throws NullPointerException ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 114 ms
+[         8 containers found      ]
+[         0 containers skipped    ]
+[         8 containers started    ]
+[         0 containers aborted    ]
+[         8 containers successful ]
+[         0 containers failed     ]
+[        22 tests found           ]
+[         0 tests skipped         ]
+[        22 tests started         ]
+[         0 tests aborted         ]
+[        22 tests successful      ]
+[         0 tests failed          ]
+

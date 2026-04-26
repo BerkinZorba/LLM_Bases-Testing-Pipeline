@@ -383,3 +383,23 @@ Select 30 prompts with balanced difficulty
 - Test logs: `llm_logs/codex/HumanEval_108_test_improvement.md`, `HumanEval_108_manual_assistance.md`.
 - Per-prompt analysis: `analysis/HumanEval_108/HumanEval_108_codex.md`.
 - No spec defects — refactor loop not triggered. HumanEval_108 fully complete (both models).
+
+## 2026-04-26 — HumanEval_087 (getRow) — Both models complete
+
+### Claude
+- GPT response obtained; Claude code generated (reverse column iteration — no explicit sort needed), saved to `generated_code/claude/HumanEval_087.java`.
+- Initial interaction logged: `llm_logs/claude/HumanEval_087_initial.md`.
+- Base (6/6 pass), improved (13/13 pass), manual (11/11 pass): 54/54 instr, 6/6 branch, 8/8 line (full coverage on all suites).
+- JaCoCo coverage saved to `coverage_reports/HumanEval_087/claude/{base,improved,manual}/`.
+- Test logs: `llm_logs/claude/HumanEval_087_test_improve.md`, `HumanEval_087_manual_assist.md`.
+- Per-prompt analysis: `analysis/HumanEval_087/HumanEval_087_claude.md`.
+- No defects — refactor loop not triggered.
+
+### Codex (GPT)
+- GPT response obtained; Codex code generated (collect cols + Collections.sort reverseOrder), saved to `generated_code/codex/HumanEval_087.java`.
+- Initial interaction logged: `llm_logs/codex/HumanEval_087_initial.md`.
+- Base (6/6 pass), improved (11/11 pass), manual (10/10 pass): 77/77 instr, 13/13 branch, 8/8 line (full coverage on all suites).
+- JaCoCo coverage saved to `coverage_reports/HumanEval_087/codex/{base,improved,manual}/`.
+- Test logs: `llm_logs/codex/HumanEval_087_test_improve.md`, `HumanEval_087_manual_assist.md`.
+- Per-prompt analysis: `analysis/HumanEval_087/HumanEval_087_codex.md`.
+- No defects — refactor loop not triggered. HumanEval_087 fully complete (both models).

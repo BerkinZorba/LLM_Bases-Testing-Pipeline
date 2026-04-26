@@ -67,3 +67,12 @@ Source: per-suite JaCoCo CSV under `coverage_reports/<HumanEval_XXX>/<model>/<su
 | HumanEval_002 | codex  | base     | 5  | 5  | 9/9   | 0/0   | 2/2   | 2/2  | 2/2 |
 | HumanEval_002 | codex  | improved | 10 | 10 | 9/9   | 0/0   | 2/2   | 2/2  | 2/2 |
 | HumanEval_002 | codex  | manual   | 9  | 9  | 9/9   | 0/0   | 2/2   | 2/2  | 2/2 |
+| HumanEval_023 | codex  | base     | 4  | 4  | 6/6   | 0/0   | 2/2   | 2/2  | 2/2 |
+| HumanEval_023 | codex  | improved | 8  | 8  | 6/6   | 0/0   | 2/2   | 2/2  | 2/2 |
+| HumanEval_023 | codex  | manual   | 9  | 9  | 6/6   | 0/0   | 2/2   | 2/2  | 2/2 |
+| HumanEval_028 | codex  | base     | 4  | 4  | 25/25 | 2/2   | 6/6   | 3/3  | 2/2 |
+| HumanEval_028 | codex  | improved | 9  | 9  | 25/25 | 2/2   | 6/6   | 3/3  | 2/2 |
+| HumanEval_028 | codex  | manual   | 10 | 10 | 25/25 | 2/2   | 6/6   | 3/3  | 2/2 |
+| HumanEval_039 | codex  | base     | 5  | 5  | 57/57 | 16/16 | 14/14 | 10/10 | 2/2 |
+| HumanEval_039 | codex  | improved | 9  | 9  | 57/57 | 16/16 | 14/14 | 10/10 | 2/2 |
+| HumanEval_039 | codex  | manual   | 9  | 9  | 57/57 | 16/16 | 14/14 | 10/10 | 2/2 |

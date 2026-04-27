@@ -1,6 +1,11 @@
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+/* @Authors
+ *   Student Names: Ahmet AKIN, Berkin ZORBA , Eylül Zeynep PINARBASI
+ *   Student IDs: 15200027, 150200735, 150220725
+ */
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;

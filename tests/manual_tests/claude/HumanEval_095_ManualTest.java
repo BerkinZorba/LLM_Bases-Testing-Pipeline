@@ -2,6 +2,11 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/* @Authors
+ *   Student Names: Ahmet AKIN, Berkin ZORBA , Eylül Zeynep PINARBASI
+ *   Student IDs: 15200027, 150200735, 150220725
+ */
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;

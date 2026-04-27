@@ -1,6 +1,11 @@
 import java.util.*;
 import java.lang.*;
 
+/* @Authors
+ *   Student Names: Ahmet AKIN, Berkin ZORBA , Eylül Zeynep PINARBASI
+ *   Student IDs: 15200027, 150200735, 150220725
+ */
+
 class Solution {
     /**
     Given a non-empty array of integers arr and an integer k, return

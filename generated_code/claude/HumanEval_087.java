@@ -1,6 +1,11 @@
 import java.util.*;
 import java.lang.*;
 
+/* @Authors
+ *   Student Names: Ahmet AKIN, Berkin ZORBA , Eylül Zeynep PINARBASI
+ *   Student IDs: 15200027, 150200735, 150220725
+ */
+
 class Solution {
     public List<List<Integer>> getRow(List<List<Integer>> lst, int x) {
         List<List<Integer>> result = new ArrayList<>();

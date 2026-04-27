@@ -1,6 +1,11 @@
 import java.util.*;
 import java.lang.*;
 
+/* @Authors
+ *   Student Names: Ahmet AKIN, Berkin ZORBA , Eylül Zeynep PINARBASI
+ *   Student IDs: 15200027, 150200735, 150220725
+ */
+
 class Solution {
     /**
      * Create a function that takes a value (string) representing a number

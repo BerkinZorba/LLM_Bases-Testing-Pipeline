@@ -3,6 +3,11 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.*;
 
+/* @Authors
+ *   Student Names: Ahmet AKIN, Berkin ZORBA , Eylül Zeynep PINARBASI
+ *   Student IDs: 15200027, 150200735, 150220725
+ */
+
 /**
  * Manual black-box tests for HumanEval_001 (codex / GPT).
  * Cases derived from equivalence classes and boundary analysis in HumanEval_001_blackbox.md.

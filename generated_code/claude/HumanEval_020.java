@@ -1,6 +1,11 @@
 import java.util.*;
 import java.lang.*;
 
+/* @Authors
+ *   Student Names: Ahmet AKIN, Berkin ZORBA , Eylül Zeynep PINARBASI
+ *   Student IDs: 15200027, 150200735, 150220725
+ */
+
 class Solution {
     /**
      * From a supplied list of numbers (of length at least two) select and return two that are the closest to each

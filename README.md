@@ -172,14 +172,6 @@ Tests are compiled and run from the command line — no build tool (Maven/Gradle
 
 ---
 
-## Known Issues / Limitations (Phase 1)
-
-- 18 of the 30 selected prompts have not yet had code generated or tests run.
-- `selection_rationale.md` contains naming mismatches for at least `Java/129` (describes *maxFill* instead of *minPath*) and `Java/95` (*checkDictKeys* vs *checkDictCase*); these are documentation inconsistencies only and do not affect the experiment.
-- JaCoCo 0.8.12 does not instrument Java 25+ bytecode; all compilation uses `--release 21`.
-
----
-
 ## Repository Rules
 
 The operating contracts for this experiment live in:
